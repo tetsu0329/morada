@@ -125,7 +125,7 @@
     				<button id="add_btn" class="btn_style">Add</button>
 					<div id="add_modal" class="modal">
 					  <div class="modal-content">
-					    <span class="add_close">&times;</span>
+					    <span class="close">&times;</span>
 					    <h4>Add User</h4>
 					    <hr>
 					  </div>
@@ -153,7 +153,7 @@
 				<button id="view_btn" class="btn_style"><img src="img/view.png" style="height: 15px; width: 15px;"></button>
 					<div id="view_modal" class="modal">
 					  <div class="modal-content">
-					    <span class="view_close">&times;</span>
+					    <span class="close">&times;</span>
 					    <h4>Lorem Ipsum Name</h4>
 					    <hr>
 					  </div>
@@ -172,65 +172,59 @@
 
 <!-- scripts -->
 
-
 <script>
 // <!--  VIEW modal -->
-// Get the modal view
-var view_modal = document.getElementById('view_modal');
+	// Get the modal view
+	var view_modal = document.getElementById('view_modal');
 
-// Get the button view that opens the modal
-var view_btn = document.getElementById("view_btn");
+	// Get the button view that opens the modal
+	var view_btn = document.getElementById("view_btn");
 
-// Get the <span> element that closes the modal
-var view_span = document.getElementsByClassName("view_close")[0];
-
-// When the user clicks the button, open the modal 
-view_btn.onclick = function() {
-    view_modal.style.display = "block";
-}
-
-
-// When the user clicks on <span> (x), close the modal
-view_span.onclick = function() {
-    view_modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        view_modal.style.display = "none";
-    }
-} // <!-- end of VIEW modal -->
-
+	// When the user clicks the button, open the modal 
+	view_btn.onclick = function() {
+		view_modal.style.display = "block";
+	}
+// <!-- end of VIEW modal -->
 </script> 
 
 <script>
 // <!--  Add modal -->
-// Get the modal view
-var add_modal = document.getElementById('add_modal');
+	// Get the modal view
+	var add_modal = document.getElementById('add_modal');
 
-// Get the button view that opens the modal
-var add_btn = document.getElementById("add_btn");
+	// Get the button view that opens the modal
+	var add_btn = document.getElementById("add_btn");
 
-// Get the <span> element that closes the modal
-var add_span = document.getElementsByClassName("add_close")[0];
+	// When the user clicks the button, open the modal 
+	add_btn.onclick = function() {
+		add_modal.style.display = "block";
+	}
+// <!-- end of VIEW modal -->
+</script>
 
-// When the user clicks the button, open the modal 
-add_btn.onclick = function() {
-    add_modal.style.display = "block";
-}
+<!-- Script for closing the modal -->
+<script>
+	// Get the <span> element that closes the modal
+	var add_span = document.getElementsByClassName("close")[0];
+	var view_span = document.getElementsByClassName("close")[1];
 
+	// When the user clicks on <span> (x), close the modal
+	add_span.onclick = function() {
+		add_modal.style.display = "none";
 
-// When the user clicks on <span> (x), close the modal
-add_span.onclick = function() {
-    add_modal.style.display = "none";
-}
+	}
+	view_span.onclick = function() {
+		view_modal.style.display = "none";
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-       add_modal.style.display = "none";
-    }
-} // <!-- end of VIEW modal -->
+	}
+	// When the user clicks anywhere outside of the modal, close it
+	window.onclick = function(event) {
+		if (event.target == add_modal) {
+		add_modal.style.display = "none";
+		}
+		if (event.target == view_modal) {
+		view_modal.style.display = "none";
+		}
+	}
 </script>
 </html>
