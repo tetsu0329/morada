@@ -1,4 +1,4 @@
-<?php 
+	<?php 
 	include ('navigation.php');
 	include ('bypass.php');
 
@@ -19,10 +19,12 @@
   		margin: 50px 40px 0px 350px;
 	}
 
-	.inquiry{
-		margin: 5% 0px 0px 2%;
-		width: 45%;
+	.img-thumbnail{
+		margin: 1%;
+		width: 40%;
+		padding: 4%;
 	}
+	
 	.inquiry_body{
 		border: 2px solid #8C6A48;
 		border-radius: 10px;
@@ -33,10 +35,6 @@
 		background-color: #e7d5d0;
 	}
 	
-	.order{
-		margin: -105px 0% 0% 50%;
-		width: 45%;
-	}
 	.order_body{
 		border: 2px solid #8C6A48;
 		border-radius: 10px;
@@ -50,37 +48,10 @@
   .content_body{
     margin-left: 50px;
     margin-top: 30px;  }
-
-    .inquiry{
-		margin: 5% 0px 0px 0%;
-		width: 45%;
-	}
-	.inquiry_body{
-		border: 1px solid black;
-		border-radius: 10px;
-		background-color: white;
-		
-	}
-    .inquiry_body:hover{
-		background-color: #dee2e6;
-	}
-	
-	.order{
-		margin: 15% 0% 0% 0%;
-		width: 45%;
-	}
-	.order_body{
-		border: 1px solid black;
-		border-radius: 10px;
-		background-color: white;
-		
-	}
-	.order_body:hover{
-		background-color: #dee2e6;
-	}
 	}
 </style>
 <body>
+<<<<<<< HEAD
 	<div class="content">
 
 	  <div class="content_body">
@@ -99,5 +70,22 @@
 			</div>
 		</div>
 	</div>
+=======
+<div class="content">
+
+  <div class="content_body">
+    <h2>Gallery</h2>
+    <hr>
+    <center>
+    	<div class="container">      
+  			<div class="inquiry_body img-thumbnail"><p style="font-size: 50px">8745</p><hr><p style="font-size: 20px">INQUIRY</p></div>
+  			<div class="inquiry_body img-thumbnail"><p style="font-size: 50px">45</p><hr><p style="font-size: 20px">ORDER</p></div>
+  			<div class="inquiry_body img-thumbnail"><p style="font-size: 50px">3536</p><hr><p style="font-size: 20px">USERS</p></div>
+  			<div class="inquiry_body img-thumbnail"><p style="font-size: 50px">67654</p><hr><p style="font-size: 20px">PRODUCTS</p></div>
+	     </div>
+    </center>
+    		
+</div>
+>>>>>>> 58bd3f8b03cfe97e38a6073f429859f2ea3aaad8
 </body>
 </html>

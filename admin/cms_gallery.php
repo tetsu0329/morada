@@ -44,7 +44,7 @@
   		<img src="img/view.png" class="img-thumbnail" alt="Cinque Terre" width="250" height="250">
 
   
-	</div>
+	     </div>
     </center>
     		
 </div>
