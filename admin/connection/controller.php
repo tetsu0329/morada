@@ -1,5 +1,7 @@
 <?php
     $sqladmins = mysqli_query($conn,"SELECT * FROM usertable");
+    $sqlselectabout = mysqli_query($conn,"SELECT * FROM abouttable WHERE id='1'");
+    $aboutrow=mysqli_fetch_assoc($sqlselectabout);
 
     if (isset($_POST['adduser'])) {
         $lname = $_POST['lastname'];
@@ -27,4 +29,23 @@
         }
 
     }
+    //update about 
+    
+    if (isset($_POST['updtaboutbtn'])) {
+        $aboutcontent=$_POST['aboutcontent'];
+
+        $sqlaboutupdt = mysqli_query($conn,"UPDATE abouttable SET content='$aboutcontent' WHERE id='1'");
+
+        if ($sqlaboutupdt) {
+           
+               echo "<script>alert('Content of about has been updated');
+                       window.location='cms_about.php';</script>";
+
+        }
+
+        else{
+               echo "<script>alert('unable to update about content')
+                    window.location='cms_about.php';</script>";
+        }
+   }
 ?>

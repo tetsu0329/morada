@@ -7,8 +7,16 @@
 <html>
 <head>
 	<title>Edit About</title>
+	<!-- Include external CSS. -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/codemirror.min.css">
+ 
+    <!-- Include Editor style. -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.7.1/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.7.1/css/froala_style.min.css" rel="stylesheet" type="text/css" />
 </head>
 <style type="text/css">
+
 	body{
 		 margin: 0;
 	}
@@ -43,11 +51,22 @@
     <center>
     	<div class="about">
 			<div class="about_body">
-				<center><p style="font-size: 16px; line-height: 1.5;">Lorem ipsum dolor sit emet. Lorem ipsum dolor sit emet. Lorem ipsum dolor sit emet. Lorem ipsum dolor sit emet. Lorem ipsum dolor sit emet. Lorem ipsum dolor sit emet. Lorem ipsum dolor sit emet. Lorem ipsum dolor sit emet. Lorem ipsum dolor sit emet. Lorem ipsum dolor sit emet. Lorem ipsum dolor sit emet. Lorem ipsum dolor sit emet.</p></center>
+			<form action='' method='POST'>
+				<textarea class="form-control p-input" id="exampleTextarea" rows="20" name="aboutcontent" ><?php echo $aboutrow['content'];?></textarea> 
+                   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+                   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/codemirror.min.js"></script>
+                   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/mode/xml/xml.min.js"></script>
+ 
+				<!-- Include Editor JS files. -->
+					<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.7.1/js/froala_editor.pkgd.min.js"></script>
+			
+				<!-- Initialize the editor. -->
+					<script> $(function() { $('textarea').froalaEditor() }); </script>
 			</div>
 		</div>
 		<br><br>
-		<button>UPDATE</button>
+		<input type= 'submit' name='updtaboutbtn' value= 'UPDATE'>
+		</form>
 	</center>
 </div>
 </body>
