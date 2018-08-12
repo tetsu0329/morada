@@ -1,3 +1,9 @@
+<?php
+//   if(!empty($_SESSION['session_moradaadmin'])){
+//     echo "<script>window.location.replace('index.php')</script>";
+//   }
+  include("connection/conn.php");
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,7 +17,7 @@
 body{
   background-color: #e7d5d0;
 }
-input[type=text], select, textarea {
+input[type=text], input[type='password'], select, textarea {
     width: 40%;
     padding: 12px;
     border: 1px solid #8C6A48;
@@ -84,22 +90,59 @@ input[type=submit]:hover {
 
 <center>
 
-  <form action="/action_page.php">
+  <form action="" method="POST">
     <div class="row">
       <div class="col-75">
-        <input type="text" id="username" name="username" placeholder="Username">
+        <input type="text" id="username" name="uname" placeholder="Username">
       </div>
     </div>
     <div class="row">
       <div class="col-75">
-        <input type="text" id="pw" name="pw" placeholder="Password">
+        <input type="password" id="pw" name="upass" placeholder="Password">
       </div>
     </div>
 
     <div class="row">
-      <input type="submit" value="LOGIN">
+      <input type="submit" value="LOGIN" name="loginbtn">
     </div>
   </form>
 </center>
 </body>
 </html>
+<?php
+    if(isset($_POST['loginbtn']))
+    {
+        $name = test_input($_POST['uname']);
+        $pass = test_input($_POST['upass']);
+        $sqllogin = mysqli_query($conn,"SELECT * FROM administrators WHERE username='$name' AND password='$pass'");
+        $usercount=mysqli_num_rows($sqllogin);
+        $rowlog=mysqli_fetch_assoc($sqllogin);
+        if($rowlog['username']==$name && $rowlog['password']==$pass && $rowlog['status']=='Active')
+        {
+            if (isset($_POST['remembermecheckbox'])) 
+            {
+                setcookie('username', $_POST['uname'], time()+60*60*24*365);
+                setcookie('password', $_POST['upass'], time()+60*60*24*365);
+            } 
+            else 
+            {
+                setcookie("username", "", time()-3600);
+                setcookie("password", "", time()-3600);
+            }
+        $_SESSION['session_moradaadmin']=$rowlog['id'];
+        $_SESSION['admin_type']=$rowlog['usertype'];
+        $_SESSION['admin_name']=$rowlog['name'];
+        echo "<script>window.location.replace('index.php')</script>";
+        }
+        else
+        {
+        echo "<script>alert('Username or Password is incorrect')</script>";
+        }
+    }
+    function test_input($data){
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
+    }
+?>

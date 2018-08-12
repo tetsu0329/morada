@@ -1,5 +1,6 @@
 <?php 
 	include ('navigation.php');
+	include ('bypass.php');
 ?>
 
 <!DOCTYPE html>
@@ -186,7 +187,7 @@
 					<span class="close">&times;</span>
 					    <h4>Add User</h4>
 					    <hr>
-
+						<form action='' method='POST'>
 					    <h5 style="margin: 20px;">Personal Information</h5>
 					    <div class="container">
 						    <div class="row">
@@ -255,9 +256,9 @@
 						 	<br>
 						    
 						    <div class="row">
-						      <input type="submit" value="Submit">
+						      <input type="submit" value="Submit" name='adduser'>
 						    </div>
-						
+					</form>
 				</div>
 			</div>
     
@@ -268,7 +269,7 @@
 					<span class="close">&times;</span>
 					    <h4>Edit User</h4>
 					    <hr>
-
+						<form action="" method="POST">
 					    <h5 style="margin: 20px;">Personal Information</h5>
 					    <div class="container">
 						    <div class="row">
@@ -323,13 +324,13 @@
 					    <div class="container">
 						    <div class="row">
 						      <div class="col-75">
-						        <input type="text" id="pw" name="pw" placeholder="Password">
+						        <input type="password" id="pw" name="pw" placeholder="Password">
 						      </div>
 						    </div>
 
 						    <div class="row">
 						      <div class="col-75">
-						        <input type="text" id="confirmpw" name="confirmpw" placeholder="Confirm Password">
+						        <input type="password" id="confirmpw" name="confirmpw" placeholder="Confirm Password">
 						      </div>
 						    </div>
 						</div>
@@ -337,9 +338,9 @@
 						 	<br>
 						    
 						    <div class="row">
-						      <input type="submit" value="Submit">
+						      <input type="submit" value="Submit" name='edituser'>
 						    </div>
-						
+					</form>
 				</div>
 			</div>
 
@@ -355,74 +356,65 @@
 	      <th><center>ACTIONS</center></th>
 
 	    </tr>
+		<?php
+            while($rows=mysqli_fetch_assoc($sqladmins))
+            {
+		?>
+	    	<tr>
+	      		<td><?php echo $rows['fname'].' '.$rows['lname']?></td>
+				<td><center><?php echo $rows['status'] ?></center></td>
+				<td><center>No purchase</center></td>
+				<td>
+				<center>  
+					<a href="?UserID=<?php echo $rows['id']?>"><button id="view_btn" class="btn_style"><img src="img/view.png" style="height: 15px; width: 15px;"></button></a>
+				</center>
+				</td>
+			</tr>
+		<?php
+			}
+		?>
+		</table>
+		</center>
+		<div id="view_modal" class="modal">
+		<div class="modal-content">
+			<span class="close"></span>
+			<?php
+			if(isset($_GET['UserID'])){
+				$userid = $_GET['UserID'];
+				$sqluserview = mysqli_query($conn,"SELECT * FROM usertable WHERE id = $userid");
+					while($rows=mysqli_fetch_assoc($sqluserview)){
+			?>
+				<h4><?php echo $rows['fname'].' '.$rows['lname']?></h4>
+				<hr>
+				<h5>Mobile Number</h5>
+				<p><?php echo $rows['mobilenum']?></p>
+				<h5>Email Address</h5>
+				<p><?php echo $rows['emailadd']?></p>
+				<h5>Address</h5>
+				<p><?php echo $rows['street']." ".$rows['barangay']." ".$rows['city']?></p>
+			<?php
+				}
+			}
+			?>							   
+		</div>
+		</div>
 
-	    <tr>
-	      <td>Lorem Ipsum Name</td>
-	      <td><center>Active</center></td>
-	      <td><center>No purchase</center></td>
-	      <td>
-	      	<center>  
-				<button id="view_btn" class="btn_style"><img src="img/view.png" style="height: 15px; width: 15px;"></button>
-					<div id="view_modal" class="modal">
-					  <div class="modal-content">
-					    <span class="close">&times;</span>
-					    <h4>Lorem Ipsum Name</h4>
-					    <hr>
-					    <h5>Mobile Number</h5>
-					    <p>0915-123-4567</p>
-
-					    <h5>Email Address</h5>
-					    <p>lorem.ipsum@gmail.com</p>
-
-					    <h5>Address</h5>
-					    <p>123 Abc Street, Def Subd., Ghij City.</p>						   
-					  </div>
-					</div>
-	      	</center>
-	      </td>
-	    </tr>
-
-	    <tr>
-	      <td>Lorem Ipsum Name</td>
-	      <td><center>Active</center></td>
-	      <td><center>No purchase</center></td>
-	      <td>
-	      	<center>  
-				<button id="view_btn" class="btn_style"><img src="img/view.png" style="height: 15px; width: 15px;"></button>
-					<div id="view_modal" class="modal">
-					  <div class="modal-content">
-					    <span class="close">&times;</span>
-					    <h4>Lorem Ipsum Name</h4>
-					    <hr>
-					    <h5>Mobile Number</h5>
-					    <p>0915-123-4567</p>
-
-					    <h5>Email Address</h5>
-					    <p>lorem.ipsum@gmail.com</p>
-
-					    <h5>Address</h5>
-					    <p>123 Abc Street, Def Subd., Ghij City.</p>						   
-					  </div>
-					</div>
-	      	</center>
-	      </td>
-	    </tr>
-	  </table>
-	</center>
 	</div>
 	</div>
 
 </body>
-
-<!-- scripts -->
+<?php
+	echo "<script> var view_modal = document.getElementById('view_modal'); </script>";
+	if(isset($_GET['UserID'])){
+		echo "<script> view_modal.style.display = 'block' </script>";
+	}
+?>
 <script>
 // <!--  ADD modal -->
 	// Get the modal view
 	var add_modal = document.getElementById('add_modal');
-
 	// Get the button view that opens the modal
 	var add_btn = document.getElementById("add_btn");
-
 	// When the user clicks the button, open the modal 
 	add_btn.onclick = function() {
 		add_modal.style.display = "block";
@@ -430,37 +422,6 @@
 // <!-- end of ADD modal -->
 </script>
 
-<script>
-// <!--  VIEW modal -->
-	// Get the modal view
-	var view_modal = document.getElementById('view_modal');
-
-	// Get the button view that opens the modal
-	var view_btn = document.getElementById("view_btn");
-
-	// When the user clicks the button, open the modal 
-	view_btn.onclick = function() {
-		view_modal.style.display = "block";
-	}
-// <!-- end of VIEW modal -->
-</script> 
-
-<script>
-// <!--  EDIT modal -->
-	// Get the modal view
-	var edit_modal = document.getElementById('edit_modal');
-
-	// Get the button view that opens the modal
-	var edit_btn = document.getElementById("edit_btn");
-
-	// When the user clicks the button, open the modal 
-	edit_btn.onclick = function() {
-		edit_modal.style.display = "block";
-	}
-// <!-- end of EDIT modal -->
-</script>
-
-<!-- Script for closing the modal -->
 <script>
 	// Get the <span> element that closes the modal
 	var add_span = document.getElementsByClassName("close")[0];
@@ -474,7 +435,6 @@
 	}
 	view_span.onclick = function() {
 		view_modal.style.display = "none";
-
 	}
 	edit_span.onclick = function() {
 		edit_modal.style.display = "none";
