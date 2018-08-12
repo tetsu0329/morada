@@ -18,18 +18,64 @@
 	}
 
 	.inquiry{
-		margin: 20px;
-		width: 70%;
+		margin: 5% 0px 0px 2%;
+		width: 45%;
 	}
 	.inquiry_body{
-		border: 1px solid black;
-		padding: 80px;
+		border: 2px solid #8C6A48;
+		border-radius: 10px;
+		background-color: white;
+		
 	}
+	.inquiry_body:hover{
+		background-color: #e7d5d0;
+	}
+	
+	.order{
+		margin: -105px 0% 0% 50%;
+		width: 45%;
+	}
+	.order_body{
+		border: 2px solid #8C6A48;
+		border-radius: 10px;
+		background-color: white;
+		
+	}
+	.order_body:hover{
+		background-color: #e7d5d0;
 	}
 	@media screen and (max-width: 600px) {
   .content_body{
     margin-left: 50px;
     margin-top: 30px;  }
+
+    .inquiry{
+		margin: 5% 0px 0px 0%;
+		width: 45%;
+	}
+	.inquiry_body{
+		border: 1px solid black;
+		border-radius: 10px;
+		background-color: white;
+		
+	}
+    .inquiry_body:hover{
+		background-color: #dee2e6;
+	}
+	
+	.order{
+		margin: 15% 0% 0% 0%;
+		width: 45%;
+	}
+	.order_body{
+		border: 1px solid black;
+		border-radius: 10px;
+		background-color: white;
+		
+	}
+	.order_body:hover{
+		background-color: #dee2e6;
+	}
 	}
 </style>
 <body>
@@ -38,22 +84,18 @@
 	  <div class="content_body">
 	    <h2>Dashboard</h2>
 	    <hr>
-	    <center>
+	   
 		<div class="inquiry">
-			<p style="font-size: 20px;">Inquiry</p>
 			<div class="inquiry_body">
-				sads
+				<center><p style="font-size: 40px;">33</p><p style="font-size: 18px;">INQUIRY</p></center>
 			</div>
 		</div>
 
-		<div class="inquiry">
-			<p style="font-size: 20px;">Orders</p>
-			<div class="inquiry_body">
-				sads
+		<div class="order">
+			<div class="order_body">
+				<center><p style="font-size: 40px;">373</p><p style="font-size: 18px;">ORDER</p></center>
 			</div>
 		</div>
-		</center>
-	</div>
 	</div>
 </body>
 </html>

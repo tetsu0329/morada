@@ -1,8 +1,10 @@
+<?php include ('include.php'); ?>
 <!DOCTYPE html>
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
+
 body {
   margin: 0;
   font-family: "Century Gothic", sans-serif;
@@ -12,32 +14,91 @@ body {
   margin: 0;
   padding: 0;
   width: 300px;
-  background-color: #222222;
+  background-color: #e7d5d0;
   position: fixed;
   height: 100%;
-  overflow: auto;
+  overflow: hidden;
 }
 
 .sidebar a {
   display: block;
-  color: #dee2e6;
+  color: #222222;
   padding: 16px;
   text-decoration: none;
 }
  
 .sidebar a.active {
-  background-color: #343a40;
-  color: #dee2e6;
+  background-color: #ceaea5;
+  color: #222222;
 }
 
 .sidebar a:hover:not(.active) {
-  background-color: #343a40;
-  color: #dee2e6;
+  background-color: #ceaea5;
+  color: #222222;
 }
 
+.mobilemenu{
+  display: none;
+}
+.icon{
+  display: none;
+}
+
+/*.sidenav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.sidenav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.sidenav .icon {
+  display: none;
+}*/
+
+@media screen and (max-width: 700px) {
+  .sidebar a:not(:first-child) {display: none;}
+  .sidebar a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .sidebar.responsive {position: relative;}
+  .sidebar.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .sidebar.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+
+  .mobilemenu{
+  display: block !important;
+}
+a .icon{
+  display: none;
+}
+
+}
 .accordion {
-    background-color: #222222;
-    color: #dee2e6;
+    color: #222222;
     cursor: pointer;
     padding: 18px;
     border: none;
@@ -45,10 +106,11 @@ body {
     outline: none;
     font-size: 15px;
     transition: 0.4s;
+
 }
 
 .active, .accordion:hover {
-    background-color: #343a40;
+    background-color: #ceaea5;
     color: #dee2e6; 
 }
 
@@ -56,7 +118,8 @@ body {
   /*  padding: 0 20px;*/
     margin-left: 20px;
     display: none;
-    background-color: #222222;
+    background-color: #e7d5d0;
+    
 }
 a.panel:hover {
   /*  padding: 0 18px;*/
@@ -64,7 +127,7 @@ a.panel:hover {
     background-color: #343a40;
 }
 .header {
-  background-color: #e9ecef;
+  background-color: #ceaea5;
   padding: 20px 20px 70px 20px;
 }
 .header a {
@@ -76,21 +139,13 @@ a.panel:hover {
   font-size: 16px; 
   line-height: 25px;
   border-radius: 4px;
+  background-color: #e7d5d0;
 }
 
-.header a.logo {
-  font-size: 25px;
-  font-weight: bold;
-}
 
 .header a:hover {
-  background-color: #ddd;
+  border:   1px solid #8C6A48;
   color: black;
-}
-
-.header a.active {
-  background-color: dodgerblue;
-  color: white;
 }
 
 .header-right {
@@ -100,7 +155,6 @@ a.panel:hover {
   margin-left: 300px;
   height: 1000px;
 }*/
-
 
 
 
@@ -123,20 +177,16 @@ a.panel:hover {
   .header-right {
     float: none;
   }
-@media screen and (max-width: 400px) {
-  .sidebar a {
-    text-align: center;
-    float: none;
-  }
-}
+
 </style>
 </head>
 <body>
 
 <!-- right content / sidebar -->
-<div class="sidebar">
-  <center><p style="font-size: 28px; color: #fff;">MORADA'S</p></center>
-  <a class="active" href="index.php">Dashboard</a>
+<div class="sidebar" id="mySidebar">
+  <center><img src="img/logo.png" style="width: 250px; margin-bottom: 5%; padding: 5%;">
+  </center>
+  <a href="index.php">Dashboard</a>
   <a href="useracc.php">User Accounts</a>
   <a href="orders.php">Orders</a>
   <a href="#cms" class="accordion">CMS</a>
@@ -149,7 +199,9 @@ a.panel:hover {
    </div>
   <a href="inquiry.php">Inquiry</a>
   <a href="reports.php">Reports</a>
-  <a href="archieve.php">Archieve</a>
+  <a href="archive.php">Archive</a>
+ <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+  <img src="img/menu.png" class="mobilemenu" style="width: 25px;">
 </div>
 
 <!-- left content / full content -->
@@ -189,4 +241,14 @@ for (i = 0; i < acc.length; i++) {
 }
 </script> <!-- end of menu accordion / dropdown cms -->
 
+<script>
+function myFunction() {
+    var x = document.getElementById("mySidebar");
+    if (x.className === "sidebar") {
+        x.className += " responsive";
+    } else {
+        x.className = "sidebar";
+    }
+}
+</script>
 </html>

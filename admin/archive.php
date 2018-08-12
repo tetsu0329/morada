@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Archieve</title>
+	<title>Archive</title>
 </head>
 <style type="text/css">
 	body{
@@ -27,7 +27,7 @@
 <div class="content">
 
   <div class="content_body">
-    <h2>Archieve</h2>
+    <h2>Archive</h2>
     <hr>
 
 </div>
