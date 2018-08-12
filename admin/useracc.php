@@ -106,7 +106,7 @@
 }
 
 .top_btns{
-	margin-left: 89%;
+	margin-left: 93%;
 }
 
 /*forms*/
@@ -115,7 +115,7 @@
 }
 
 	input[type=text], select, textarea {
-    width: 100%;
+    width: 45%;
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -123,17 +123,19 @@
 }
 
 	input[type=submit] {
-    background-color: #4CAF50;
+    background-color: #8C6A48;
     color: white;
     padding: 12px 20px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    float: right;
+    
 }
 
 	input[type=submit]:hover {
-    background-color: #45a049;
+    background-color: transparent;
+    border: 1px solid #8C6A48;
+    color: #8C6A48;
 }
 
 .container {
@@ -188,7 +190,7 @@
 					    <h4>Add User</h4>
 					    <hr>
 						<form action='' method='POST'>
-					    <h5 style="margin: 20px;">Personal Information</h5>
+					    <center><h5 style="margin: 20px;">Personal Information</h5></center>
 					    <div class="container">
 						    <div class="row">
 						      <div class="col-75">
@@ -215,7 +217,7 @@
 						    </div>
 						</div>
 						
-					  	<h5 style="margin: 20px;">Billing Information</h5>
+					  	<center><h5 style="margin: 20px;">Billing Information</h5></center>
 					    <div class="container">
 
 						    <div class="row">
@@ -237,8 +239,7 @@
 						    </div>
 						</div>
 
-					  	<h5>Login Information</h5>
-
+					  	<center><h5>Login Information</h5></center>
 					    <div class="container">
 						    <div class="row">
 						      <div class="col-75">
@@ -256,14 +257,14 @@
 						 	<br>
 						    
 						    <div class="row">
-						      <input type="submit" value="Submit" name='adduser'>
+						      <center><input type="submit" value="Add" name='adduser'></center>
 						    </div>
 					</form>
 				</div>
 			</div>
     
 
-    	<button id="edit_btn" class="btn_style"><img src="img/edit.png" style="height: 15px; width: 15px;"></button>
+    	<!-- <button id="edit_btn" class="btn_style"><img src="img/edit.png" style="height: 15px; width: 15px;"></button> -->
 			<div id="edit_modal" class="modal">
 				<div class="modal-content">
 					<span class="close">&times;</span>
@@ -364,9 +365,10 @@
 	      		<td><?php echo $rows['fname'].' '.$rows['lname']?></td>
 				<td><center><?php echo $rows['status'] ?></center></td>
 				<td><center>No purchase</center></td>
-				<td>
+				<td style="float: left;">
 				<center>  
 					<a href="?UserID=<?php echo $rows['id']?>"><button id="view_btn" class="btn_style"><img src="img/view.png" style="height: 15px; width: 15px;"></button></a>
+					<a href=""><button class="btn_style"><img src="img/edit.png" style="height: 15px; width: 15px;"></button></a>
 				</center>
 				</td>
 			</tr>
