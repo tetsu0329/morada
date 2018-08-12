@@ -1,4 +1,10 @@
 <?php
+    $sqlinquirycount = mysqli_query($conn,"SELECT * FROM inquirytable");
+    $inquirycount = mysqli_num_rows($sqlinquirycount);
+
+    $sqlorder = mysqli_query($conn,"SELECT * FROM ordertable");
+    $ordercount = mysqli_num_rows($sqlorder);
+
     $sqladmins = mysqli_query($conn,"SELECT * FROM usertable");
     $sqlselectabout = mysqli_query($conn,"SELECT * FROM abouttable WHERE id='1'");
     $aboutrow=mysqli_fetch_assoc($sqlselectabout);

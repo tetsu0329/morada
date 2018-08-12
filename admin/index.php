@@ -89,13 +89,13 @@
 	   
 		<div class="inquiry">
 			<div class="inquiry_body">
-				<center><p style="font-size: 40px;">33</p><p style="font-size: 18px;">INQUIRY</p></center>
+				<center><p style="font-size: 40px;"><?php echo $ordercount?></p><p style="font-size: 18px;">INQUIRY</p></center>
 			</div>
 		</div>
 
 		<div class="order">
 			<div class="order_body">
-				<center><p style="font-size: 40px;">373</p><p style="font-size: 18px;">ORDER</p></center>
+				<center><p style="font-size: 40px;"><?php echo $inquirycount?></p><p style="font-size: 18px;">ORDER</p></center>
 			</div>
 		</div>
 	</div>
