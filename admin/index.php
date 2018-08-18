@@ -54,7 +54,7 @@
 <div class="content">
 
   <div class="content_body">
-    <h2>Gallery</h2>
+    <h2>Dashboard</h2>
     <hr>
     <center>
     	<div class="container">      

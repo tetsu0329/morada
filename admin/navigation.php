@@ -77,17 +77,21 @@ body {
 }
 
 @media screen and (max-width: 700px) {
+/*  .logo{
+    float: left;
+  }*/
   .sidebar.responsive {position: relative;}
   .sidebar.responsive .icon {
     position: absolute;
     right: 0;
-    top: 0;
+    top:0%;
   }
   .sidebar.responsive a {
     float: none;
     display: block;
     text-align: left;
   }
+
 
   .mobilemenu{
   display: block !important;
@@ -184,8 +188,8 @@ a.panel:hover {
 
 <!-- right content / sidebar -->
 <div class="sidebar" id="mySidebar">
-  <center><img src="img/logo.png" style="width: 250px; margin-bottom: 5%; padding: 5%;">
-  </center>
+  <!-- <center><img src="img/logo.png" style="width: 250px; margin-bottom: 5%; padding: 5%;" class="logo"></center> -->
+   <i><img src="img/logo.png" style="width: 250px; margin-bottom: 5%; padding: 5%;" class="logo"></i>
   <a href="index.php">Dashboard</a>
   <a href="useracc.php">User Accounts</a>
   <a href="orders.php">Orders</a>
@@ -200,7 +204,7 @@ a.panel:hover {
   <a href="inquiry.php">Inquiry</a>
   <a href="reports.php">Reports</a>
   <a href="archive.php">Archive</a>
- <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+ <a href="javascript:void(0);" class="icon" onclick="myFunction()"><br>
   <img src="img/menu.png" class="mobilemenu" style="width: 25px;">
 </div>
 
