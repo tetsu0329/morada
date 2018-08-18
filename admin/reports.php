@@ -1,6 +1,6 @@
 <?php 
-	include ('navigation.php');
 	include ('bypass.php');
+	include ('navigation.php');
 ?>
 
 <!DOCTYPE html>

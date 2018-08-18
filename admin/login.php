@@ -1,7 +1,8 @@
 <?php
-//   if(!empty($_SESSION['session_moradaadmin'])){
-//     echo "<script>window.location.replace('index.php')</script>";
-//   }
+    session_start();
+    if(!empty($_SESSION['moradaadmin'])){
+        echo "<script>window.location.replace('index.php')</script>";
+    }
   include("connection/conn.php");
 ?>
 <!DOCTYPE html>
@@ -112,6 +113,7 @@ input[type=submit]:hover {
 <?php
     if(isset($_POST['loginbtn']))
     {
+
         $name = test_input($_POST['uname']);
         $pass = test_input($_POST['upass']);
         $sqllogin = mysqli_query($conn,"SELECT * FROM administrators WHERE username='$name' AND password='$pass'");
@@ -129,7 +131,7 @@ input[type=submit]:hover {
                 setcookie("username", "", time()-3600);
                 setcookie("password", "", time()-3600);
             }
-        $_SESSION['session_moradaadmin']=$rowlog['id'];
+        $_SESSION['moradaadmin']=$rowlog['id'];
         $_SESSION['admin_type']=$rowlog['usertype'];
         $_SESSION['admin_name']=$rowlog['name'];
         echo "<script>window.location.replace('index.php')</script>";

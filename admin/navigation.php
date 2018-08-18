@@ -209,7 +209,7 @@ a.panel:hover {
 
   <div class="header">
       <div class="header-right">
-        <a href="#logout">Logout</a>
+        <a href="logout.php">Logout</a>
       </div>
   </div>
 

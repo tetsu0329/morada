@@ -1,6 +1,6 @@
 <?php 
-	include ('navigation.php');
 	include ('bypass.php');
+	include ('navigation.php');
 ?>
 
 <!DOCTYPE html>
@@ -267,33 +267,39 @@
     	<!-- <button id="edit_btn" class="btn_style"><img src="img/edit.png" style="height: 15px; width: 15px;"></button> -->
 			<div id="edit_modal" class="modal">
 				<div class="modal-content">
-					<span class="close">&times;</span>
+					<span class="close"></span>
 					    <h4>Edit User</h4>
 					    <hr>
+						<?php
+						if(isset($_GET['ID'])){
+							$userid = $_GET['ID'];
+							$sqluserview = mysqli_query($conn,"SELECT * FROM usertable WHERE id = $userid");
+								while($rows=mysqli_fetch_assoc($sqluserview)){
+						?>
 						<form action="" method="POST">
 					    <h5 style="margin: 20px;">Personal Information</h5>
 					    <div class="container">
 						    <div class="row">
 						      <div class="col-75">
-						        <input type="text" id="lname" name="lastname" placeholder="Last Name">
+						        <input type="text" id="lname" name="lastname" value="<?php echo $rows['lname']?>">
 						      </div>
 						    </div>
 
 						    <div class="row">
 						      <div class="col-75">
-						        <input type="text" id="fname" name="firstname" placeholder="First Name">
+						        <input type="text" id="fname" name="firstname" value="<?php echo $rows['fname']?>">
 						      </div>
 						    </div>
 
 						    <div class="row">
 						      <div class="col-75">
-						        <input type="text" id="mobienum" name="mobilenum" placeholder="Mobile Number">
+						        <input type="text" id="mobienum" name="mobilenum" value="<?php echo $rows['mobilenum']?>">
 						      </div>
 						    </div>
 
 						    <div class="row">
 						      <div class="col-75">
-						        <input type="text" id="emailadd" name="emailadd" placeholder="Email Address">
+						        <input type="text" id="emailadd" name="emailadd" value="<?php echo $rows['emailadd']?>">
 						      </div>
 						    </div>
 						</div>
@@ -303,19 +309,19 @@
 
 						    <div class="row">
 						      <div class="col-75">
-						        <input type="text" id="address" name="address" placeholder="house number, building, street name, subdivision name">
+						        <input type="text" id="address" name="address" value="<?php echo $rows['street']?>">
 						      </div>
 						    </div>
 
 						    <div class="row">
 						      <div class="col-75">
-						        <input type="text" id="city" name="city" placeholder="City">
+						        <input type="text" id="city" name="city" value="<?php echo $rows['city']?>">
 						      </div>
 						    </div>
 
 						    <div class="row">
 						      <div class="col-75">
-						        <input type="text" id="brgy" name="brgy" placeholder="Barangay">
+						        <input type="text" id="brgy" name="brgy" value="<?php echo $rows['barangay']?>">
 						      </div>
 						    </div>
 						</div>
@@ -325,17 +331,20 @@
 					    <div class="container">
 						    <div class="row">
 						      <div class="col-75">
-						        <input type="password" id="pw" name="pw" placeholder="Password">
+						        <input type="password" id="pw" name="pw" value="<?php echo $rows['password']?>">
 						      </div>
 						    </div>
 
 						    <div class="row">
 						      <div class="col-75">
-						        <input type="password" id="confirmpw" name="confirmpw" placeholder="Confirm Password">
+						        <input type="password" id="confirmpw" name="confirmpw" value="<?php echo $rows['password']?>">
 						      </div>
 						    </div>
 						</div>
-
+						<?php
+							}
+						}
+						?>
 						 	<br>
 						    
 						    <div class="row">
@@ -368,7 +377,7 @@
 				<td style="float: left;">
 				<center>  
 					<a href="?UserID=<?php echo $rows['id']?>"><button id="view_btn" class="btn_style"><img src="img/view.png" style="height: 15px; width: 15px;"></button></a>
-					<a href=""><button class="btn_style"><img src="img/edit.png" style="height: 15px; width: 15px;"></button></a>
+					<a href="?ID=<?php echo $rows['id']?>"><button class="btn_style"><img src="img/edit.png" style="height: 15px; width: 15px;"></button></a>
 				</center>
 				</td>
 			</tr>
@@ -409,6 +418,10 @@
 	echo "<script> var view_modal = document.getElementById('view_modal'); </script>";
 	if(isset($_GET['UserID'])){
 		echo "<script> view_modal.style.display = 'block' </script>";
+	}
+	echo "<script> var edit_modal = document.getElementById('edit_modal'); </script>";
+	if(isset($_GET['ID'])){
+		echo "<script> edit_modal.style.display = 'block' </script>";
 	}
 ?>
 <script>

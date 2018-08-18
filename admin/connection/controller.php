@@ -1,14 +1,25 @@
 <?php
+
+    //dashboard number
     $sqlinquirycount = mysqli_query($conn,"SELECT * FROM inquirytable");
     $inquirycount = mysqli_num_rows($sqlinquirycount);
 
-    $sqlorder = mysqli_query($conn,"SELECT * FROM ordertable");
-    $ordercount = mysqli_num_rows($sqlorder);
+    $sqlordercount = mysqli_query($conn,"SELECT * FROM ordertable");
+    $ordercount = mysqli_num_rows($sqlordercount);
+
+    $sqlusercount = mysqli_query($conn,"SELECT * FROM usertable");
+    $usercount = mysqli_num_rows($sqlusercount);
+
+    $sqlproductcount = mysqli_query($conn,"SELECT * FROM producttbl");
+    $productcount = mysqli_num_rows($sqlproductcount);
+
+
 
     $sqladmins = mysqli_query($conn,"SELECT * FROM usertable");
     $sqlselectabout = mysqli_query($conn,"SELECT * FROM abouttable WHERE id='1'");
     $aboutrow=mysqli_fetch_assoc($sqlselectabout);
 
+    //add user customer
     if (isset($_POST['adduser'])) {
         $lname = $_POST['lastname'];
         $fname = $_POST['firstname'];
@@ -35,6 +46,36 @@
         }
 
     }
+
+    //edit user customer
+    if(isset($_POST['edituser'])){
+        $userid = $_GET['ID'];
+        $lname = $_POST['lastname'];
+        $fname = $_POST['firstname'];
+        $mnumb = $_POST['mobilenum'];
+        $emadd = $_POST['emailadd'];
+        $addre = $_POST['address'];
+        $cityy = $_POST['city'];
+        $brgyy = $_POST['brgy'];
+        $passw = $_POST['pw'];
+        $cpass = $_POST['confirmpw'];
+        $comp = strcmp($passw, $cpass);
+        if($comp == 0){
+            $result = mysqli_query($conn,"UPDATE usertable SET lname = '$lname', fname = '$fname', 
+            mobilenum = '$mnumb', emailadd = '$emadd', street = '$addre', city = '$cityy', barangay = '$brgyy', password = '$passw', 
+            status = 'Active' WHERE id = '$userid'")
+            or die ("failed to query database". mysqli_error());
+            echo"<script type='text/javascript'>alert('User Updated Successfully'); 
+            window.location='useracc.php';
+            </script>";
+        }
+        else{
+            echo"<script type='text/javascript'>alert('Password Doesnt Match'); 
+            window.location='useracc.php';
+            </script>";
+        }
+    }
+
     //update about 
     
     if (isset($_POST['updtaboutbtn'])) {

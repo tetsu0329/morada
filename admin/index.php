@@ -1,7 +1,6 @@
-	<?php 
-	include ('navigation.php');
+<?php 
 	include ('bypass.php');
-
+	include ('navigation.php');
 ?>
 
 <!DOCTYPE html>
@@ -51,41 +50,19 @@
 	}
 </style>
 <body>
-<<<<<<< HEAD
-	<div class="content">
-
-	  <div class="content_body">
-	    <h2>Dashboard</h2>
-	    <hr>
-	   
-		<div class="inquiry">
-			<div class="inquiry_body">
-				<center><p style="font-size: 40px;"><?php echo $ordercount?></p><p style="font-size: 18px;">INQUIRY</p></center>
-			</div>
-		</div>
-
-		<div class="order">
-			<div class="order_body">
-				<center><p style="font-size: 40px;"><?php echo $inquirycount?></p><p style="font-size: 18px;">ORDER</p></center>
-			</div>
-		</div>
-	</div>
-=======
 <div class="content">
-
   <div class="content_body">
-    <h2>Gallery</h2>
+    <h2>Dashboard</h2>
     <hr>
     <center>
     	<div class="container">      
-  			<div class="inquiry_body img-thumbnail"><p style="font-size: 50px">8745</p><hr><p style="font-size: 20px">INQUIRY</p></div>
-  			<div class="inquiry_body img-thumbnail"><p style="font-size: 50px">45</p><hr><p style="font-size: 20px">ORDER</p></div>
-  			<div class="inquiry_body img-thumbnail"><p style="font-size: 50px">3536</p><hr><p style="font-size: 20px">USERS</p></div>
-  			<div class="inquiry_body img-thumbnail"><p style="font-size: 50px">67654</p><hr><p style="font-size: 20px">PRODUCTS</p></div>
+  			<div class="inquiry_body img-thumbnail"><p style="font-size: 50px"><?php echo $inquirycount ?></p><hr><p style="font-size: 20px">INQUIRY</p></div>
+  			<div class="inquiry_body img-thumbnail"><p style="font-size: 50px"><?php echo $ordercount ?></p><hr><p style="font-size: 20px">ORDER</p></div>
+  			<div class="inquiry_body img-thumbnail"><p style="font-size: 50px"><?php echo $usercount ?></p><hr><p style="font-size: 20px">USERS</p></div>
+  			<div class="inquiry_body img-thumbnail"><p style="font-size: 50px"><?php echo $productcount ?></p><hr><p style="font-size: 20px">PRODUCTS</p></div>
 	     </div>
     </center>
     		
 </div>
->>>>>>> 58bd3f8b03cfe97e38a6073f429859f2ea3aaad8
 </body>
 </html>
