@@ -53,7 +53,7 @@
 		box-shadow: none;
 		padding: 10px;
 		font-size: 12px;
-		border-radius: 10px;
+		border-radius: 5px;
 		font-weight: 600;
 	}
 
@@ -212,15 +212,29 @@
 	      <td><center><?php echo $rows['messagestatus']?></center></td>
 	      <td style="float: left;" class="action">
 		  			<a href="?ID=<?php echo $rows['id']?>"><button id="view_btn" class="btn_style"><img src="img/view.png" style="height: 15px; width: 15px;"></button></a>
-					<div id="view_modal" class="modal">
+					<!-- <div id="view_modal" class="modal">
 					  <div class="modal-content">
 					    <span class="close">&times;</span>
 					    <h4>View Inquiry</h4>
 					    <hr>
 										   
 					  </div>
-					</div>
+					</div> -->
 
+					<div id="view_modal" class="modal">
+					<div class="modal-content">
+						<span class="close"></span>
+							<h4>View Inquiry</h4>
+							<hr>
+							<label>Sender Name:</label><h5>Lorem Ipsum Name</h5>
+							<label>Sender Email:</label><h5>senderemail@gmail.com</h5>
+							<label>Subject:</label><h5>Lorem Subject</h5>
+							<label>Date:</label><h5>01/01/01</h5>
+							<label>Message:</label><h5 style="line-height: 2;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</h5>
+							<hr>
+							<center><button class="btn_style">PROCESS</button></center>						 	  
+					</div>
+					</div>
 					<button id="edit_btn" class="btn_style"><img src="img/delete.png" style="height: 15px; width: 15px;"></button>
 					
 					</div>
