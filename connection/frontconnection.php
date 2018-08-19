@@ -3,6 +3,27 @@ $sqlselectabout = mysqli_query($conn,"SELECT * FROM abouttable WHERE id='1'");
 $sqlselectcontact = mysqli_query($conn,"SELECT * FROM contacttable WHERE id='1'");
 $sqlselectproduct = mysqli_query($conn,"SELECT * FROM producttbl");
 $sqlselectslider = mysqli_query($conn,"SELECT * FROM slidertable");
+$sqlproduct = mysqli_query($conn,"SELECT * FROM producttbl ORDER BY id DESC LIMIT 4");
+
+if(isset($_POST['loginbtn'])){
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    $result = mysqli_query($conn,"SELECT * FROM usertable WHERE emailadd = '$username' AND password = '$password'")
+            or die ("failed to query database". mysqli_error());
+
+    $numrows = mysqli_num_rows($result);
+    if($numrows==1){
+        echo"<script type='text/javascript'>alert('Login Successful'); 
+        window.location='login.php';
+        </script>";
+    }
+    else{
+        echo"<script type='text/javascript'>alert('Incorrect username or password'); 
+        window.location='login.php';
+        </script>";
+    }
+}
 
 if (isset($_POST['inquirybtn'])) {
         $name = $_POST['name'];

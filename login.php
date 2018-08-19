@@ -1,4 +1,9 @@
-<?php include ('navigation.php');?>
+<?php
+	session_start();
+	include ('navigation.php');
+	include ('connection/frontconn.php');
+	include ('connection/frontconnection.php');
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,7 +27,7 @@
     box-sizing: border-box;
 }
 
-input[type=text], select, textarea {
+input[type=text], input[type=password], select, textarea {
     width: 100%;
     padding: 12px;
     border: 1px solid #ccc;
@@ -103,24 +108,24 @@ input[type=submit]:hover {
 	      <h3>Sign in with your account.</h3>
 	      <hr>
 	      <div class="container">
-			  <form action="/action_page.php">
+			  <form action="" method="POST">
 			    <div class="row">
 			      <div class="col-75">
-			        <input type="text" id="username" name="username" placeholder="Username">
+			        <input type="text" id="username" name="username" placeholder="Email">
 			      </div>
 			    </div>
 
 			    <div class="row">
 
 			      <div class="col-75">
-			        <input type="text" id="password" name="password" placeholder="Password">
+			        <input type="password" id="password" name="password" placeholder="Password">
 			      </div>
 			    </div>
 
 			   <br>
 			   <center>
 			    <div class="row">
-			      <input type="submit" value="LOGIN" class="mybtn">
+			      <input type="submit" value="LOGIN" class="mybtn" name="loginbtn">
 			    </div>
 			    <br>
 			    <p class="w3-opacity">Don't have an account? <a href="register.php" style="color: #8C6A48; text-decoration: none; font-weight: 600;">Register here.</a> </p></center>

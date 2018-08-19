@@ -170,58 +170,26 @@
 
 	<div class="w3-container" style="padding:50px 50px 50px 50px;">
 	  <h3 class="w3-center">Featured Products</h3>
-	  <p class="w3-center w3-large">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p>
-
+	  <p class="w3-center w3-large">Newly Added Products in our store go check 'ehm out</p>
 	  <div class="w3-row-padding w3-grayscale" style="margin-top:64px">
+		<?php 
+				while($rows=mysqli_fetch_assoc($sqlproduct))
+				{
+		?>
 	    <div class="w3-col l3 m6 w3-margin-bottom boxlink">
 		    <a href="product_view.php"><div class="w3-card boxprod">
-		      <img src="img/logo.png" alt="John" style="width:100%">
+		      <img src="<?php echo $rows['productimage'] ?>" alt="John" style="width:100%; height:250px">
 		        <div class="w3-container">
-		          <h3>Lorem Product 1</h3>
-		          <h6>123.00</h6>
-		          <p class="w3-opacity" style="text-align: justify;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+		          <h3><?php echo $rows['productname'] ?></h3>
+		          <h6>P <?php echo $rows['itemprice'] ?></h6>
+		          <p class="w3-opacity" style="text-align: justify;"><?php echo $rows['productdesc'] ?></p>
 		        </div>
 		      </div>
 		  	</a>
 	    </div>
-	   
-	    <div class="w3-col l3 m6 w3-margin-bottom boxlink">
-		    <a href="#"><div class="w3-card boxprod">
-		      <img src="img/logo.png" alt="John" style="width:100%">
-		        <div class="w3-container">
-		          <h3>Lorem Product 2</h3>
-		          <h6>123.00</h6>
-		          <p class="w3-opacity" style="text-align: justify;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-		        </div>
-		      </div>
-		  	</a>
-	    </div>
-
-	    <div class="w3-col l3 m6 w3-margin-bottom boxlink">
-		    <a href="#"><div class="w3-card boxprod">
-		      <img src="img/logo.png" alt="John" style="width:100%">
-		        <div class="w3-container">
-		          <h3>Lorem Product 3</h3>
-		          <h6>123.00</h6>
-		          <p class="w3-opacity" style="text-align: justify;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-		        </div>
-		      </div>
-		  	</a>
-	    </div>
-
-	    <div class="w3-col l3 m6 w3-margin-bottom boxlink">
-		    <a href="#"><div class="w3-card boxprod">
-		      <img src="img/logo.png" alt="John" style="width:100%">
-		        <div class="w3-container">
-		          <h3>Lorem Product 4</h3>
-		          <h6>123.00</h6>
-		          <p class="w3-opacity" style="text-align: justify;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-		        </div>
-		      </div>
-		  	</a>
-	    </div>
-
-
+			<?php
+			}
+		?>
 	  </div>
 	</div>
 

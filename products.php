@@ -87,10 +87,10 @@
 	    <div class="w3-col l3 m6 w3-margin-bottom boxlink">
 
 		    <a href="product_view.php"><div class="w3-card boxprod">
-		      <img src="img/logo.png" alt="John" style="width:100%">
+		      <img src="<?php echo $rows['productimage'] ?>" alt="John" style="width:100%;height:250px;">
 		        <div class="w3-container">
 		          <h3><?php echo $rows['productname'] ?></h3>
-		          <h6><?php echo $rows['itemprice'] ?></h6>
+		          <h6>P <?php echo $rows['itemprice'] ?></h6>
 		          <p class="w3-opacity" style="text-align: justify;"><?php echo $rows['productdesc'] ?></p>
 		        </div>
 		      </div>
