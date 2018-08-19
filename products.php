@@ -12,6 +12,7 @@
 	/*products*/
 	.boxprod{
 		padding: 10%;
+		min-height: 400px !important;
 	}
 	.boxprod:hover{
 		background: #f8f9fa;
