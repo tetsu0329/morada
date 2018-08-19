@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Register</title>
+	<title>Register | Login</title>
 </head>
 <style type="text/css">
 	.ourstory{

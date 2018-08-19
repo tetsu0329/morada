@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Register</title>
+	<title>Register | Billing</title>
 </head>
 <style type="text/css">
 	.ourstory{
@@ -111,7 +111,7 @@ input[type=submit]:hover {
 	      <h3>Register</h3>
 
 	      <hr>
-	      <center><h6>Login Information</h6></center>
+	      <center><h6>Billing Information</h6></center>
 	      <div class="container">
 
 			  <form action="/action_page.php">
