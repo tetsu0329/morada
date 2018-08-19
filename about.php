@@ -14,9 +14,15 @@
 	}
 		/*why choose us*/
 
-	.chooseus{
+/*	.chooseus{
 		background: #f1f1f1 !important;
+	}*/
+	.misvis p{
+		padding: 5%;
+		line-height: 2.5;
+		text-align: justify;
 	}
+
 </style> 	
 <body>
 
@@ -46,9 +52,35 @@
 	  </div>
 	</div>
 	<!-- end * our story -->
+<br>
 
+<!-- mission vision -->
+	<div class="w3-container w3-light-grey" style="padding: 50px 50px 50px 0px;">
+	  <div class="w3-row-padding">
+
+	  	<div class="w3-col m6 misvis">
+	      <center><h3>Mission</h3></center>
+	      <p>
+	      	Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
+
+			Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.
+	      </p>
+	    </div>
+
+	    <div class="w3-col m6 misvis">
+	      <center><h3>Vision</h3></center>
+	      <p>
+	      	Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
+
+			Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.
+	      </p>
+	    </div>
+
+	  </div>
+	</div>
+<!-- end * mission vision -->
 			<!-- why choose us -->
-	<div class="w3-container chooseus" style="padding:50px 50px 50px 50px; margin-top: 5%;">
+	<div class="w3-container chooseus" style="padding:0px 50px 50px 50px; margin-top: 2%;">
 	  <h3 class="w3-center">Why Choose Us?</h3>
 	  <div class="w3-row-padding w3-center" style="margin-top:64px">
 	    <div class="w3-quarter">

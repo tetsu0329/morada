@@ -91,9 +91,14 @@ input[type=submit]:hover {
 }
 
 .nextbtn{
+	background: transparent !important;
 	text-decoration: none;
 	font-size: 20px;
-	color: #8C6A48;
+	padding: 0 !important;
+	color: #8C6A48 !important;
+}
+.nextbtn{
+	border: none !important;
 }
   .isDisabled{
     pointer-events: none;
