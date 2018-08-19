@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Login</title>
+	<title>Register</title>
 </head>
 <style type="text/css">
 	.ourstory{
@@ -53,7 +53,7 @@ input[type=submit]:hover {
 
 .container {
 
-    padding: 20px;
+    padding: 10px;
 }
 
 .col-25 {
@@ -85,6 +85,14 @@ input[type=submit]:hover {
 	padding: 20%;
 }
 
+.nextbtn{
+	text-decoration: none;
+	font-size: 20px;
+	color: #8C6A48;
+}
+  .isDisabled{
+    pointer-events: none;
+  }
 </style> 	
 <body>
 
@@ -92,7 +100,7 @@ input[type=submit]:hover {
     <span class="w3-xxlarge">L O G I N</p>
   	</div> -->
 
-<div class="w3-container" style="padding: 177px 50px 70px 50px;">
+<div class="w3-container" style="padding: 170px 50px 47px 50px;">
 	  <div class="w3-row-padding">
 
 	  	<div class="w3-col m6">
@@ -100,30 +108,50 @@ input[type=submit]:hover {
 	    </div>
 
 	    <div class="w3-col m6 our_story">
-	      <h3>Sign in with your account.</h3>
+	      <h3>Register</h3>
+
 	      <hr>
+	      <center><h6>Login Information</h6></center>
 	      <div class="container">
+
 			  <form action="/action_page.php">
-			    <div class="row">
-			      <div class="col-75">
-			        <input type="text" id="username" name="username" placeholder="Username">
-			      </div>
-			    </div>
+			  	
 
 			    <div class="row">
-
 			      <div class="col-75">
 			        <input type="text" id="password" name="password" placeholder="Password">
 			      </div>
 			    </div>
 
-			   <br>
-			   <center>
 			    <div class="row">
-			      <input type="submit" value="LOGIN" class="mybtn">
+			      <div class="col-75">
+			        <input type="text" id="confirmpw" name="confirmpw" placeholder="Confirm Password">
+			      </div>
 			    </div>
 			    <br>
-			    <p class="w3-opacity">Don't have an account? <a href="register.php" style="color: #8C6A48; text-decoration: none; font-weight: 600;">Register here.</a> </p></center>
+			       <div class="row">
+			    	<a href="registerpage2.php" class="nextbtn" style="float: left;">PREV</a>
+			      <a href="registerpage3.php" class="nextbtn" style="float: right;">NEXT</a>
+			    </div>
+
+			    <center>
+			    <div class="row">
+			      <input type="submit" value="REGISTER" class="mybtn">
+			    </div>
+			   
+			    <p class="w3-opacity">Already have an account? <a href="login.php" style="color: #8C6A48; text-decoration: none; font-weight: 600;">Sign in here.</a> </p></center>
+			   
+			    </div>
+			 	
+
+			  
+
+			   <center>
+
+			   
+			   
+			    <!-- <p class="w3-opacity">Already have an account? <a href="login.php" style="color: #8C6A48; text-decoration: none; font-weight: 600;">Sign in here.</a> </p> -->
+			</center>
 			  </form>
 			</div>
 	    </div>

@@ -24,7 +24,7 @@
 	
 	.nav a{
 		text-decoration: none;
-		margin-top: 2%;
+		margin-top: 10px;
 	}	
 
   .nav a:hover{
