@@ -126,41 +126,96 @@ input[type=submit]:hover {
 <div class="content">
 
   <div class="content_body">
-    <h2>Contact Us</h2>
+    <h2>Homepage</h2>
     <hr>
      <center>  
      <h4>Logo</h4> 
 			<div class="map">
+			<input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp"  name="logo" value="Choose Photo" accept="image/*" onchange="loadlogo(event)">
+			
 				<div class="img-thumbnail">
-					<img src="img/dummymap.jpg" width="50%;">
+					<img src="img/dummymap.jpg" width="50%;" id='logo'>
+					<input type='submit' name='logo' value='Save'>
 				</div>
+				
 			</div>
+			<script>
+			var loadlogo = function(event) {
+				var output = document.getElementById('logo');
+				output.src = URL.createObjectURL(event.target.files[0]);
+				};
+			</script>
 			
 			<br>
-			<br><button class="btn_style">UPLOAD IMAGE</button>&nbsp;<button class="btn_style">SAVE</button><br>
-			<br>
 	<h4>Slider</h4> 		
-
+			<?php
+				while($rows=mysqli_fetch_assoc($sqlselectslider))
+				{
+			?>
 			<div class="map">
+				<form action="" method="POST" enctype="multipart/form-data">
 				<div class="img-thumbnail">Slider 1<hr>
-					<img src="img/dummymap.jpg" width="95%;">
+				<input type="file" class="form-control-file" name='slider1'id="exampleInputFile" aria-describedby="fileHelp" value="Choose Photo" accept="image/*" onchange="loadslider1(event)">
+				<input type='submit' name='sliderbtn1' value='Save'>
+					<img src="<?php echo $rows['sliderpicture'] ?>" width="95%;" id='slider1'>
+				</form>
 				</div>
+				
+				<script>
+				var loadslider1 = function(event) {
+					var output = document.getElementById('slider1');
+					output.src = URL.createObjectURL(event.target.files[0]);
+					};
+				</script>
 			</div>
-			<br><button class="btn_style">UPLOAD IMAGE</button>&nbsp;<button class="btn_style">SAVE</button><br>
-
+			<br>
+			<?php
+				}
+			?>
+			<?php
+				while($rows2=mysqli_fetch_assoc($sqlselectslider2))
+				{
+			?>
 			<div class="map">
 				<div class="img-thumbnail">Slider 2<hr>
-					<img src="img/dummymap.jpg" width="95%;">
+				<form action="" method="POST" enctype="multipart/form-data">
+				<input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp"  name="slider2" value="Choose Photo" accept="image/*" onchange="loadslider2(event)">
+				<input type='submit' name='sliderbtn2' value='Save'>
+				<img src="<?php echo $rows2['sliderpicture'] ?>" width="95%;" id='slider2'>
+				</form>
 				</div>
+				<script>
+				var loadslider2 = function(event) {
+					var output = document.getElementById('slider2');
+					output.src = URL.createObjectURL(event.target.files[0]);
+					};
+				</script>
 			</div>
-			<br><button class="btn_style">UPLOAD IMAGE</button>&nbsp;<button class="btn_style">SAVE</button><br>
-
+			<?php
+				}
+			?>
+			<?php
+				while($rows3=mysqli_fetch_assoc($sqlselectslider3))
+				{
+			?>
 			<div class="map">
 				<div class="img-thumbnail">Slider 3<hr>
-					<img src="img/dummymap.jpg" width="95%;">
+				<form action="" method="POST" enctype="multipart/form-data">
+				<input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp"  name="slider3" value="Choose Photo" accept="image/*" onchange="loadslider3(event)">
+				<input type='submit' name='sliderbtn3' value='Save'>
+				<img src="<?php echo $rows3['sliderpicture'] ?>" width="95%;" id='slider3'>
+				</form>
 				</div>
+				<script>
+				var loadslider3 = function(event) {
+					var output = document.getElementById('slider3');
+					output.src = URL.createObjectURL(event.target.files[0]);
+					};
+				</script>
 			</div>
-			<br><button class="btn_style">UPLOAD IMAGE</button>&nbsp;<button class="btn_style">SAVE</button><br>
+			<?php
+				}
+			?>
 			<br>
   		</center>
 

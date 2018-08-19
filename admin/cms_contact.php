@@ -129,11 +129,16 @@ input[type=submit]:hover {
     <h2>Contact Us</h2>
     <hr>
      <center>  
-     <h4>Contact Details</h4>  
-  			<div class="social img-thumbnail"><img src="img/name.png" style="width: 50px;"><hr>
+     <h4>Contact Details</h4>
+
+	 <?php
+		while($rows=mysqli_fetch_assoc($sqlcontact))
+		{
+	 ?>  	<form action="" method="POST">
+  			<div class="social img-thumbnail"><img src="../img/name.png" style="width: 50px;"><hr>
 				<div class="row">
 			      <div class="col-75">
-			        <input type="text" id="facebook" name="facebook" placeholder="Lorem Ipsum Name">
+			        <input type="text" id="facebook" name="name" placeholder="Lorem Ipsum Name" value='<?php echo $rows['name']?>'>
 			      </div>
   				</div>		    	
 			</div>
@@ -141,7 +146,7 @@ input[type=submit]:hover {
 			<div class="social img-thumbnail"><img src="img/location.png" style="width: 50px;"><hr>
 				<div class="row">
 			      <div class="col-75">
-			        <input type="text" id="instagram" name="instagram" placeholder="123 ABC City">
+			        <input type="text" id="instagram" name="address" placeholder="123 ABC City" value='<?php echo $rows['address']?>'>
 			      </div>
   				</div>		    	
 			</div>
@@ -149,7 +154,7 @@ input[type=submit]:hover {
 			<div class="social img-thumbnail"><img src="img/email.png" style="width: 50px;"><hr>
 				<div class="row">
 			      <div class="col-75">
-			        <input type="text" id="twitter" name="twitter" placeholder="loremipsum@gmail.com">
+			        <input type="text" id="twitter" name="email" placeholder="loremipsum@gmail.com" value='<?php echo $rows['email']?>'>
 			      </div>
   				</div>		    	
 			</div>
@@ -157,7 +162,7 @@ input[type=submit]:hover {
 			<div class="social img-thumbnail"><img src="img/phone.png" style="width: 50px;"><hr>
 				<div class="row">
 			      <div class="col-75">
-			        <input type="text" id="phone" name="phone" placeholder="0915-123-4567">
+			        <input type="text" id="phone" name="phone" placeholder="0915-123-4567" value='<?php echo $rows['contactnumber']?>'>
 			      </div>
   				</div>		    	
 			</div>
@@ -167,7 +172,7 @@ input[type=submit]:hover {
   			<div class="social img-thumbnail"><img src="img/facebook.png" style="width: 50px;"><hr>
 				<div class="row">
 			      <div class="col-75">
-			        <input type="text" id="facebook" name="facebook" placeholder="www.facebook.com/morada">
+			        <input type="text" id="facebook" name="facebook" placeholder="www.facebook.com/morada" value='<?php echo $rows['facebook']?>'>
 			      </div>
   				</div>		    	
 			</div>
@@ -175,7 +180,7 @@ input[type=submit]:hover {
 			<div class="social img-thumbnail"><img src="img/instagram.png" style="width: 50px;"><hr>
 				<div class="row">
 			      <div class="col-75">
-			        <input type="text" id="instagram" name="instagram" placeholder="www.instagram.com/morada">
+			        <input type="text" id="instagram" name="instagram" placeholder="www.instagram.com/morada" value='<?php echo $rows['instagram']?>'>
 			      </div>
   				</div>		    	
 			</div>
@@ -183,24 +188,24 @@ input[type=submit]:hover {
 			<div class="social img-thumbnail"><img src="img/twitter.png" style="width: 50px;"><hr>
 				<div class="row">
 			      <div class="col-75">
-			        <input type="text" id="twitter" name="twitter" placeholder="www.twitter.com/morada">
+			        <input type="text" id="twitter" name="twitter" placeholder="www.twitter.com/morada" value='<?php echo $rows['twitter']?>'>
 			      </div>
   				</div>		    	
 			</div>
 
 			<br>
-			<br><button class="btn_style">SAVE</button><br>
+			<br><input type='submit' value="SAVE" name="contactbtn"><br>
 			<br>
-
 			<div class="map">
 				<div class="img-thumbnail"><img src="img/map.png" style="width: 50px;"><hr>
 					<img src="img/dummymap.jpg" width="95%;">
 				</div>
 			</div>
-			
-
+			</form>
+		<?php
+		}
+		?>
   		</center>
-
 
  </div>
     

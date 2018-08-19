@@ -224,15 +224,25 @@
 					<div id="view_modal" class="modal">
 					<div class="modal-content">
 						<span class="close"></span>
+						<?php
+						if(isset($_GET['ID'])){
+							$inquiryid = $_GET['ID'];
+							$sqlinqview = mysqli_query($conn,"SELECT * FROM inquirytable WHERE id = $inquiryid");
+								while($rows=mysqli_fetch_assoc($sqlinqview)){
+						?>
 							<h4>View Inquiry</h4>
 							<hr>
-							<label>Sender Name:</label><h5>Lorem Ipsum Name</h5>
-							<label>Sender Email:</label><h5>senderemail@gmail.com</h5>
-							<label>Subject:</label><h5>Lorem Subject</h5>
-							<label>Date:</label><h5>01/01/01</h5>
-							<label>Message:</label><h5 style="line-height: 2;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</h5>
+							<label>Sender Name:</label><h5><?php echo $rows['customername'] ?></h5>
+							<label>Sender Email:</label><h5><?php echo $rows['customeremail'] ?></h5>
+							<label>Subject:</label><h5><?php echo $rows['customersubject'] ?></h5>
+							<label>Date:</label><h5><?php echo $rows['messagedate'] ?></h5>
+							<label>Message:</label><h5 style="line-height: 2;"><?php echo $rows['customermessage'] ?></h5>
 							<hr>
-							<center><button class="btn_style">PROCESS</button></center>						 	  
+							<center><button class="btn_style">PROCESS</button></center>	
+						<?php
+							}
+						}
+						?>
 					</div>
 					</div>
 					<button id="edit_btn" class="btn_style"><img src="img/delete.png" style="height: 15px; width: 15px;"></button>

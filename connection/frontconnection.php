@@ -3,6 +3,7 @@ $sqlselectabout = mysqli_query($conn,"SELECT * FROM abouttable WHERE id='1'");
 $sqlselectcontact = mysqli_query($conn,"SELECT * FROM contacttable WHERE id='1'");
 $sqlselectproduct = mysqli_query($conn,"SELECT * FROM producttbl");
 $sqlselectslider = mysqli_query($conn,"SELECT * FROM slidertable");
+
 if (isset($_POST['inquirybtn'])) {
         $name = $_POST['name'];
         $emailadd = $_POST['emailadd'];
@@ -19,6 +20,9 @@ if (isset($_POST['inquirybtn'])) {
             window.location='contact.php';
             </script>";
     }
+
+
+
 if(isset($_POST['nextbtn'])){
     $_SESSION['clastname'] = $_POST['lastname'];
     $_SESSION['cfirstname'] = $_POST['firstname'];

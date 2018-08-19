@@ -125,7 +125,9 @@
 		{
 	?>
 		<div class="mySlides fade">
-		  <img src="<?php echo $rows['sliderpicture'] ?>" style="width:100%">
+			<img src="<?php 
+			echo substr($rows['sliderpicture'],3)
+			?>" style="width:100%">
 		</div>
 	<?php
 		}
