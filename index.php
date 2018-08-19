@@ -120,29 +120,21 @@
 	<!-- slider -->
 	<div class="slideshow-container">
 
+	<?php
+		while($rows=mysqli_fetch_assoc($sqlselectslider))
+		{
+	?>
 		<div class="mySlides fade">
-		  <img src="img/slider1.jpeg" style="width:100%">
+		  <img src="<?php echo $rows['sliderpicture'] ?>" style="width:100%">
 		</div>
-
-		<div class="mySlides fade">
-		  <img src="img/slider2.jpg" style="width:100%">
-		</div>
-
-
-		<div class="mySlides fade">
-		  <img src="img/slider1.jpeg" style="width:100%">
-		</div>
-
-		<div class="mySlides fade">
-		  <img src="img/slider2.jpg" style="width:100%">
-		</div>
-
+	<?php
+		}
+	?>
 	</div>
 
 	<div style="text-align:center">
 	  <span class="dot"></span> 
 	  <span class="dot"></span> 
-	  <span class="dot"></span>
 	  <span class="dot"></span>
 	</div>
 	<!-- end * slider -->
@@ -291,7 +283,7 @@ function showSlides() {
     }
     slides[slideIndex-1].style.display = "block";  
     dots[slideIndex-1].className += " active";
-    setTimeout(showSlides, 2000); // Change image every 2 seconds
+    setTimeout(showSlides, 3000); // Change image every 2 seconds
 }
 </script>
 		<!-- end * SLIDER -->

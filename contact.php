@@ -98,28 +98,32 @@ input[type=submit]:hover {
   	</div>
 
   <div class="w3-row w3-container" style="padding: 30px">
+			<?php
+			while($rows=mysqli_fetch_assoc($sqlselectcontact))
+			{
+			?>
 	    <div class="w3-center">
 	      <span class="w3-xlarge w3-border-dark-grey w3-padding-16">Stay in touch with us!</span>
 	      <br><br>
 	    </div>
 	    <div class="w3-col l3 m6 w3-light-grey w3-container w3-padding-64 w3-center">
 	    	<i><img src="img/name.png" style="width: 50px;"></i><!-- <h3>Name</h3> -->
-	      <p>Lorem Ipsum Name</p>
+	      <p><?php echo $rows['name'] ?></p>
 	    </div>
 
 	    <div class="w3-col l3 m6 brown w3-container w3-padding-64 w3-center">
 	      <i><img src="img/location.png" style="width: 50px;"></i><!-- <h3>Name</h3> -->
-	      <p>123 ABC Street Def Subd Ghi City</p>
+	      <p><?php echo $rows['address'] ?></p>
 	    </div>
 
 	    <div class="w3-col l3 m6  w3-light-grey w3-container w3-padding-64 w3-center">
 	      <i><img src="img/email.png" style="width: 50px;"></i><!-- <h3>Name</h3> -->
-	      <p>Lloremimpsum@gmail.com</p>
+	      <p><?php echo $rows['email'] ?></p>
 	    </div>
 
 	    <div class="w3-col l3 m6 brown w3-container w3-padding-64 w3-center">
 	      <i><img src="img/phone.png" style="width: 50px;"></i><!-- <h3>Name</h3> -->
-	      <p>09123456789</p>
+	      <p><?php echo $rows['contactnumber'] ?></p>
 		</div>
   </div>
 
@@ -132,21 +136,21 @@ input[type=submit]:hover {
 	    <a href="#">		
 	    <div class="w3-col l3 m6 w3-light-grey w3-container w3-padding-64 w3-center">
 	      <i><img src="img/facebook.png" style="width: 50px;"></i><!-- <h3>Name</h3> -->
-	      <p>www.facebook.com/loremipsum</p>
+	      <p><?php echo $rows['facebook'] ?></p>
 	    </div>
 		</a>
 
 		<a href="#">
 	    <div class="w3-col l3 m6  brown w3-container w3-padding-64 w3-center">
 	      <i><img src="img/twitter.png" style="width: 50px;"></i><!-- <h3>Name</h3> -->
-	      <p>www.twitter.com/loremipsum</p>
+	      <p><?php echo $rows['twitter'] ?></p>
 	    </div>
 		</a>
 
 		<a href="#">
 	    <div class="w3-col l3 m6 w3-light-grey w3-container w3-padding-64 w3-center ">
 	      <i><img src="img/instagram.png" style="width: 50px;"></i><!-- <h3>Name</h3> -->
-	      <p>www.instagram.com/loremipsum</p>
+	      <p><?php echo $rows['instagram'] ?></p>
 		</div>
 		</a>
 </div>
@@ -157,7 +161,9 @@ input[type=submit]:hover {
 	  	<div class="w3-col m6">
 	      <img class="w3-image" src="img/dummymap.jpg" width="700" height="394">
 	    </div>
-
+			<?php
+			}
+			?>
 	    <div class="w3-col m6 our_story">
 	      <h3>Leave us a message!</h3>
 	      <hr>
