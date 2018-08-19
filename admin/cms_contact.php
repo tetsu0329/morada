@@ -128,7 +128,42 @@ input[type=submit]:hover {
   <div class="content_body">
     <h2>Contact Us</h2>
     <hr>
-     <center>    
+     <center>  
+     <h4>Contact Details</h4>  
+  			<div class="social img-thumbnail"><img src="img/name.png" style="width: 50px;"><hr>
+				<div class="row">
+			      <div class="col-75">
+			        <input type="text" id="facebook" name="facebook" placeholder="Lorem Ipsum Name">
+			      </div>
+  				</div>		    	
+			</div>
+
+			<div class="social img-thumbnail"><img src="img/location.png" style="width: 50px;"><hr>
+				<div class="row">
+			      <div class="col-75">
+			        <input type="text" id="instagram" name="instagram" placeholder="123 ABC City">
+			      </div>
+  				</div>		    	
+			</div>
+
+			<div class="social img-thumbnail"><img src="img/email.png" style="width: 50px;"><hr>
+				<div class="row">
+			      <div class="col-75">
+			        <input type="text" id="twitter" name="twitter" placeholder="loremipsum@gmail.com">
+			      </div>
+  				</div>		    	
+			</div>
+
+			<div class="social img-thumbnail"><img src="img/phone.png" style="width: 50px;"><hr>
+				<div class="row">
+			      <div class="col-75">
+			        <input type="text" id="phone" name="phone" placeholder="0915-123-4567">
+			      </div>
+  				</div>		    	
+			</div>
+
+
+			<h4>Social Media</h4>  
   			<div class="social img-thumbnail"><img src="img/facebook.png" style="width: 50px;"><hr>
 				<div class="row">
 			      <div class="col-75">
@@ -153,14 +188,6 @@ input[type=submit]:hover {
   				</div>		    	
 			</div>
 
-			<div class="social img-thumbnail"><img src="img/phone.png" style="width: 50px;"><hr>
-				<div class="row">
-			      <div class="col-75">
-			        <input type="text" id="phone" name="phone" placeholder="0915-123-4567">
-			      </div>
-  				</div>		    	
-			</div>
-
 			<br>
 			<br><button class="btn_style">SAVE</button><br>
 			<br>
@@ -172,7 +199,9 @@ input[type=submit]:hover {
 			</div>
 			
 
-  		</center>			
+  		</center>
+
+
  </div>
     
 </div>
