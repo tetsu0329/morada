@@ -77,6 +77,19 @@ input[type=submit]:hover {
         width: 100%;
         margin-top: 0;
     }
+
+    .container {
+    border-radius: 5px;
+    border: 1px solid black;
+    width: 100%;
+    padding: 2%;
+    margin-top: 10%;
+    margin-bottom: 2%;
+}
+
+.logo{
+    max-width: 250px;
+}
 }
 </style>
 </head>
@@ -84,7 +97,7 @@ input[type=submit]:hover {
 
 <center>
 <div class="container">
-  <img src="img/logo.png" style="width: 500px;">
+  <img src="img/logo.png" style="width: 500px;" class="logo">
 </div>
 <h5>Admin Panel</h5>
 </center>

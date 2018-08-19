@@ -1,4 +1,4 @@
-<?php include ('navigation.php');?>
+<?php include ('navigation.php') ;?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -155,7 +155,7 @@
 	      <p>
 	      	Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.
 	      </p>
-	      <p><a href="#" class="w3-button w3-brown mybtn">READ MORE</a></p>
+	      <p><a href="about.php" class="w3-button w3-brown mybtn">READ MORE</a></p>
 	    </div>
 
 	  </div>
@@ -222,7 +222,7 @@
 	</div>
 
 
-	<center><p><a href="#" class="w3-center w3-button w3-brown mybtn">SEE ALL</a></p></center>
+	<center><p><a href="products.php" class="w3-center w3-button w3-brown mybtn">SEE ALL</a></p></center>
 	<!-- end * our products -->
 
 	<!-- why choose us -->
