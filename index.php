@@ -180,7 +180,7 @@
 
 	  <div class="w3-row-padding w3-grayscale" style="margin-top:64px">
 	    <div class="w3-col l3 m6 w3-margin-bottom boxlink">
-		    <a href="#"><div class="w3-card boxprod">
+		    <a href="product_view.php"><div class="w3-card boxprod">
 		      <img src="img/logo.png" alt="John" style="width:100%">
 		        <div class="w3-container">
 		          <h3>Lorem Product 1</h3>

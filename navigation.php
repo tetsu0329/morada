@@ -54,13 +54,14 @@
     outline: none;
     background-color: inherit;
     font-family: inherit;
-    margin: 0;
+    margin-top: 9px;
+    padding: 16px;
 }
 
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
+    background-color: #fff;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
@@ -68,7 +69,6 @@
 
 .dropdown-content a {
     float: none;
-    color: black;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
@@ -76,7 +76,7 @@
 }
 
 .dropdown-content a:hover {
-    background-color: #ddd;
+    background-color: #fff;
 }
 
 .dropdown:hover .dropdown-content {
@@ -92,17 +92,20 @@
     <div class="nav w3-right w3-hide-small">
       <a href="index.php" class="w3-bar-item w3-button">HOME</a>
       <a href="about.php" class="w3-bar-item w3-button">ABOUT</a>
-      <a href="products.php" class="w3-bar-item w3-button">PRODUCTS</a>
-        <div class="dropdown">
-    <button class="dropbtn">Products 
-      <i class="fa fa-caret-down"></i>
+        <a href=""><div class="dropdown">
+    <button class="dropbtn">PRODUCTS 
+      <!-- <i class="fa fa-caret-down"></i> -->
     </button>
+    </a>
     <div class="dropdown-content">
-      <a href="#">Link 1</a>
-      <a href="#">Link 2</a>
-      <a href="#">Link 3</a>
+      <a href="#">Bedroom</a>
+      <a href="#">Cabinets</a>
+      <a href="#">Dining Room</a>
+      <a href="#">Kitchen</a>
+      <a href="#">Living Room</a>
+      <a href="products.php">See all</a>
     </div>
-  </div>>
+  </div>
       <a href="gallery.php" class="w3-bar-item w3-button">GALLERY</a>
       <a href="contact.php" class="w3-bar-item w3-button">CONTACT US</a>
        <a href="#" class="w3-bar-item w3-button isDisabled">|</a>
