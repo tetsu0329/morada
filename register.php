@@ -1,4 +1,9 @@
-<?php include ('navigation.php');?>
+<?php
+	session_start();
+	include ('navigation.php');
+	include ('connection/frontconn.php');
+	include ('connection/frontconnection.php');
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -113,41 +118,63 @@ input[type=submit]:hover {
 	      <hr>
 	      <center><h6>Personal Information</h6></center>
 	      <div class="container">
-
-			  <form action="/action_page.php">
-			  	
+			  <form action="" method="POST">
 
 			    <div class="row">
 			      <div class="col-75">
-			        <input type="text" id="lname" name="lastname" placeholder="Lastname">
+							<?php
+							if(!empty($_SESSION['clastname'])){
+								echo "<input type='text' id='lname' name='lastname' placeholder='Lastname' value='".$_SESSION['clastname']."'>";
+							}
+							else{
+								echo "<input type='text' id='lname' name='lastname' placeholder='Lastname'>";
+							}
+							?>
 			      </div>
 			    </div>
 
 			    <div class="row">
 			      <div class="col-75">
-			        <input type="text" id="fname" name="firstname" placeholder="Firstname">
+							<?php
+							if(!empty($_SESSION['clastname'])){
+								echo "<input type='text' id='fname' name='firstname' placeholder='Firstname' value='".$_SESSION['cfirstname']."'>";
+							}
+							else{
+								echo "<input type='text' id='fname' name='firstname' placeholder='Firstname'>";
+							}
+							?>
 			      </div>
 			    </div>
 
 			    <div class="row">
 			      <div class="col-75">
-			        <input type="text" id="mobilenum" name="mobilenum" placeholder="Mobile Number">
+							<?php
+							if(!empty($_SESSION['cmobilenum'])){
+								echo "<input type='text' id='mobilenum' name='mobilenum' placeholder='Mobile Number' value='".$_SESSION['cmobilenum']."'>";
+							}
+							else{
+								echo "<input type='text' id='mobilenum' name='mobilenum' placeholder='Mobile Number'>";
+							}
+							?>
 			      </div>
 			    </div>
 
 			     <div class="col-75">
-			        <input type="text" id="email" name="email" placeholder="Email Address">
+							<?php
+							if(!empty($_SESSION['cmobilenum'])){
+								echo "<input type='text' id='email' name='email' placeholder='Email Address' value='".$_SESSION['cemailadd']."'>";
+							}
+							else{
+								echo "<input type='text' id='email' name='email' placeholder='Email Address'>";
+							}
+							?>
 			      </div>
 			      <br>
 			       <div class="row"><!-- 
 			    	<a href="registerpage2.php" class="nextbtn" style="float: left;">PREV</a> -->
-			      <a href="registerpage2.php" class="nextbtn" style="float: right;">NEXT</a>
+			      <input type="submit" class="nextbtn" style="float: right;" value="NEXT" name='nextbtn'>
 			    </div>
 			    </div>
-			 	
-
-			  
-
 			   <center>
 
 			   

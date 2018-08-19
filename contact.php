@@ -1,4 +1,8 @@
-<?php include ('navigation.php');?>
+<?php 
+	include ('navigation.php');
+	include ('connection/frontconn.php');
+	include ('connection/frontconnection.php');
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -158,12 +162,20 @@ input[type=submit]:hover {
 	      <h3>Leave us a message!</h3>
 	      <hr>
 	      <div class="container">
-			  <form action="/action_page.php">
+			  <form action="" method="POST">
 			    <div class="row">
 			      <div class="col-25">Name</label></div>
 
 			      <div class="col-75">
 			        <input type="text" id="name" name="name" placeholder="Fullname">
+			      </div>
+			    </div>
+
+					<div class="row">
+			      <div class="col-25">Email Address</label></div>
+
+			      <div class="col-75">
+			        <input type="text" id="emailadd" name="emailadd" placeholder="Email Address">
 			      </div>
 			    </div>
 
@@ -186,7 +198,7 @@ input[type=submit]:hover {
 			    </div>
 
 			    <div class="row">
-			      <input type="submit" value="SUBMIT" class="mybtn">
+			      <input type="submit" value="SUBMIT" class="mybtn" name='inquirybtn'>
 			    </div>
 			  </form>
 			</div>

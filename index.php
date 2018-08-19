@@ -1,4 +1,8 @@
-<?php include ('navigation.php') ;?>
+<?php 
+	include ('navigation.php');
+	include ('connection/frontconn.php');
+	include ('connection/frontconnection.php');
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -153,7 +157,13 @@
 	    <div class="w3-col m6 our_story">
 	      <h3>Our Story</h3>
 	      <p>
-	      	Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.
+	      	<?php
+					while($rows=mysqli_fetch_assoc($sqlselectabout))
+					{
+						echo substr($rows["content"], 0, 550);
+						echo " .....";
+					}
+					?>
 	      </p>
 	      <p><a href="about.php" class="w3-button w3-brown mybtn">READ MORE</a></p>
 	    </div>

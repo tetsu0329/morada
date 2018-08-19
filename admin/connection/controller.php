@@ -16,6 +16,8 @@
 
 
     $sqladmins = mysqli_query($conn,"SELECT * FROM usertable");
+    $sqlinquiry = mysqli_query($conn,"SELECT * FROM inquirytable");
+
     $sqlselectabout = mysqli_query($conn,"SELECT * FROM abouttable WHERE id='1'");
     $aboutrow=mysqli_fetch_assoc($sqlselectabout);
 

@@ -1,4 +1,9 @@
-<?php include ('navigation.php');?>
+<?php 
+	session_start();
+	include ('navigation.php');
+	include ('connection/frontconn.php');
+	include ('connection/frontconnection.php');
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -114,37 +119,55 @@ input[type=submit]:hover {
 	      <center><h6>Billing Information</h6></center>
 	      <div class="container">
 
-			  <form action="/action_page.php">
+			  <form action="" method="POST">
 			  	
 
 			    <div class="row">
 			      <div class="col-75">
-			        <input type="text" id="address" name="address" placeholder="House number, building, street name, subdivision name">
+							<?php
+							if(!empty($_SESSION['caddress'])){
+								echo "<input type='text' id='address' name='address' placeholder='House number, building, street name, subdivision name' value='".$_SESSION['caddress']."'>";
+							}
+							else{
+								echo "<input type='text' id='address' name='address' placeholder='House number, building, street name, subdivision name'>";
+							}
+							?>
 			      </div>
 			    </div>
 
 			    <div class="row">
 			      <div class="col-75">
-			        <input type="text" id="city" name="city" placeholder="City">
+							<?php
+							if(!empty($_SESSION['ccity'])){
+								echo "<input type='text' id='city' name='city' placeholder='City' value='".$_SESSION['ccity']."'>";
+							}
+							else{
+								echo "<input type='text' id='city' name='city' placeholder='City'>";
+							}
+							?>
 			      </div>
 			    </div>
 
 			    <div class="row">
 			      <div class="col-75">
-			        <input type="text" id="brgy" name="brgy" placeholder="Barangay">
+							<?php
+							if(!empty($_SESSION['cbrgy'])){
+								echo "<input type='text' id='brgy' name='brgy' placeholder='Barangay' value='".$_SESSION['cbrgy']."'>";
+							}
+							else{
+								echo "<input type='text' id='brgy' name='brgy' placeholder='Barangay'>";
+							}
+							?>
 			      </div>
 			    </div>
 
 			     <br>
 			       <div class="row">
 			    	<a href="register.php" class="nextbtn" style="float: left;">PREV</a>
-			      <a href="registerpage3.php" class="nextbtn" style="float: right;">NEXT</a>
+						<input type="submit" class="nextbtn" style="float: right;" value="NEXT" name='nextbtn2'>
 			    </div>
 			    </div>
 			 	
-
-			  
-
 			   <center>
 
 			   

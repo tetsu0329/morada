@@ -1,4 +1,9 @@
-<?php include ('navigation.php');?>
+<?php 
+	session_start();
+	include ('navigation.php');
+	include ('connection/frontconn.php');
+	include ('connection/frontconnection.php');
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,7 +27,7 @@
     box-sizing: border-box;
 }
 
-input[type=text], select, textarea {
+input[type=text], input[type=password], select, textarea {
     width: 100%;
     padding: 12px;
     border: 1px solid #ccc;
@@ -114,29 +119,28 @@ input[type=submit]:hover {
 	      <center><h6>Login Information</h6></center>
 	      <div class="container">
 
-			  <form action="/action_page.php">
+			  <form action="" method="POST">
 			  	
 
 			    <div class="row">
 			      <div class="col-75">
-			        <input type="text" id="password" name="password" placeholder="Password">
+			        <input type="password" id="password" name="password" placeholder="Password">
 			      </div>
 			    </div>
 
 			    <div class="row">
 			      <div class="col-75">
-			        <input type="text" id="confirmpw" name="confirmpw" placeholder="Confirm Password">
+			        <input type="password" id="confirmpw" name="confirmpw" placeholder="Confirm Password">
 			      </div>
 			    </div>
 			    <br>
 			       <div class="row">
 			    	<a href="registerpage2.php" class="nextbtn" style="float: left;">PREV</a>
-			      <a href="registerpage3.php" class="nextbtn" style="float: right;">NEXT</a>
 			    </div>
 
 			    <center>
 			    <div class="row">
-			      <input type="submit" value="REGISTER" class="mybtn">
+			      <input type="submit" value="REGISTER" class="mybtn" name="registerbtn">
 			    </div>
 			   
 			    <p class="w3-opacity">Already have an account? <a href="login.php" style="color: #8C6A48; text-decoration: none; font-weight: 600;">Sign in here.</a> </p></center>

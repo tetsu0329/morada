@@ -202,13 +202,16 @@
 
 	    </tr>
 
-
+		<?php
+            while($rows=mysqli_fetch_assoc($sqlinquiry))
+            {
+		?>
 	    <tr>
-	      <td>INQ01</td>
-	      <td class="name">Lorem Ipsum Product Name</td>
-	      <td><center>STATUS</center></td>
+	      <td>INQ-<?php echo $rows['id']?></td>
+	      <td class="name"><?php echo $rows['customername']?></td>
+	      <td><center><?php echo $rows['messagestatus']?></center></td>
 	      <td style="float: left;" class="action">
-				<button id="view_btn" class="btn_style"><img src="img/view.png" style="height: 15px; width: 15px;"></button>
+		  			<a href="?ID=<?php echo $rows['id']?>"><button id="view_btn" class="btn_style"><img src="img/view.png" style="height: 15px; width: 15px;"></button></a>
 					<div id="view_modal" class="modal">
 					  <div class="modal-content">
 					    <span class="close">&times;</span>
@@ -223,6 +226,9 @@
 					</div>
 	      </td>
 	    </tr>
+		<?php
+			}
+		?>
 	  </table>
 	</center>
 	</div>
@@ -231,22 +237,12 @@
 </body>
 
 <!-- scripts -->
-
-<script>
-// <!--  VIEW modal -->
-	// Get the modal view
-	var view_modal = document.getElementById('view_modal');
-
-	// Get the button view that opens the modal
-	var view_btn = document.getElementById("view_btn");
-
-	// When the user clicks the button, open the modal 
-	view_btn.onclick = function() {
-		view_modal.style.display = "block";
+<?php
+echo "<script> var view_modal = document.getElementById('view_modal'); </script>";
+	if(isset($_GET['ID'])){
+		echo "<script> view_modal.style.display = 'block' </script>";
 	}
-// <!-- end of VIEW modal -->
-</script> 
-
+?>
 <!-- Script for closing the modal -->
 <script>
 	// Get the <span> element that closes the modal
