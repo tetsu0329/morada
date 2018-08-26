@@ -48,8 +48,8 @@
 	}
 
 	.btn_style:hover{
-		    background-color: transparent;
-    border: 1px solid #8C6A48;
+		    background-color: transparent !important;
+    border: 2px solid #8C6A48;
     color: #8C6A48;
 
 	}
@@ -63,6 +63,7 @@
 <div class="content">
 
   <div class="content_body">
+  	<div style="padding-top: 5%;"></div>
     <h2>About Us</h2>
     <hr>
     <center>

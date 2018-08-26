@@ -37,7 +37,7 @@
 	.map .img-thumbnail{
 		width: 85% !important;
 	}
-	.btn_style{
+		.btn_style{
 	background-color: #8C6A48 !important;
     color: white;
     padding: 12px 20px;
@@ -49,8 +49,8 @@
 	}
 
 	.btn_style:hover{
-		    background-color: transparent;
-    border: 1px solid #8C6A48;
+		    background-color: transparent !important;
+    border: 2px solid #8C6A48;
     color: #8C6A48;
 
 	}
@@ -126,6 +126,7 @@ input[type=submit]:hover {
 <div class="content">
 
   <div class="content_body">
+  	<div style="padding-top: 5%;"></div>
     <h2>Homepage</h2>
     <hr>
      <center>  

@@ -47,19 +47,36 @@
 		border-bottom: 1px solid #dee2e6;
 	}
 
-	.btn_style{
-		background-color: #d9b6ac;
-		border: none;
-		box-shadow: none;
-		padding: 10px;
-		font-size: 12px;
-		border-radius: 5px;
-		font-weight: 600;
+ .btn_style{
+    background-color: #d9b6ac;
+    border: none;
+    box-shadow: none;
+    padding: 10px;
+    font-size: 12px;
+    border-radius: 10px;
+    font-weight: 600;
+  }
+
+  .btn_style:hover{
+    border: 1px solid #e7d5d0;
+    color: #313232;
+  }
+		.btn_style2{
+	background-color: #8C6A48 !important;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 40%;
+
 	}
 
-	.btn_style:hover{
-		border: 1px solid #e7d5d0;
-		color: #313232;
+	.btn_style2:hover{
+		    background-color: transparent !important;
+    border: 2px solid #8C6A48;
+    color: #8C6A48;
+
 	}
 
 /*	tr:nth-child(odd){background-color: #f1f3f5;
@@ -175,6 +192,7 @@
 <div class="content">
 
   <div class="content_body">
+  	<div style="padding-top: 5%;"></div>
     <h2>Inquiry</h2>
     <hr>
     <br>
@@ -238,7 +256,7 @@
 							<label>Date:</label><h5><?php echo $rows['messagedate'] ?></h5>
 							<label>Message:</label><h5 style="line-height: 2;"><?php echo $rows['customermessage'] ?></h5>
 							<hr>
-							<center><button class="btn_style">CANCEL</button>&nbsp;<button class="btn_style">REPLY</button></center>	
+							<center><button class="btn_style2">CANCEL</button>&nbsp;<button class="btn_style2">REPLY</button></center>	
 						<?php
 							}
 						}

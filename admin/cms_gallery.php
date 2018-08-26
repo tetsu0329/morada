@@ -38,7 +38,24 @@
     border: 1px solid #e7d5d0;
     color: #313232;
   }
+  
+      .btn_style2{
+  background-color: #8C6A48 !important;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 40%;
 
+  }
+
+  .btn_style2:hover{
+        background-color: transparent !important;
+    border: 2px solid #8C6A48;
+    color: #8C6A48;
+
+  }
 
   /* The Modal (background) */
 .modal {
@@ -88,6 +105,7 @@
 <div class="content">
 
   <div class="content_body">
+    <div style="padding-top: 5%;"></div>
     <h2>Gallery</h2>
     <hr>
         <div class="top_btns">
@@ -101,7 +119,7 @@
                 <br>
                 <br>
                 <center>
-                <input type='submit' name='logo' value='SAVE' class="btn_style">
+                <input type='submit' name='logo' value='SAVE' class="btn_style2">
                 </center>
               </div>
 

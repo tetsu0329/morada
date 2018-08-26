@@ -28,6 +28,7 @@
 <div class="content">
 
   <div class="content_body">
+  	<div style="padding-top: 5%;"></div>
     <h2>Reports</h2>
     <hr>
 

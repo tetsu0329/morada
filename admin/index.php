@@ -58,6 +58,7 @@
 <body>
 <div class="content">
   <div class="content_body">
+  	<div style="padding-top: 5%;"></div>
     <h2>Dashboard</h2>
     <hr>
     <center>
@@ -74,7 +75,7 @@
 
   			<div class="inquiry_body msg">
   			<p style="font-size: 30px">3</p>
-  			<p style="font-size: 20px">UNREAD</p>
+  			<p style="font-size: 20px">READ</p>
   			</div>
 
   			<div class="inquiry_body msg">
@@ -92,5 +93,7 @@
     		
 </div>
 <br><br>
+
+
 </body>
 </html>

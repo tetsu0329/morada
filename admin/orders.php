@@ -47,19 +47,22 @@
 		border-bottom: 1px solid #dee2e6;
 	}
 
-	.btn_style{
-		background-color: #d9b6ac;
-		border: none;
-		box-shadow: none;
-		padding: 10px;
-		font-size: 12px;
-		border-radius: 10px;
-		font-weight: 600;
+		.btn_style{
+	background-color: #8C6A48 !important;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 40%;
+
 	}
 
 	.btn_style:hover{
-		border: 1px solid #e7d5d0;
-		color: #313232;
+		    background-color: transparent !important;
+    border: 2px solid #8C6A48;
+    color: #8C6A48;
+
 	}
 
 /*	tr:nth-child(odd){background-color: #f1f3f5;
@@ -175,6 +178,7 @@
 <div class="content">
 
   <div class="content_body">
+  	<div style="padding-top: 5%;"></div>
     <h2>Orders</h2>
     <hr>
     <br>

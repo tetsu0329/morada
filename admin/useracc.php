@@ -178,6 +178,7 @@
 <div class="content">
 
   <div class="content_body">
+  	<div style="padding-top: 5%;"></div>
     <h2>User Accounts</h2>
     <hr>
     <br>
@@ -348,7 +349,7 @@
 						 	<br>
 						    
 						    <div class="row">
-						      <input type="submit" value="Submit" name='edituser'>
+						      <center><input type="submit" value="Submit" name='edituser'></center>
 						    </div>
 					</form>
 				</div>

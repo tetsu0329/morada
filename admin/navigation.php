@@ -3,98 +3,13 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 
 body {
   margin: 0;
   font-family: "Century Gothic", sans-serif;
-}
-
-.sidebar {
-  margin: 0;
-  padding: 0;
-  width: 300px;
-  background-color: #e7d5d0;
-  position: fixed;
-  height: 100%;
-  overflow: hidden;
-}
-
-.sidebar a {
-  display: block;
-  color: #222222;
-  padding: 16px;
-  text-decoration: none;
-}
- 
-.sidebar a.active {
-  background-color: #ceaea5;
-  color: #222222;
-}
-
-.sidebar a:hover:not(.active) {
-  background-color: #ceaea5;
-  color: #222222;
-}
-
-.mobilemenu{
-  display: none;
-}
-.icon{
-  display: none;
-}
-
-/*.sidenav a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
-
-.sidenav a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-.active {
-  background-color: #4CAF50;
-  color: white;
-}
-
-.sidenav .icon {
-  display: none;
-}*/
-
-@media screen and (max-width: 700px) {
-  .sidebar a:not(:first-child) {display: none;}
-  .sidebar a.icon {
-    float: right;
-    display: block;
-  }
-}
-
-@media screen and (max-width: 700px) {
-/*  .logo{
-    float: left;
-  }*/
-  .sidebar.responsive {position: relative;}
-  .sidebar.responsive .icon {
-    position: absolute;
-    right: 0;
-    top:0%;
-  }
-  .sidebar.responsive a {
-    float: none;
-    display: block;
-    text-align: left;
-  }
-
-
-  .mobilemenu{
-  display: block !important;
 }
 a .icon{
   display: none;
@@ -114,119 +29,125 @@ a .icon{
 }
 
 .active, .accordion:hover {
-    background-color: #ceaea5;
-    color: #dee2e6; 
+  
 }
 
 .panel {
   /*  padding: 0 20px;*/
     margin-left: 20px;
     display: none;
-    background-color: #e7d5d0;
+    background: transparent !important;
     
 }
 a.panel:hover {
   /*  padding: 0 18px;*/
     display: none;
     background-color: #343a40;
-}
-.header {
-  background-color: #ceaea5;
-  padding: 20px 20px 70px 20px;
-}
-.header a {
-  float: left;
-  color: black;
-  text-align: center;
-  padding: 12px;
-  text-decoration: none;
-  font-size: 16px; 
-  line-height: 25px;
-  border-radius: 4px;
-  background-color: #e7d5d0;
+    text-decoration: none !important;
 }
 
-
-.header a:hover {
-  border:   1px solid #8C6A48;
-  color: black;
+.links{
+  padding:5% !important;
+  text-decoration: none !important;
+}
+.sidebarmenu{
+  background: #e7d5d0 !important;
 }
 
-.header-right {
-  float: right;
+.sidebarmenu a:hover{
+  background: #ceaea5 !important;
 }
-/*div.content {
-  margin-left: 300px;
-  height: 1000px;
-}*/
 
-
-
-/* MOBILE RESPONSIVE*/
-@media screen and (max-width: 700px) {
-  .sidebar {
-    width: 100%;
-    height: auto;
-    position: relative;
-  }
-  .sidebar a {float: left;}
-  div.content {margin-left: 0;}
+* button{
+  border-radius: 5px;
 }
-@media screen and (max-width: 500px) {
-  .header a {
-    float: none;
-    display: block;
-    text-align: left;
-  }
-  .header-right {
-    float: none;
-  }
-
+.topbar{
+  background: #ceaea5 !important;
+  color: #222;
+}
+.topbar a:hover{
+  background: #e7d5d0 !important;
+  color: #222;
+  border-radius: 5px;
+  text-decoration: none !important;
+}
+/**/
 </style>
 </head>
 <body>
 
-<!-- right content / sidebar -->
-<div class="sidebar" id="mySidebar">
-  <!-- <center><img src="img/logo.png" style="width: 250px; margin-bottom: 5%; padding: 5%;" class="logo"></center> -->
-   <i><img src="img/logo.png" style="width: 250px; margin-bottom: 5%; padding: 5%;" class="logo"></i>
-  <a href="index.php">Dashboard</a>
-  <a href="useracc.php">User Accounts</a>
-  <a href="orders.php">Orders</a>
-  <a href="#cms" class="accordion">CMS</a>
+<!-- Top container -->
+<div class="w3-bar w3-top w3-large topbar" style="z-index:4;">
+  <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i>  </button>
+  <span class="w3-bar-item w3-right"><a href="#" class="w3-bar-item w3-button">LOGOUT</a></span>
+</div>
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-collapse w3-white w3-animate-left sidebarmenu" style="z-index:3;width:300px;" id="mySidebar"><br>
+  <div class="w3-container w3-row">
+    <div class="w3-col s4">
+      <img src="img/logo.png" style="max-width: 250px;"><br>
+    </div>
+    <div class="w3-col s8 w3-bar">
+      
+  
+    </div>
+  </div>
+  <hr>
+ 
+  <div class="w3-bar-block">
+    <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Close Menu</a>
+    <a href="index.php" class="w3-bar-item w3-button w3-padding links">Dashboard</a>
+    <a href="useracc.php" class="w3-bar-item w3-button w3-padding links">User Accounts</a>
+    <a href="#cms" class="w3-bar-item w3-button w3-padding accordion links">CMS</a>
     <div class="panel">
-      <a href="cms_homepage.php">Homepage</a>
-      <a href="cms_about.php">About Us</a>
-      <a href="cms_contact.php">Contact Us</a>
-      <a href="cms_gallery.php">Gallery</a>
-      <a href="cms_products.php">Products</a>
-   </div>
-  <a href="inquiry.php">Inquiry</a>
-  <a href="reports.php">Reports</a>
-  <a href="archive.php">Archive</a>
- <a href="javascript:void(0);" class="icon" onclick="myFunction()"><br>
-  <img src="img/menu.png" class="mobilemenu" style="width: 25px;">
-</div>
-
-<!-- left content / full content -->
-<div class="content">
-
-  <div class="header">
-      <div class="header-right">
-        <a href="logout.php">Logout</a>
-      </div>
+       <a href="cms_homepage.php" class="w3-bar-item w3-button w3-padding links">Homepage</a>
+      <a href="cms_about.php" class="w3-bar-item w3-button w3-padding links">About Us</a>
+      <a href="cms_contact.php" class="w3-bar-item w3-button w3-padding links">Contact Us</a>
+      <a href="cms_gallery.php" class="w3-bar-item w3-button w3-padding links">Gallery</a>
+      <a href="cms_products.php" class="w3-bar-item w3-button w3-padding links">Products</a>
+    </div>
+  <a href="inquiry.php" class="w3-bar-item w3-button w3-padding links">Inquiry</a>
+   <a href="reports.php" class="w3-bar-item w3-button w3-padding links">Reports</a>
+    <a href="archive.php" class="w3-bar-item w3-button w3-padding links">Archive</a><br><br>
   </div>
+</nav>
 
-  <div class="content_body">
-<!--     <h2>Dashboard</h2>
-    <hr> -->
-  </div>
 
-</div>
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 
-</body>
+<!-- end of sidebar -->
 
-<!-- scripts -->
+<!-- SCRIPTS  -->
+
+<!-- sidebar -->
+<script>
+// Get the Sidebar
+var mySidebar = document.getElementById("mySidebar");
+
+// Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function w3_open() {
+    if (mySidebar.style.display === 'block') {
+        mySidebar.style.display = 'none';
+        overlayBg.style.display = "none";
+    } else {
+        mySidebar.style.display = 'block';
+        overlayBg.style.display = "block";
+    }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+    mySidebar.style.display = "none";
+    overlayBg.style.display = "none";
+}
+</script>
+<!-- end sidebar -->
+
 <!-- menu accordion / dropdown cms -->
 <script>
 var acc = document.getElementsByClassName("accordion");
@@ -244,15 +165,4 @@ for (i = 0; i < acc.length; i++) {
     });
 }
 </script> <!-- end of menu accordion / dropdown cms -->
-
-<script>
-function myFunction() {
-    var x = document.getElementById("mySidebar");
-    if (x.className === "sidebar") {
-        x.className += " responsive";
-    } else {
-        x.className = "sidebar";
-    }
-}
-</script>
 </html>

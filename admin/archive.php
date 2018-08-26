@@ -25,10 +25,12 @@
 	}
 </style>
 <body>
+
 <div class="content">
 
-  <div class="content_body">
-    <h2>Archive</h2>
+  <div class="content_body" >
+  	<div style="padding-top: 5%;"></div>
+    <h2 >Archive</h2>
     <hr>
 
 </div>
