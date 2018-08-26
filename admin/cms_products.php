@@ -61,7 +61,13 @@
 		border: 1px solid #e7d5d0;
 		color: #313232;
 	}
-
+	textarea {
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    font-size: 16px;
+    resize: none;
+}
 /*	tr:nth-child(odd){background-color: #f1f3f5;
 	}*/
 	tr:hover {background-color: #f5f5f5;}
@@ -105,7 +111,7 @@
 }
 
 .top_btns{
-	margin-left: 92%;
+	margin-left: 93%;
 }
 
 /*forms*/
@@ -114,7 +120,7 @@
 }
 
 	input[type=text], select, textarea {
-    width: 100%;
+    width: 45% !important;
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -122,17 +128,19 @@
 }
 
 	input[type=submit] {
-    background-color: #4CAF50;
+    background-color: #8C6A48;
     color: white;
     padding: 12px 20px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    float: right;
+    
 }
 
 	input[type=submit]:hover {
-    background-color: #45a049;
+    background-color: transparent;
+    border: 1px solid #8C6A48;
+    color: #8C6A48;
 }
 
 .container {
@@ -158,10 +166,15 @@
     display: table;
     clear: both;
 }
-.prod_img{
-	max-width: 100px;
+.prodcode{
+	width: 25% !important;
 }
-
+textarea {
+    box-sizing: border-box;
+    border-radius: 4px;
+    font-size: 16px;
+    resize: none;
+}
 /*MOBILE RESPONSIVE*/
 	@media screen and (max-width: 600px) {
   .content_body{
@@ -172,8 +185,7 @@
         width: 100%;
         margin-top: 0;
     }
-	}
-</style>
+	}</style>
 <body>
 <div class="content">
 
@@ -184,14 +196,95 @@
     <div style="overflow-x:auto;">
     <div class="top_btns">
 	    <button id="add_btn" class="btn_style"><img src="img/add.png" style="height: 15px; width: 15px;"></button>
-						<div id="add_modal" class="modal">
-						  <div class="modal-content">
+	    <div id="add_modal" class="modal">
+              <div class="modal-content">
+                <span class="close">&times;</span>
+                <h4>Add Product</h4>
+                <hr>
+                
+                <div class="container">
+                	<div class="row">
+						      <div class="col-75 prodcode">
+						        <input type="text" id="prodcode" name="prodcode" placeholder="Product Code">
+						      </div>
+					</div>
+
+					 <div class="row">
+						      <div class="col-75">
+						        <input type="text" id="prodname" name="prodname" placeholder="Product Name">
+						      </div>
+						    </div>
+
+					<div class="row">
+						      <div class="col-75">
+						          <select class="w3-select w3-border" name="option">
+								    <option value="" disabled selected placeholder>Product Category</option>
+								    <option value="1">Bedroom</option>
+								    <option value="2">Cabinets</option>
+								    <option value="3">Dining Room</option>
+								    <option value="3">Kitchen</option>
+								    <option value="3">Living Room</option>
+								  </select>
+						      </div>
+						    </div>
+
+
+					<div class="row">
+						      <div class="col-75">
+						        <textarea placeholder="Product Description"></textarea>
+						      </div>
+						    </div>
+
+					 <div class="row">
+						      <div class="col-75 prodcode">
+						        <input type="text" id="width" name="width" placeholder="WIDTH">&nbsp;&nbsp;x&nbsp;&nbsp;<input type="text" id="height" name="height" placeholder="HEIGHT">
+						      </div>
+						    </div>
+
+					<div class="row">
+						      <div class="col-75">
+						        <input type="text" id="quantity" name="quantity" placeholder="Quantity">
+						      </div>
+						    </div>
+
+                </div>
+                <center>
+                <br>
+                <p><b>Product Image</b></p>
+                <img src="img/view.png">
+                <br>
+                <br>
+                <input type='submit' name='logo' value='SAVE' class="btn_style">
+                </center>
+              </div>
+            </div>
+
+				<!-- <div id="add_modal" class="modal">
+					<div class="modal-content">
 						    <span class="close">&times;</span>
 						    <h4>Add Product</h4>
 						    <hr>
+
+						<div class="container">
 						    
-							</div>
-						  </div>
+
+						   
+
+						    
+
+						    
+
+						   
+
+						    
+						    <br>
+						    
+
+						    <br> 
+						    <input type='submit' name='logo' value='SAVE' class="btn_style">		
+						</div>
+					</div>
+				</div> -->
 	    <button class="btn_style"><img src="img/delete.png" style="height: 15px; width: 15px;"></button>
     </div>
     <br>

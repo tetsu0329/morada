@@ -38,7 +38,7 @@
 		width: 85% !important;
 	}
 	.btn_style{
-	background-color: #8C6A48;
+	background-color: #8C6A48 !important;
     color: white;
     padding: 12px 20px;
     border: none;
@@ -49,8 +49,8 @@
 	}
 
 	.btn_style:hover{
-		    background-color: transparent;
-    border: 1px solid #8C6A48;
+	background-color: transparent !important;
+    border: 2px solid #8C6A48;
     color: #8C6A48;
 
 	}
@@ -72,20 +72,20 @@ label {
     display: inline-block;
 }
 
-input[type=submit] {
-    background-color: #4CAF50;
+/*input[type=submit] {
+    background-color: #4CAF50 !important;
     color: white;
     padding: 12px 20px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    float: right;
+
 }
 
 input[type=submit]:hover {
-    background-color: #45a049;
+    background-color: #45a049 !important;
 }
-
+*/
 .container {
     border-radius: 5px;
     background-color: #f2f2f2;
@@ -194,7 +194,7 @@ input[type=submit]:hover {
 			</div>
 
 			<br>
-			<br><input type='submit' value="SAVE" name="contactbtn"><br>
+			<br><input type='submit' value="SAVE" name="contactbtn" class="btn_style"><br>
 			<br>
 			<div class="map">
 				<div class="img-thumbnail"><img src="img/map.png" style="width: 50px;"><hr>

@@ -238,7 +238,7 @@
 							<label>Date:</label><h5><?php echo $rows['messagedate'] ?></h5>
 							<label>Message:</label><h5 style="line-height: 2;"><?php echo $rows['customermessage'] ?></h5>
 							<hr>
-							<center><button class="btn_style">PROCESS</button></center>	
+							<center><button class="btn_style">CANCEL</button>&nbsp;<button class="btn_style">REPLY</button></center>	
 						<?php
 							}
 						}

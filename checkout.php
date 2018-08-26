@@ -56,7 +56,7 @@
   	</div>
   	<br>
   	 <div class="w3-center">
-    	<h6>Please check your orders below.</h6>
+    	<h6><b>Please check your orders below.</b></h6>
   </div>
   
   	<div class="w3-container">
@@ -126,17 +126,15 @@
 </table>
 </div>
 <br>
+<br>
 </div>
 
-
-<center><p><a href="checkout.php" class="w3-button w3-brown mybtn">CONFIRM ORDER</a></p></center>
-<br>
+	<div class="w3-container w3-light-grey" style="padding: 50px 50px 50px 50px;">
 
  <div class="w3-center">
-    	<h6>Please choose your payment option.</h6>
+      <h6><b>Please choose your payment option.</b></h6>
   </div>
 <br>
-	<div class="w3-container w3-light-grey" style="padding: 50px 50px 50px 50px;">
 	  <div class="w3-row-padding">
 
 	  	<div class="w3-col m6 w3-center">
@@ -157,6 +155,9 @@
 
 	  </div>
 	</div>
+<br>
+<center><p><a href="checkout.php" class="w3-button w3-brown mybtn">CONFIRM ORDER</a></p></center>
+<br>
 <!-- <div style="margin-bottom: 5.5%;"></div> -->
 <!-- scripts -->
 	<script type="text/javascript">

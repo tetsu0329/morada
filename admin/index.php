@@ -24,6 +24,12 @@
 		padding: 4%;
 	}
 	
+	.msg{
+		margin: 1%;
+		width: 30%;
+		padding: 4%;
+		float: left;
+	}
 	.inquiry_body{
 		border: 2px solid #8C6A48;
 		border-radius: 10px;
@@ -60,9 +66,31 @@
   			<div class="inquiry_body img-thumbnail"><p style="font-size: 50px"><?php echo $ordercount ?></p><hr><p style="font-size: 20px">ORDER</p></div>
   			<div class="inquiry_body img-thumbnail"><p style="font-size: 50px"><?php echo $usercount ?></p><hr><p style="font-size: 20px">USERS</p></div>
   			<div class="inquiry_body img-thumbnail"><p style="font-size: 50px"><?php echo $productcount ?></p><hr><p style="font-size: 20px">PRODUCTS</p></div>
+  			<br>
+  			<br>
+  			<br>
+  			<p style="font-size: 20px">MESSAGES</p>
+  			<hr>
+
+  			<div class="inquiry_body msg">
+  			<p style="font-size: 30px">3</p>
+  			<p style="font-size: 20px">UNREAD</p>
+  			</div>
+
+  			<div class="inquiry_body msg">
+  			<p style="font-size: 30px">5</p>
+  			<p style="font-size: 20px">UNREAD</p>
+  			</div>
+
+  			<div class="inquiry_body msg">
+  			<p style="font-size: 30px">8</p>
+  			<p style="font-size: 20px">TOTAL</p>
+  			</div>
+
 	     </div>
     </center>
     		
 </div>
+<br><br>
 </body>
 </html>
