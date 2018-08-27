@@ -8,6 +8,7 @@
 <head>
 	<title>Edit Products</title>
 </head>
+
 <style type="text/css">
 	body{
 		 margin: 0;
@@ -110,6 +111,7 @@
     padding: 20px;
     border: 1px solid #888;
     width: 40%;
+    z-index: 5 !important;
 }
 
 /* The Close Button */
@@ -137,7 +139,7 @@
 }
 
 	input[type=text], select, textarea {
-    width: 45% !important;
+    width: 100% !important;
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -167,7 +169,7 @@
 
 .col-25 {
     float: left;
-    width: 25%;
+    width: 100%;
     margin-top: 6px;
 }
 
@@ -184,8 +186,14 @@
     clear: both;
 }
 .prodcode{
-	width: 25% !important;
+	width: 30% !important;
 }
+.prodimg{
+	border: 1px solid #8C6A48;
+	margin: 5px;
+	padding: 15px;
+}
+
 textarea {
     box-sizing: border-box;
     border-radius: 4px;
@@ -246,18 +254,28 @@ textarea {
 						      </div>
 						    </div>
 
-
 					<div class="row">
 						      <div class="col-75">
 						        <textarea placeholder="Product Description"></textarea>
 						      </div>
 						    </div>
 
-					 <div class="row">
+					<!--  <div class="row">
 						      <div class="col-75 prodcode">
-						        <input type="text" id="width" name="width" placeholder="WIDTH">&nbsp;&nbsp;x&nbsp;&nbsp;<input type="text" id="height" name="height" placeholder="HEIGHT">
+						        <input type="text" id="width" name="width" placeholder="WIDTH">x<input type="text" id="height" name="height" placeholder="HEIGHT">
 						      </div>
-						    </div>
+						    </div> -->
+						       <div class="">
+								  <div class="w3-half">
+								    <input class="w3-input w3-border" type="text" placeholder="WIDTH">
+								  </div>
+
+								  <div class="w3-half">
+								    <input class="w3-input w3-border" type="text" placeholder="HEIGHT">
+								  </div>
+								</div>
+						     
+					
 
 					<div class="row">
 						      <div class="col-75">
@@ -267,9 +285,8 @@ textarea {
 
                 </div>
                 <center>
-                <br>
                 <p><b>Product Image</b></p>
-                <img src="img/view.png">
+                <img src="img/view.png" class="prodimg"><img src="img/view.png" class="prodimg"><img src="img/view.png" class="prodimg">
                 <br>
                 <br>
                 <input type='submit' name='logo' value='SAVE' class="btn_style2">
