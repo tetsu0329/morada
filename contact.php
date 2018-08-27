@@ -1,4 +1,4 @@
-<?php 
+ 	<?php 
 	include ('navigation.php');
 	include ('connection/frontconn.php');
 	include ('connection/frontconnection.php');
@@ -82,12 +82,22 @@ input[type=submit]:hover {
 .brown{
 	background: #ceaea5 !important;
 }
+.contact{
+	padding: 78px !important;
+}
 
+.social {
+	width: 33.3% !important;
+}
 /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 600px) {
     .col-25, .col-75, input[type=submit] {
         width: 100%;
         margin-top: 0;
+    }
+
+    .social p {
+    	display: none !important;
     }
 }
 </style> 	
@@ -97,7 +107,7 @@ input[type=submit]:hover {
     <span class="w3-xxlarge">Contact Us</p>
   	</div>
 
-  <div class="w3-row w3-container" style="padding: 30px">
+  <div class="w3-row w3-container" style="padding: 30px;">
 			<?php
 			while($rows=mysqli_fetch_assoc($sqlselectcontact))
 			{
@@ -106,7 +116,8 @@ input[type=submit]:hover {
 	      <span class="w3-xlarge w3-border-dark-grey w3-padding-16">Stay in touch with us!</span>
 	      <br><br>
 	    </div>
-	    <div class="w3-col l3 m6 w3-light-grey w3-container w3-padding-64 w3-center">
+
+	    <div class="w3-col l3 m6 w3-light-grey w3-container w3-padding-64 w3-center contact">
 	    	<i><img src="img/name.png" style="width: 50px;"></i><!-- <h3>Name</h3> -->
 	      <p><?php echo $rows['name'] ?></p>
 	    </div>
@@ -116,39 +127,36 @@ input[type=submit]:hover {
 	      <p><?php echo $rows['address'] ?></p>
 	    </div>
 
-	    <div class="w3-col l3 m6  w3-light-grey w3-container w3-padding-64 w3-center">
+	    <div class="w3-col l3 m6  w3-light-grey w3-container w3-padding-64 w3-center contact">
 	      <i><img src="img/email.png" style="width: 50px;"></i><!-- <h3>Name</h3> -->
 	      <p><?php echo $rows['email'] ?></p>
 	    </div>
 
-	    <div class="w3-col l3 m6 brown w3-container w3-padding-64 w3-center">
+	    <div class="w3-col l3 m6 brown w3-container w3-padding-64 w3-center contact">
 	      <i><img src="img/phone.png" style="width: 50px;"></i><!-- <h3>Name</h3> -->
 	      <p><?php echo $rows['contactnumber'] ?></p>
 		</div>
   </div>
 
  <div class="w3-row w3-container" style="padding: 30px;">
-		<div class="w3-col l3 m6 brown w3-container w3-padding-64 w3-center">
-	      <i><img src="img/right.png" style="width: 50px;"></i><!-- <h3>Name</h3> -->
-	      <p>Social Media Accounts</p>
-	    </div>
+		
 
 	    <a href="#">		
-	    <div class="w3-col l3 m6 w3-light-grey w3-container w3-padding-64 w3-center">
+	    <div class="w3-col l3 m6 w3-light-grey w3-container w3-padding-64 w3-center social">
 	      <i><img src="img/facebook.png" style="width: 50px;"></i><!-- <h3>Name</h3> -->
 	      <p><?php echo $rows['facebook'] ?></p>
 	    </div>
 		</a>
 
 		<a href="#">
-	    <div class="w3-col l3 m6  brown w3-container w3-padding-64 w3-center">
+	    <div class="w3-col l3 m6  brown w3-container w3-padding-64 w3-center social">
 	      <i><img src="img/twitter.png" style="width: 50px;"></i><!-- <h3>Name</h3> -->
 	      <p><?php echo $rows['twitter'] ?></p>
 	    </div>
 		</a>
 
 		<a href="#">
-	    <div class="w3-col l3 m6 w3-light-grey w3-container w3-padding-64 w3-center ">
+	    <div class="w3-col l3 m6 w3-light-grey w3-container w3-padding-64 w3-center social">
 	      <i><img src="img/instagram.png" style="width: 50px;"></i><!-- <h3>Name</h3> -->
 	      <p><?php echo $rows['instagram'] ?></p>
 		</div>
