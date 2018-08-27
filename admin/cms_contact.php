@@ -20,7 +20,7 @@
 
 	.contact{
 		margin: 30px 50px 0px 50px;
-		width: 85%;
+		width: 100%;
 	}
 	.contact_body{
 		border-radius: 10px;
@@ -28,10 +28,26 @@
 		background-color: white;
 		padding: 100px;
 	}
-	.img-thumbnail{
+
+
+	.msg1{
 		margin: 1%;
-		width: 40%;
+		width: 45%;
 		padding: 4%;
+		float: left;
+	}
+	
+	.msg{
+		margin: 1%;
+		width: 31.3%;
+		padding: 4%;
+		float: left;
+	}
+	.inquiry_body{
+		border: 2px solid #8C6A48;
+		border-radius: 10px;
+		background-color: white;
+		
 	}
 
 	.map .img-thumbnail{
@@ -136,7 +152,7 @@ input[type=submit]:hover {
 		while($rows=mysqli_fetch_assoc($sqlcontact))
 		{
 	 ?>  	<form action="" method="POST">
-  			<div class="social img-thumbnail"><img src="../img/name.png" style="width: 50px;"><hr>
+  			<div class="social inquiry_body msg1"><img src="../img/name.png" style="width: 50px;"><hr>
 				<div class="row">
 			      <div class="col-75">
 			        <input type="text" id="facebook" name="name" placeholder="Lorem Ipsum Name" value='<?php echo $rows['name']?>'>
@@ -144,7 +160,7 @@ input[type=submit]:hover {
   				</div>		    	
 			</div>
 
-			<div class="social img-thumbnail"><img src="img/location.png" style="width: 50px;"><hr>
+			<div class="social inquiry_body msg1"><img src="img/location.png" style="width: 50px;"><hr>
 				<div class="row">
 			      <div class="col-75">
 			        <input type="text" id="instagram" name="address" placeholder="123 ABC City" value='<?php echo $rows['address']?>'>
@@ -152,7 +168,7 @@ input[type=submit]:hover {
   				</div>		    	
 			</div>
 
-			<div class="social img-thumbnail"><img src="img/email.png" style="width: 50px;"><hr>
+			<div class="social inquiry_body msg1"><img src="img/email.png" style="width: 50px;"><hr>
 				<div class="row">
 			      <div class="col-75">
 			        <input type="text" id="twitter" name="email" placeholder="loremipsum@gmail.com" value='<?php echo $rows['email']?>'>
@@ -160,17 +176,20 @@ input[type=submit]:hover {
   				</div>		    	
 			</div>
 
-			<div class="social img-thumbnail"><img src="img/phone.png" style="width: 50px;"><hr>
+			<div class="social inquiry_body msg1"><img src="img/phone.png" style="width: 50px;"><hr>
 				<div class="row">
 			      <div class="col-75">
 			        <input type="text" id="phone" name="phone" placeholder="0915-123-4567" value='<?php echo $rows['contactnumber']?>'>
 			      </div>
   				</div>		    	
 			</div>
-
+			<br>
+  			<br>
+  			<br>
+  			<div style="margin-top: 45%;">
 
 			<h4>Social Media</h4>  
-  			<div class="social img-thumbnail"><img src="img/facebook.png" style="width: 50px;"><hr>
+  			<div class="social inquiry_body msg"><img src="img/facebook.png" style="width: 50px;"><hr>
 				<div class="row">
 			      <div class="col-75">
 			        <input type="text" id="facebook" name="facebook" placeholder="www.facebook.com/morada" value='<?php echo $rows['facebook']?>'>
@@ -178,7 +197,7 @@ input[type=submit]:hover {
   				</div>		    	
 			</div>
 
-			<div class="social img-thumbnail"><img src="img/instagram.png" style="width: 50px;"><hr>
+			<div class="social inquiry_body msg"><img src="img/instagram.png" style="width: 50px;"><hr>
 				<div class="row">
 			      <div class="col-75">
 			        <input type="text" id="instagram" name="instagram" placeholder="www.instagram.com/morada" value='<?php echo $rows['instagram']?>'>
@@ -186,7 +205,7 @@ input[type=submit]:hover {
   				</div>		    	
 			</div>
 
-			<div class="social img-thumbnail"><img src="img/twitter.png" style="width: 50px;"><hr>
+			<div class="social inquiry_body msg"><img src="img/twitter.png" style="width: 50px;"><hr>
 				<div class="row">
 			      <div class="col-75">
 			        <input type="text" id="twitter" name="twitter" placeholder="www.twitter.com/morada" value='<?php echo $rows['twitter']?>'>
@@ -198,9 +217,12 @@ input[type=submit]:hover {
 			<br><input type='submit' value="SAVE" name="contactbtn" class="btn_style"><br>
 			<br>
 			<div class="map">
-				<div class="img-thumbnail"><img src="img/map.png" style="width: 50px;"><hr>
+				<div class="inquiry_body" style="padding: 5%;"><img src="img/map.png" style="width: 50px;"><hr>
 					<img src="img/dummymap.jpg" width="95%;">
 				</div>
+				<br>
+				<br><input type='submit' value="SAVE" name="contactbtn" class="btn_style"><br>
+				<br>
 			</div>
 			</form>
 		<?php

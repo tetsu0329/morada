@@ -155,8 +155,8 @@ input[type=submit]:hover {
 			?>
 			<div class="map">
 				<form action="" method="POST" enctype="multipart/form-data">
-				<div class="img-thumbnail"><b>Slider 1</b><hr>
-				<input type="file" class="form-control-file" name='slider1'id="exampleInputFile" aria-describedby="fileHelp" value="Choose Photo" accept="image/*" onchange="loadslider1(event)" style="float: left;"><br><br>
+				<div class="img-thumbnail"><b>Slider 1</b><br><br><center><input type="file" class="form-control-file" name='slider1'id="exampleInputFile" aria-describedby="fileHelp" value="Choose Photo" accept="image/*" onchange="loadslider1(event)"></center><hr>
+				<br><br>
 				<input type='submit' name='sliderbtn1' value='Save' class="btn_style">
 					<img src="<?php echo $rows['sliderpicture'] ?>" width="50%;" id='slider1'>
 				</form>
@@ -178,9 +178,9 @@ input[type=submit]:hover {
 				{
 			?>
 			<div class="map">
-				<div class="img-thumbnail"><b>Slider 2</b><hr>
+				<div class="img-thumbnail"><b>Slider 2</b><br><br><input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp"  name="slider2" value="Choose Photo" accept="image/*" onchange="loadslider2(event)"><hr>
 				<form action="" method="POST" enctype="multipart/form-data">
-				<input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp"  name="slider2" value="Choose Photo" accept="image/*" onchange="loadslider2(event)" style="float: left;"><br><br>
+				<br><br>
 				<input type='submit' name='sliderbtn2' value='Save'  class="btn_style">
 				<img src="<?php echo $rows2['sliderpicture'] ?>" width="50%;" id='slider2'>
 				</form>
@@ -200,9 +200,9 @@ input[type=submit]:hover {
 				{
 			?>
 			<div class="map">
-				<div class="img-thumbnail"><b>Slider 3</b><hr>
+				<div class="img-thumbnail"><b>Slider 3</b><br><br><input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp"  name="slider3" value="Choose Photo" accept="image/*" onchange="loadslider3(event)"><hr>
 				<form action="" method="POST" enctype="multipart/form-data">
-				<input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp"  name="slider3" value="Choose Photo" accept="image/*" onchange="loadslider3(event)" style="float: left;"><br><br>
+				<br><br>
 				<input type='submit' name='sliderbtn3' value='Save'  class="btn_style">
 				<img src="<?php echo $rows3['sliderpicture'] ?>" width="50%;" id='slider3'>
 				</form>
