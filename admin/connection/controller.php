@@ -33,6 +33,8 @@
     $sqlselectabout = mysqli_query($conn,"SELECT * FROM abouttable WHERE id='1'");
     $aboutrow=mysqli_fetch_assoc($sqlselectabout);
 
+    $sqlselectgallery = mysqli_query($conn,"SELECT * FROM gallerytbl");
+
     //add user customer
     if (isset($_POST['adduser'])) {
         $lname = $_POST['lastname'];

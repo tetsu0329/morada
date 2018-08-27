@@ -137,17 +137,15 @@
     </div>
     <br>
     <center>
-    	<div class="container">      
-  		<img src="img/view.png" class="img-thumbnail" alt="Cinque Terre" width="250" height="250">
-  		<img src="img/view.png" class="img-thumbnail" alt="Cinque Terre" width="250" height="250"> 
-  		<img src="img/view.png" class="img-thumbnail" alt="Cinque Terre" width="250" height="250"> 
-  		<img src="img/view.png" class="img-thumbnail" alt="Cinque Terre" width="250" height="250">
-  		<img src="img/view.png" class="img-thumbnail" alt="Cinque Terre" width="250" height="250">
-  		<img src="img/view.png" class="img-thumbnail" alt="Cinque Terre" width="250" height="250"> 
-  		<img src="img/view.png" class="img-thumbnail" alt="Cinque Terre" width="250" height="250"> 
-  		<img src="img/view.png" class="img-thumbnail" alt="Cinque Terre" width="250" height="250">
-
-  
+    	<div class="container">
+      <?php
+				while($rows=mysqli_fetch_assoc($sqlselectgallery))
+				{
+			?>
+        <img src="<?php echo $rows['photopath'] ?>" class="img-thumbnail" alt="Cinque Terre" width="250" height="250">
+      <?php
+        }
+      ?>
 	     </div>
     </center>
     		

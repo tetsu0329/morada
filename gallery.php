@@ -1,4 +1,8 @@
-<?php include ('navigation.php');?>
+<?php 
+  include ('navigation.php');
+  include ('connection/frontconn.php');
+	include ('connection/frontconnection.php');
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -42,45 +46,16 @@
 
 
   <div class="w3-row-padding" style="margin-top:64px">
+  <?php
+		while($rows=mysqli_fetch_assoc($sqlselectgallery))
+		{
+	?>
     <div class="w3-col l3 m6">
-      <img src="img/slider1.jpeg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity galleryimg" alt="">
+      <img src="<?php echo substr($rows['photopath'],3) ?>" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity galleryimg" alt="">
     </div>
-
-    <div class="w3-col l3 m6">
-      <img src="img/slider2.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity galleryimg" alt="">
-    </div>
-
-    <div class="w3-col l3 m6">
-      <img src="img/slider1.jpeg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity galleryimg" alt="">
-    </div>
-
-    <div class="w3-col l3 m6">
-      <img src="img/slider2.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity galleryimg" alt="">
-    </div>
-
-    <div class="w3-col l3 m6">
-      <img src="img/slider1.jpeg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity galleryimg" alt="">
-    </div>
-
-    <div class="w3-col l3 m6">
-      <img src="img/slider2.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity galleryimg" alt="">
-    </div>
-
-    <div class="w3-col l3 m6">
-      <img src="img/slider1.jpeg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity galleryimg" alt="">
-    </div>
-
-    <div class="w3-col l3 m6">
-      <img src="img/slider2.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity galleryimg" alt="">
-    </div>
-   
-   <div class="w3-col l3 m6">
-      <img src="img/slider2.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity galleryimg" alt="">
-    </div>
-
-    <div class="w3-col l3 m6">
-      <img src="img/slider2.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity galleryimg" alt="">
-    </div>
+  <?php
+    }
+  ?>
   </div>
 </div>
 	<!-- Modal for full size images on click-->
