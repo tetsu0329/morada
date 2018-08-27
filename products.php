@@ -13,6 +13,7 @@
 	.boxprod{
 		padding: 10%;
 		min-height: 550px !important;
+		max-height: 550px !important;
 	}
 	.boxprod:hover{
 		background: #f8f9fa;

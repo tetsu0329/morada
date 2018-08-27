@@ -105,6 +105,7 @@
 	.boxprod{
 		padding: 10%;
 		min-height: 550px !important;
+		max-height: 550px !important;
 	}
 	.boxprod:hover{
 		/*border: 2px solid #8C6A48;*/
