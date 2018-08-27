@@ -18,15 +18,16 @@
   		margin: 50px 40px 0px 350px;
 	}
 
-	.img-thumbnail{
+	.msg1{
 		margin: 1%;
-		width: 40%;
+		width: 23%;
 		padding: 4%;
+		float: left;
 	}
 	
 	.msg{
 		margin: 1%;
-		width: 30%;
+		width: 31.3%;
 		padding: 4%;
 		float: left;
 	}
@@ -63,31 +64,35 @@
     <hr>
     <center>
     	<div class="container">      
-  			<div class="inquiry_body img-thumbnail"><p style="font-size: 50px"><?php echo $inquirycount ?></p><hr><p style="font-size: 20px">INQUIRY</p></div>
-  			<div class="inquiry_body img-thumbnail"><p style="font-size: 50px"><?php echo $ordercount ?></p><hr><p style="font-size: 20px">ORDER</p></div>
-  			<div class="inquiry_body img-thumbnail"><p style="font-size: 50px"><?php echo $usercount ?></p><hr><p style="font-size: 20px">USERS</p></div>
-  			<div class="inquiry_body img-thumbnail"><p style="font-size: 50px"><?php echo $productcount ?></p><hr><p style="font-size: 20px">PRODUCTS</p></div>
+  			<div class="inquiry_body msg1"><p style="font-size: 50px"><?php echo $inquirycount ?></p><hr><img src="img/inquiry.png" width="20px;"><p style="font-size: 20px">INQUIRY</p></div>
+  			<div class="inquiry_body msg1"><p style="font-size: 50px"><?php echo $ordercount ?></p><hr><img src="img/orders.png" width="20px;"><p style="font-size: 20px">ORDER</p></div>
+  			<div class="inquiry_body msg1"><p style="font-size: 50px"><?php echo $usercount ?></p><hr><img src="img/users.png" width="20px;"><p style="font-size: 20px">USERS</p></div>
+  			<div class="inquiry_body msg1"><p style="font-size: 50px"><?php echo $productcount ?></p><hr><img src="img/products.png" width="20px;"><p style="font-size: 20px">PRODUCTS</p></div>
   			<br>
   			<br>
   			<br>
+  			<div style="margin-top: 35%;">
   			<p style="font-size: 20px">MESSAGES</p>
   			<hr>
 
   			<div class="inquiry_body msg">
   			<p style="font-size: 30px">3</p>
+  			<img src="img/read.png" width="20px;">
   			<p style="font-size: 20px">READ</p>
   			</div>
 
   			<div class="inquiry_body msg">
   			<p style="font-size: 30px">5</p>
+  			<img src="img/unread.png" width="20px;">
   			<p style="font-size: 20px">UNREAD</p>
   			</div>
 
   			<div class="inquiry_body msg">
   			<p style="font-size: 30px">8</p>
+  			<img src="img/allmail.png" width="20px;">
   			<p style="font-size: 20px">TOTAL</p>
   			</div>
-
+  		</div>
 	     </div>
     </center>
     		

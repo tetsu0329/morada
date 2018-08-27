@@ -9,7 +9,8 @@
 	<title>Inquiry</title>
 </head>
 <style type="text/css">
-	body{
+	html,body{
+		font-family: 'Century Gothic' !important;
 		 margin: 0;
 	}
 
@@ -145,7 +146,6 @@
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    float: right;
 }
 
 	input[type=submit]:hover {
@@ -230,14 +230,6 @@
 	      <td><center><?php echo $rows['messagestatus']?></center></td>
 	      <td style="float: left;" class="action">
 		  			<a href="?ID=<?php echo $rows['id']?>"><button id="view_btn" class="btn_style"><img src="img/view.png" style="height: 15px; width: 15px;"></button></a>
-					<!-- <div id="view_modal" class="modal">
-					  <div class="modal-content">
-					    <span class="close">&times;</span>
-					    <h4>View Inquiry</h4>
-					    <hr>
-										   
-					  </div>
-					</div> -->
 
 					<div id="view_modal" class="modal">
 					<div class="modal-content">
@@ -256,16 +248,46 @@
 							<label>Date:</label><h5><?php echo $rows['messagedate'] ?></h5>
 							<label>Message:</label><h5 style="line-height: 2;"><?php echo $rows['customermessage'] ?></h5>
 							<hr>
-							<center><button class="btn_style2">CANCEL</button>&nbsp;<button class="btn_style2">REPLY</button></center>	
+							<center><button class="btn_style2">CLOSE</button></center>	
 						<?php
 							}
 						}
 						?>
 					</div>
 					</div>
+
+					<button id="reply_btn" class="btn_style"><img src="img/reply.png" style="height: 15px; width: 15px;"></button>
+			<div id="reply_modal" class="modal">
+				<div class="modal-content">
+					<span class="close">&times;</span>
+					    <h4>Reply</h4>
+					    <hr>
+						    <form class="w3-container">
+						      <p><label><b>To:</b></label>&nbsp;lorem@gmail.com</p>
+						      
+						      <p>     
+						      <label><b>Message:</b></label></p>
+						      <textarea style="height: 200px; resize: none;"></textarea>
+
+
+						      	<br>
+						      	<br>
+						    
+						      	<center>
+						      	<input type='submit' name='logo' value='Cancel' class="btn_style2">
+						        <input type='submit' name='logo' value='Reply' class="btn_style2">
+
+						   		 </center>	
+						    </form>
+
+				</div>
+			</div>
+
+
 					<button id="edit_btn" class="btn_style"><img src="img/delete.png" style="height: 15px; width: 15px;"></button>
 					
 					</div>
+
 	      </td>
 	    </tr>
 		<?php
@@ -285,16 +307,35 @@ echo "<script> var view_modal = document.getElementById('view_modal'); </script>
 		echo "<script> view_modal.style.display = 'block' </script>";
 	}
 ?>
+
+<script>
+// <!--  ADD modal -->
+	// Get the modal view
+	var reply_modal = document.getElementById('reply_modal');
+	// Get the button view that opens the modal
+	var reply_btn = document.getElementById("reply_btn");
+	// When the user clicks the button, open the modal 
+	reply_btn.onclick = function() {
+		reply_modal.style.display = "block";
+	}
+// <!-- end of ADD modal -->
+</script>
+
+
 <!-- Script for closing the modal -->
 <script>
 	// Get the <span> element that closes the modal
 	var view_span = document.getElementsByClassName("close")[0];
-	
+	var reply_span = document.getElementsByClassName("close")[1];
 
 	// When the user clicks on <span> (x), close the modal
 
 	view_span.onclick = function() {
 		view_modal.style.display = "none";
+
+	}
+	reply_span.onclick = function() {
+		reply_modal.style.display = "none";
 
 	}
 	
@@ -303,6 +344,10 @@ echo "<script> var view_modal = document.getElementById('view_modal'); </script>
 			
 		if (event.target == view_modal) {
 		view_modal.style.display = "none";
+		}
+
+		if (event.target == reply_modal) {
+		reply_modal.style.display = "none";
 		}
 	}
 </script>
