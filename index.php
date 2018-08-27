@@ -69,6 +69,11 @@
 	  animation-duration: 1.5s;
 	}
 
+	.prodprice{
+		color: #8C6A48;
+		font-size: 20px;
+		font-weight: 500;
+	}
 	@-webkit-keyframes fade {
 	  from {opacity: .4} 
 	  to {opacity: 1}
@@ -99,6 +104,8 @@
 	/*products*/
 	.boxprod{
 		padding: 10%;
+		min-height: 550px !important;
+		max-height: 550px !important;
 	}
 	.boxprod:hover{
 		/*border: 2px solid #8C6A48;*/
@@ -181,7 +188,7 @@
 		      <img src="<?php echo $rows['productimage'] ?>" alt="John" style="width:100%; height:250px">
 		        <div class="w3-container">
 		          <h3><?php echo $rows['productname'] ?></h3>
-		          <h6>P <?php echo $rows['itemprice'] ?></h6>
+		          <h6 class="prodprice">P <?php echo $rows['itemprice'] ?></h6>
 		          <p class="w3-opacity" style="text-align: justify;"><?php echo $rows['productdesc'] ?></p>
 		        </div>
 		      </div>
