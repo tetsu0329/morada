@@ -61,18 +61,24 @@
 	  	<div class="w3-col m6 misvis">
 	      <center><h3>Mission</h3></center>
 	      <p>
-	      	Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
-
-			Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.
+				<?php
+					while($rows2=mysqli_fetch_assoc($sqlselectmission))
+					{
+						echo $rows2["mission"];
+					}
+				?>
 	      </p>
 	    </div>
 
 	    <div class="w3-col m6 misvis">
 	      <center><h3>Vision</h3></center>
 	      <p>
-	      	Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
-
-			Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.
+				<?php
+					while($rows3=mysqli_fetch_assoc($sqlselectvision))
+					{
+						echo $rows3["vision"];
+					}
+				?>
 	      </p>
 	    </div>
 
@@ -86,22 +92,22 @@
 	    <div class="w3-quarter">
 	      <i><img src="img/highquality.png" style="width: 60px;"></i>
 	      <p class="w3-large">High Quality</p>
-	      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+	      <p>"Quality is never an accident. The quality of a leader is reflected in the standards they set for." - Anonymous</p>
 	    </div>
 	    <div class="w3-quarter">
 	      <i><img src="img/affordable.png" style="width: 60px;"></i>
 	      <p class="w3-large">Affordable</p>
-	      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+	      <p>“Price ain't merely about numbers. It's a satisfying sacrifice.”  - Toba Beta</p>
 	    </div>
 	    <div class="w3-quarter">
 	      <i><img src="img/freedel.png" style="width: 60px;"></i>
 	      <p class="w3-large">Free Delivery</p>
-	      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+	      <p>Free Delivery Nationwide with a minimum purchase of 1,000 and it takes 5-7 days only</p>
 	    </div>
 		    <div class="w3-quarter">
 		      <i><img src="img/accomodate.png" style="width: 60px;"></i>
 		      <p class="w3-large">Accomodating</p>
-		      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+		      <p>We have very accomondating personnel and staff so why don't you stop by our store or ask online</p>
 		    </div>
 	  </div>
 	</div>

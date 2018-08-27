@@ -101,7 +101,7 @@
 				<hr>
 				<br>
 			<form action='' method='POST'>
-				<textarea class="form-control p-input" id="exampleTextarea" rows="20" name="aboutcontent" ><?php echo $aboutrow['content'];?></textarea> 
+				<textarea class="form-control p-input" id="exampleTextarea" rows="20" name="aboutmission" ><?php echo $aboutrow['mission'];?></textarea> 
                    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
                    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/codemirror.min.js"></script>
                    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/mode/xml/xml.min.js"></script>
@@ -113,7 +113,7 @@
 					<script> $(function() { $('textarea').froalaEditor() }); </script>
 
 					<br><br>
-		<input type= 'submit' name='updtaboutbtn' value= 'UPDATE' class="btn_style">
+		<input type= 'submit' name='updtmissionbtn' value= 'UPDATE' class="btn_style">
 			</div>
 		</div>
 		
@@ -125,7 +125,7 @@
 				<hr>
 				<br>
 			<form action='' method='POST'>
-				<textarea class="form-control p-input" id="exampleTextarea" rows="20" name="aboutcontent" ><?php echo $aboutrow['content'];?></textarea> 
+				<textarea class="form-control p-input" id="exampleTextarea" rows="20" name="aboutvision" ><?php echo $aboutrow['vision'];?></textarea> 
                    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
                    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/codemirror.min.js"></script>
                    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/mode/xml/xml.min.js"></script>
@@ -137,7 +137,7 @@
 					<script> $(function() { $('textarea').froalaEditor() }); </script>
 
 					<br><br>
-		<input type= 'submit' name='updtaboutbtn' value= 'UPDATE' class="btn_style">
+		<input type= 'submit' name='updtvisionbtn' value= 'UPDATE' class="btn_style">
 			</div>
 		</div>
 		

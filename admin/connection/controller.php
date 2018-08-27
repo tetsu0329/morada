@@ -111,6 +111,40 @@
                     window.location='cms_about.php';</script>";
         }
    }
+   if (isset($_POST['updtmissionbtn'])) {
+    $aboutcontent=$_POST['aboutmission'];
+
+    $sqlaboutupdt = mysqli_query($conn,"UPDATE abouttable SET mission='$aboutcontent' WHERE id='1'");
+
+    if ($sqlaboutupdt) {
+       
+           echo "<script>alert('Content of mission has been updated');
+                   window.location='cms_about.php';</script>";
+
+    }
+
+    else{
+           echo "<script>alert('unable to update mission content')
+                window.location='cms_about.php';</script>";
+    }
+}
+if (isset($_POST['updtvisionbtn'])) {
+    $aboutcontent=$_POST['aboutvision'];
+
+    $sqlaboutupdt = mysqli_query($conn,"UPDATE abouttable SET vision='$aboutcontent' WHERE id='1'");
+
+    if ($sqlaboutupdt) {
+       
+           echo "<script>alert('Content of vision has been updated');
+                   window.location='cms_about.php';</script>";
+
+    }
+
+    else{
+           echo "<script>alert('unable to update vision content')
+                window.location='cms_about.php';</script>";
+    }
+}
    
 if(isset($_POST['sliderbtn1'])){
     $target_dir = "../slider/";

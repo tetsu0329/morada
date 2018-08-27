@@ -1,5 +1,7 @@
 <?php
 $sqlselectabout = mysqli_query($conn,"SELECT * FROM abouttable WHERE id='1'");
+$sqlselectmission = mysqli_query($conn,"SELECT * FROM abouttable WHERE id='1'");
+$sqlselectvision = mysqli_query($conn,"SELECT * FROM abouttable WHERE id='1'");
 $sqlselectcontact = mysqli_query($conn,"SELECT * FROM contacttable WHERE id='1'");
 $sqlselectproduct = mysqli_query($conn,"SELECT * FROM producttbl");
 $sqlselectslider = mysqli_query($conn,"SELECT * FROM slidertable");

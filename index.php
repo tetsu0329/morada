@@ -205,22 +205,22 @@
 	    <div class="w3-quarter">
 	      <i><img src="img/highquality.png" style="width: 60px;"></i>
 	      <p class="w3-large">High Quality</p>
-	      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+	      <p>"Quality is never an accident. The quality of a leader is reflected in the standards they set for." - Anonymous</p>
 	    </div>
 	    <div class="w3-quarter">
 	      <i><img src="img/affordable.png" style="width: 60px;"></i>
 	      <p class="w3-large">Affordable</p>
-	      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+	      <p>“Price ain't merely about numbers. It's a satisfying sacrifice.”  - Toba Beta</p>
 	    </div>
 	    <div class="w3-quarter">
 	      <i><img src="img/freedel.png" style="width: 60px;"></i>
 	      <p class="w3-large">Free Delivery</p>
-	      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+	      <p>Free Delivery Nationwide with a minimum purchase of 1,000 and it takes 5-7 days only</p>
 	    </div>
 		    <div class="w3-quarter">
 		      <i><img src="img/accomodate.png" style="width: 60px;"></i>
 		      <p class="w3-large">Accomodating</p>
-		      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+		      <p>We have very accomondating personnel and staff so why don't you stop by our store or ask online</p>
 		    </div>
 	  </div>
 	</div>
