@@ -248,7 +248,7 @@
 							<label>Date:</label><h5><?php echo $rows['messagedate'] ?></h5>
 							<label>Message:</label><h5 style="line-height: 2;"><?php echo $rows['customermessage'] ?></h5>
 							<hr>
-							<center><button class="btn_style2">CLOSE</button></center>	
+							<!-- <span><center><button class="btn_style2">CLOSE</button></center></span>	 -->
 						<?php
 							}
 						}
@@ -256,14 +256,20 @@
 					</div>
 					</div>
 
-					<button id="reply_btn" class="btn_style"><img src="img/reply.png" style="height: 15px; width: 15px;"></button>
+					<a href="?Reply=<?php echo $rows['id']?>"><button id="reply_btn" class="btn_style"><img src="img/reply.png" style="height: 15px; width: 15px;"></button></a>
 			<div id="reply_modal" class="modal">
 				<div class="modal-content">
 					<span class="close">&times;</span>
 					    <h4>Reply</h4>
 					    <hr>
+						<?php
+						if(isset($_GET['Reply'])){
+							$inquiryid = $_GET['Reply'];
+							$sqlinqview = mysqli_query($conn,"SELECT * FROM inquirytable WHERE id = $inquiryid");
+								while($rows=mysqli_fetch_assoc($sqlinqview)){
+						?>
 						    <form class="w3-container">
-						      <p><label><b>To:</b></label>&nbsp;lorem@gmail.com</p>
+						      <p><label><b>To:</b></label>&nbsp;<?php echo $rows['customeremail'] ?></p>
 						      
 						      <p>     
 						      <label><b>Message:</b></label></p>
@@ -279,7 +285,10 @@
 
 						   		 </center>	
 						    </form>
-
+					<?php
+							}
+						}
+					?>
 				</div>
 			</div>
 
@@ -303,24 +312,17 @@
 <!-- scripts -->
 <?php
 echo "<script> var view_modal = document.getElementById('view_modal'); </script>";
+echo "<script> var reply_modal = document.getElementById('reply_modal'); </script>";
 	if(isset($_GET['ID'])){
+		$idd = $_GET['ID'];
 		echo "<script> view_modal.style.display = 'block' </script>";
+		$result = mysqli_query($conn,"UPDATE inquirytable SET messagestatus = 'Read' WHERE id = $idd")
+            or die ("failed to query database". mysqli_error());
+	}
+	if(isset($_GET['Reply'])){
+		echo "<script> reply_modal.style.display = 'block' </script>";
 	}
 ?>
-
-<script>
-// <!--  ADD modal -->
-	// Get the modal view
-	var reply_modal = document.getElementById('reply_modal');
-	// Get the button view that opens the modal
-	var reply_btn = document.getElementById("reply_btn");
-	// When the user clicks the button, open the modal 
-	reply_btn.onclick = function() {
-		reply_modal.style.display = "block";
-	}
-// <!-- end of ADD modal -->
-</script>
-
 
 <!-- Script for closing the modal -->
 <script>

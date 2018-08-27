@@ -76,19 +76,19 @@
   			<hr>
 
   			<div class="inquiry_body msg">
-  			<p style="font-size: 30px">3</p>
+  			<p style="font-size: 30px"><?php echo $inqread ?></p>
   			<img src="img/read.png" width="20px;">
   			<p style="font-size: 20px">READ</p>
   			</div>
 
   			<div class="inquiry_body msg">
-  			<p style="font-size: 30px">5</p>
+  			<p style="font-size: 30px"><?php echo $inqunread ?></p>
   			<img src="img/unread.png" width="20px;">
   			<p style="font-size: 20px">UNREAD</p>
   			</div>
 
   			<div class="inquiry_body msg">
-  			<p style="font-size: 30px">8</p>
+  			<p style="font-size: 30px"><?php echo $inquirycount ?></p>
   			<img src="img/allmail.png" width="20px;">
   			<p style="font-size: 20px">TOTAL</p>
   			</div>

@@ -316,11 +316,14 @@ textarea {
 
 	    </tr>
 
-
+		<?php
+            while($rows=mysqli_fetch_assoc($sqlproductcount))
+            {
+		?>
 	    <tr>
-	      <td>Product01</td>
-	      <td class="name">Lorem Ipsum Product Name</td>
-	      <td><center>4</center></td>
+	      <td>Product<?php echo $rows['id'] ?></td>
+	      <td class="name"><?php echo $rows['productname'] ?></td>
+	      <td><center><?php echo $rows['quantity'] ?></center></td>
 	      <td style="float: left;" class="action">
 				<button id="view_btn" class="btn_style"><img src="img/view.png" style="height: 15px; width: 15px;"></button>
 					<div id="view_modal" class="modal">
@@ -355,6 +358,9 @@ textarea {
 	      	
 	      </td>
 	    </tr>
+		<?php
+			}
+		?>
 	  </table>
 	</center>
 	</div>
