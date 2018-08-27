@@ -53,6 +53,9 @@
     color: #8C6A48;
 
 	}
+	.fr-toolbar, .fr-desktop, .fr-top, .fr-basic, .fr-sticky-off{
+		z-index: 0;
+	}
 	@media screen and (max-width: 600px) {
   .content_body{
     margin-left: 50px;
