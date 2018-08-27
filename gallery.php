@@ -34,6 +34,10 @@
 	.viewclose:hover{
 		background: #ceaea5 !important;
 	}
+	.galleryimg{
+		min-height: 270px !important;
+		max-height: 270px;
+	}
 </style> 	
 <body>
 
