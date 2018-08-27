@@ -267,4 +267,50 @@ if(isset($_POST['sliderbtn3'])){
             window.location='cms_contact.php';
             </script>";
     }
+    if(isset($_POST['gallerybtn'])){
+        $target_dir = "../gallery/";
+        $target_file = $target_dir . substr(str_shuffle("abcdefghijklmnopqrstuvwxyz"),0,5) . basename($_FILES["gallery"]["name"]);
+
+        $uploadOk = 1;
+        $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+        $check = getimagesize($_FILES["gallery"]["tmp_name"]);
+        if ($check == false)
+            {
+                echo "<script type = 'text/javascript>alert'>alert('File is not an Image');
+                window.location.replace('cms_gallery.php');
+                </script>";
+                $uploadOk = 0;
+            }
+            if ($_FILES["slider3"]["size"] > 10000000) 
+            {
+                echo "<script type = 'text/javascript'>alert('Sorry, your file is too large');
+                window.location.replace('cms_gallery.php');
+                </script>";
+                $uploadOk = 0;
+            }
+            if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" &&
+                $imageFileType != "JPG" && $imageFileType != "PNG" && $imageFileType != "JPEG" && $imageFileType != "GIF") 
+            {
+                echo "<script type = 'text/javascript'>alert('Sorry, only JPG, JPEG, PNG & GIF files are allowed.');
+                window.location.replace('cms_gallery.php');
+                </script>";
+                $uploadOk = 0;
+            }
+            else 
+            {
+                if (move_uploaded_file($_FILES["gallery"]["tmp_name"], $target_file))
+                {
+                $result = mysqli_query($conn,"INSERT INTO gallerytbl (photopath) VALUES ('$target_file')")
+                    or die ("failed to query database". mysql_error());
+                echo"<script type='text/javascript'>alert('Picture added successfully in gallery'); 
+                window.location.replace('cms_gallery.php');
+                </script>";
+                } 
+                else 
+                {
+                    echo "<script type = 'text/javascript'>alert('Sorry, there was an error uploading your file.');
+                    </script>";
+                }
+            }
+    }
 ?>

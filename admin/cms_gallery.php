@@ -115,15 +115,24 @@
                 <span class="close">&times;</span>
                 <h4>Add Image</h4>
                 <hr>
-                <center><img src="img/view.png"></center>
+                <form action="" method="POST" enctype="multipart/form-data">
+                <center><img src="img/view.png" id='galleryimg' style='width:300px;height:300px;'></center>
+                <center><input type="file" class="form-control-file" name='gallery'id="exampleInputFile" aria-describedby="fileHelp" value="Choose Photo" accept="image/*" onchange="loadslider1(event)"></center>
                 <br>
                 <br>
                 <center>
-                <input type='submit' name='logo' value='SAVE' class="btn_style2">
+                <input type='submit' name='gallerybtn' value='SAVE' class="btn_style2">
                 </center>
+                </form>
               </div>
-
+              <script>
+              var loadslider1 = function(event) {
+                var output = document.getElementById('galleryimg');
+                output.src = URL.createObjectURL(event.target.files[0]);
+                };
+              </script>
             </div>
+
       <button class="btn_style"><img src="img/delete.png" style="height: 15px; width: 15px;"></button>
     </div>
     <br>
