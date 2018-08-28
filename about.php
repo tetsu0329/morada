@@ -18,9 +18,9 @@
 		background: #f1f1f1 !important;
 	}*/
 	.misvis p{
-		padding: 5%;
-		line-height: 2.5;
-		text-align: justify;
+		padding: 1%;
+		line-height: 2;
+		text-align: center;
 	}
 
 </style> 	
@@ -55,7 +55,7 @@
 <br>
 
 <!-- mission vision -->
-	<div class="w3-container w3-light-grey" style="padding: 50px 50px 50px 0px;">
+	<div class="w3-container w3-light-grey" style="padding: 40px 40px 40px 0px;">
 	  <div class="w3-row-padding">
 
 	  	<div class="w3-col m6 misvis">
