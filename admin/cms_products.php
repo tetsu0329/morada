@@ -360,6 +360,9 @@ textarea {
 						<h5 style="font-weight: 600;">Code</h5><h6 style="line-height: 2;">LOREM123</h6>
 						<h5 style="font-weight: 600;">Price</h5><h6 style="line-height: 2;">123.00</h6> 	 
 					  </div>
+
+					  <br>
+					  <br>
 					</div>
 
 					<button id="edit_btn" class="btn_style"><img src="img/edit.png" style="height: 15px; width: 15px;"></button>
@@ -382,7 +385,8 @@ textarea {
 	</center>
 	</div>
 	</div>
-
+<br>
+<br>
 </body>
 
 <!-- scripts -->

@@ -52,7 +52,14 @@ input[type=submit]:hover {
 		border: 2px solid #8C6A48;
 		color: #8C6A48 !important;
 }
-
+textarea {
+    width: 100%;
+    height: 100px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    resize: none;
+}
 .container {
 
     padding: 20px;
@@ -220,29 +227,7 @@ img {
     <div class="numbertext">4 / 6</div>
     <img src="img/slider1.jpeg" style="width:100%">
   </div>
-	<!--     
-	  <a class="prev" onclick="plusSlides(-1)">❮</a>
-	  <a class="next" onclick="plusSlides(1)">❯</a> -->
 
-  <div class="caption-container">
-    <p id="caption"></p>
-  </div>
-
-  <div class="row">
-    <div class="column">
-      <img class="demo cursor" src="img/slider1.jpeg" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
-    </div>
-    <div class="column">
-      <img class="demo cursor" src="img/slider1.jpeg" style="width:100%" onclick="currentSlide(2)" alt="Cinque Terre">
-    </div>
-    <div class="column">
-      <img class="demo cursor" src="img/slider1.jpeg" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
-    </div>
-    <div class="column">
-      <img class="demo cursor" src="img/slider1.jpeg" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
-    </div>
-
-  </div>
 </div>
 	      </div>
 
@@ -253,23 +238,50 @@ img {
 	    	<div style="padding: 5%;">
 	      <h3>Lorem Ipsum Product Name</h3>
 	      <hr>
-	      <h6>Price</h6>
-	      <h3>123.00</h3>
+	      <p style="line-height: 1; font-size: 20px; color: gray;">Php 123.00</p>
+        <h6>Product Code: <b>PRODUCT1</b></h6>
 	      <h6>Description</h6>
-	      <p style="line-height: 3;">
-	      	Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
+	      <p style="line-height: 1;">
+	      	Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
 	      </p>
-	      <div>
-        	
-          <div id="input_div">
+
+        <h6>Type</h6>
+        <select class="w3-select w3-border" name="option">
+          <option value="" disabled selected>Choose type</option>
+          <option value="1">Metal</option>
+          <option value="2">Plastic</option>
+          <option value="3">Wood</option>
+        </select>
+
+        <h6>Color</h6>
+        <select class="w3-select w3-border" name="option">
+          <option value="" disabled selected>Choose color</option>
+          <option value="1">Black</option>
+          <option value="2">Brown</option>
+          <option value="3">Mahogany</option>
+          <option value="3">White</option>
+        </select>
+
+        <h6>Edge</h6>
+        <select class="w3-select w3-border" name="option">
+          <option value="" disabled selected>Choose edge</option>
+          <option value="1">Point</option>
+          <option value="2">Round</option>
+        </select>
+
+        <h6>Add another customization request</h6>
+        <textarea></textarea>
+
+        <div id="input_div">
           	<h6>Quantity</h6>
 		    <input type="button" value="-" id="moins" onclick="minus()" class="addminus">      	
 		    <input type="text" size="25" value="0" id="count" class="quantity">
 		    <input type="button" value="+" id="plus" onclick="plus()" class="addminus">
-		  </div>
-		  <hr>
-
-		  <center><p><a href="checkout.php" class="w3-button w3-brown mybtn">ORDER NOW</a></p></center>
+		    </div>
+	     <hr>
+        <center><p><a href="checkout.php" class="w3-button w3-brown mybtn">PROCEED TO CHECKOUT</a></p></center>
+       </div>
+		 
 		</div>
     </div>
 	    </div>

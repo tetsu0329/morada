@@ -109,7 +109,11 @@ a.panel:hover {
     </div>
   <a href="inquiry.php" class="w3-bar-item w3-button w3-padding links">Inquiry</a>
    <a href="reports.php" class="w3-bar-item w3-button w3-padding links">Reports</a>
-    <a href="archive.php" class="w3-bar-item w3-button w3-padding links">Archive</a><br><br>
+    <a href="#archive" class="w3-bar-item w3-button w3-padding accordion links">Archive</a>
+    <div class="panel">
+       <a href="archive_products.php" class="w3-bar-item w3-button w3-padding links">Products</a>
+      <a href="archive_orders.php" class="w3-bar-item w3-button w3-padding links">Orders</a>
+    </div>
   </div>
 </nav>
 
