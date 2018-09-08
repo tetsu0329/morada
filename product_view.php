@@ -1,4 +1,8 @@
-<?php include ('navigation.php');?>
+<?php 
+  include ('navigation.php');
+  include ('connection/frontconn.php');
+	include ('connection/frontconnection.php');
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -201,7 +205,12 @@ img {
 <!-- 	<div class="w3-container w3-light-grey w3-row w3-center" style="padding: 100px 0px 0px 0px;">
     <span class="w3-xxlarge">L O G I N</p>
   	</div> -->
-
+    <?php
+        $id = $_GET['ProductID'];
+        $sqlselectproductview = mysqli_query($conn,"SELECT * FROM producttbl WHERE id='$id'"); 
+				while($rows=mysqli_fetch_assoc($sqlselectproductview))
+				{
+		?>
 <div class="w3-container" style="padding: 120px 50px 0px 50px;">
 	  <div class="w3-row-padding">
 
@@ -210,22 +219,22 @@ img {
 <div class="container">
   <div class="mySlides">
     <div class="numbertext">1 / 6</div>
-    <img src="img/slider1.jpeg" style="width:100%">
+    <img src="<?php echo substr($rows['productimage'],3) ?>" style="width:100%">
   </div>
 
   <div class="mySlides">
     <div class="numbertext">2 / 6</div>
-    <img src="img/slider1.jpeg" style="width:100%">
+    <img src="<?php echo substr($rows['productimage'],3) ?>" style="width:100%">
   </div>
 
   <div class="mySlides">
     <div class="numbertext">3 / 6</div>
-    <img src="img/slider1.jpeg" style="width:100%">
+    <img src="<?php echo substr($rows['productimage'],3) ?>" style="width:100%">
   </div>
     
   <div class="mySlides">
     <div class="numbertext">4 / 6</div>
-    <img src="img/slider1.jpeg" style="width:100%">
+    <img src="<?php echo substr($rows['productimage'],3) ?>" style="width:100%">
   </div>
 
 </div>
@@ -233,53 +242,135 @@ img {
 
 
 	    </div>
-
+      <form action="checkout.php?ProductID=<?php echo $id ?>" method="POST">
+      <input type="hidden" value="<?php echo $id ?>" name='id'>
 	    <div class="w3-col m6 our_story">
 	    	<div style="padding: 5%;">
-	      <h3>Lorem Ipsum Product Name</h3>
+	      <h3><?php echo $rows['productname'] ?></h3>
 	      <hr>
-	      <p style="line-height: 1; font-size: 20px; color: gray;">Php 123.00</p>
-        <h6>Product Code: <b>PRODUCT1</b></h6>
+	      <p style="line-height: 1; font-size: 20px; color: gray;"><?php echo $rows['itemprice'] ?></p>
+        <h6>Product Code: <b><?php echo $rows['productcode'] ?></b></h6>
 	      <h6>Description</h6>
 	      <p style="line-height: 1;">
-	      	Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+        <?php echo $rows['productdesc'] ?>
 	      </p>
-
+        <?php
+        if($rows['productclass'] == 'Table') {
+        ?>
         <h6>Type</h6>
         <select class="w3-select w3-border" name="option">
           <option value="" disabled selected>Choose type</option>
-          <option value="1">Metal</option>
-          <option value="2">Plastic</option>
-          <option value="3">Wood</option>
+          <option value="Metal">Metal</option>
+          <option value="Plastic">Plastic</option>
+          <option value="Wood">Wood</option>
         </select>
 
         <h6>Color</h6>
-        <select class="w3-select w3-border" name="option">
+        <select class="w3-select w3-border" name="option2">
           <option value="" disabled selected>Choose color</option>
-          <option value="1">Black</option>
-          <option value="2">Brown</option>
-          <option value="3">Mahogany</option>
-          <option value="3">White</option>
+          <option value="Black">Black</option>
+          <option value="Brown">Brown</option>
+          <option value="Mahogany">Mahogany</option>
+          <option value="White">White</option>
         </select>
 
         <h6>Edge</h6>
-        <select class="w3-select w3-border" name="option">
+        <select class="w3-select w3-border" name="option3">
           <option value="" disabled selected>Choose edge</option>
-          <option value="1">Point</option>
-          <option value="2">Round</option>
+          <option value="Point">Point</option>
+          <option value="Round">Round</option>
         </select>
 
+        <h6>Capacity</h6>
+        <select class="w3-select w3-border" name="option4">
+          <option value="" disabled selected>Choose edge</option>
+          <option value="4 Person">4 Person</option>
+          <option value="5 Person">5 Person</option>
+          <option value="6 Person">6 Person</option>
+        </select>
+        <?php
+        }
+        if($rows['productclass'] == 'Chair'){
+        ?>
+        <h6>Type</h6>
+        <select class="w3-select w3-border" name="option">
+          <option value="" disabled selected>Choose type</option>
+          <option value="Metal">Metal</option>
+          <option value="Plastic">Plastic</option>
+          <option value="Wood">Wood</option>
+        </select>
+
+        <h6>Color</h6>
+        <select class="w3-select w3-border" name="option2">
+          <option value="" disabled selected>Choose color</option>
+          <option value="Black">Black</option>
+          <option value="Brown">Brown</option>
+          <option value="Mahogany">Mahogany</option>
+          <option value="White">White</option>
+        </select>
+
+        <select class="w3-select w3-border" name="option3" hidden>
+          <option value=""></option>
+        </select>
+        <select class="w3-select w3-border" name="option4" hidden>
+          <option value=""></option>
+        </select>
+        <?php
+        }
+        if($rows['productclass'] == 'Cabinet'){
+        ?>
+        <h6>Type</h6>
+        <select class="w3-select w3-border" name="option">
+          <option value="" disabled selected>Choose type</option>
+          <option value="Metal">Metal</option>
+          <option value="Plastic">Plastic</option>
+          <option value="Wood">Wood</option>
+        </select>
+
+        <h6>Doors</h6>
+        <select class="w3-select w3-border" name="option2">
+          <option value="" disabled selected>Choose color</option>
+          <option value="2 Doors">2 Doors</option>
+          <option value="3 Doors">3 Doors</option>
+          <option value="4 Doors">4 Doors</option>
+        </select>
+
+        <select class="w3-select w3-border" name="option3" hidden>
+          <option value=""></option>
+        </select>
+        <select class="w3-select w3-border" name="option4" hidden>
+          <option value=""></option>
+        </select>
+        <?php
+        }
+        else{
+        ?>
+        <select class="w3-select w3-border" name="option" hidden>
+          <option value=""></option>
+        </select>
+        <select class="w3-select w3-border" name="option2" hidden>
+          <option value=""></option>
+        </select>
+        <select class="w3-select w3-border" name="option3" hidden>
+          <option value=""></option>
+        </select>
+        <select class="w3-select w3-border" name="option4" hidden>
+          <option value=""></option>
+        </select>
+        <?php
+        }
+        ?>
         <h6>Add another customization request</h6>
-        <textarea></textarea>
+        <textarea name="option5"></textarea>
 
         <div id="input_div">
           	<h6>Quantity</h6>
-		    <input type="button" value="-" id="moins" onclick="minus()" class="addminus">      	
-		    <input type="text" size="25" value="0" id="count" class="quantity">
-		    <input type="button" value="+" id="plus" onclick="plus()" class="addminus">
+		    <!-- <input type="button" value="-" id="moins" onclick="minus()" class="addminus">      	 -->
+		    <input type="number" size="25" value="0" id="count" class="quantity" name="quantity">
+		    <!-- <input type="button" value="+" id="plus" onclick="plus()" class="addminus"> -->
 		    </div>
 	     <hr>
-        <center><p><a href="checkout.php" class="w3-button w3-brown mybtn">PROCEED TO CHECKOUT</a></p></center>
+        <center><p><input type = "submit" value="PROCEED TO CHECKOUT" name="checkout"></p></center>
        </div>
 		 
 		</div>
@@ -290,6 +381,9 @@ img {
 
 
   </form>
+  <?php
+        }
+  ?>
 </div>
 </center>
 

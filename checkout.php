@@ -1,4 +1,47 @@
-<?php include ('navigation.php');?>
+<?php
+session_start(); 
+include ('navigation.php');
+include ('connection/frontconn.php');
+include ('connection/frontconnection.php');
+if(isset($_GET['ProductID']))
+  {
+		echo "<script>alert('Product Added to Cart')</script>";
+    $prodID= $_GET['ProductID'];
+    if(!empty($_SESSION['product']))
+    {
+      $rowcounttt = count($_SESSION['product']);
+      $query = mysqli_query($conn,"SELECT * FROM producttbl where id='$prodID'");
+      while ($queryhold= mysqli_fetch_array($query)){
+          $product[1] = $queryhold['productcode'];
+          $product[2] = $queryhold['productname'];
+          $product[3] = $_POST['quantity'];
+					$product[4] = $queryhold['itemprice'];
+					$product[5] = $_POST['option'];
+					$product[6] = $_POST['option2'];
+					$product[7] = $_POST['option3'];
+					$product[8] = $_POST['option4'];
+      }
+      array_push($_SESSION['product'], $product);
+      echo "<script>window.location = 'checkout.php'</script>";
+    }
+    if(empty($_SESSION['product']))
+    {
+      $query = mysqli_query($conn,"SELECT * FROM producttbl where id='$prodID'");
+      while ($queryhold= mysqli_fetch_array($query)){
+          $product[1] = $queryhold['productcode'];
+          $product[2] = $queryhold['productname'];
+					$product[3] = $_POST['quantity'];
+					$product[4] = $queryhold['itemprice'];
+					$product[5] = $_POST['option'];
+					$product[6] = $_POST['option2'];
+					$product[7] = $_POST['option3'];
+					$product[8] = $_POST['option4'];
+      }
+      $_SESSION['product']=array($product);
+      echo "<script>window.location = 'checkout.php'</script>";
+    }
+  }
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -72,52 +115,40 @@
 </tr>
 </thead>
 <tbody>
+<?php
+  if(!empty($_SESSION['product'])){
+		$total = 0;
+  $rowcount= count($_SESSION['product']);
+  for($row=0; $row<$rowcount; $row++)
+    {
+?>
 <tr>
-  <td>001</td>
-  <td>Lorem Ipsum Product Name</td>
-  <td>1</td>
-  <td>123.00</td>
-  <td>123.00</td>
+  <td><?php echo($_SESSION['product'][$row][1]) ?></td>
+  <td><?php echo($_SESSION['product'][$row][2]) ?></td>
+  <td><?php echo($_SESSION['product'][$row][3]) ?></td>
+  <td>PHP <?php echo($_SESSION['product'][$row][4]) ?></td>
+	<?php
+	$subtot = $_SESSION['product'][$row][3] * $_SESSION['product'][$row][4];
+
+	$total += $subtot;
+	?>
+  <td>PHP <?php echo $subtot; ?></td>
 </tr>
 
-<tr>
-  <td>001</td>
-  <td>Lorem Ipsum Product Name</td>
-  <td>1</td>
-  <td>123.00</td>
-  <td>123.00</td>
-</tr>
-
-<tr>
-  <td>001</td>
-  <td>Lorem Ipsum Product Name</td>
-  <td>1</td>
-  <td>123.00</td>
-  <td>123.00</td>
-</tr>
-
-<tr>
-  <td>001</td>
-  <td>Lorem Ipsum Product Name</td>
-  <td>1</td>
-  <td>123.00</td>
-  <td>123.00</td>
-</tr>
-
-<tr>
-  <td>001</td>
-  <td>Lorem Ipsum Product Name</td>
-  <td>1</td>
-  <td>123.00</td>
-  <td>123.00</td>
-</tr>
+<?php
+	}
+}
+else{
+	//no items in cart
+}
+?>
 <!-- total -->
 <tr class="total">
   <td><b>TOTAL</b></td>
   <td></td>
   <td></td>
   <td></td>
-  <td><b>123.00</b></td>
+  <td><b>PHP <?php echo $total; ?></b></td>
 </tr>
 <!-- total -->
 

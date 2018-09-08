@@ -90,4 +90,19 @@ if(isset($_POST['registerbtn'])){
         </script>";
     }    
 }
+// if(isset($_POST['checkout'])){
+//     if(!empty($_SESSION['product']))
+//     {
+//     $_SESSION['productid']=$_POST['id'];
+//     $_SESSION['option']=$_POST['option'];
+//     $_SESSION['option2']=$_POST['option2'];
+//     $_SESSION['option3']=$_POST['option3'];
+//     $_SESSION['option4']=$_POST['option4'];
+//     $_SESSION['option5']=$_POST['option5'];
+//     $_SESSION['quantity']=$_POST['quantity'];
+//     echo"<script type='text/javascript'>alert('Product Added to Cart');
+//     window.location='checkout.php';
+//     </script>";
+
+// }
 ?>

@@ -349,4 +349,60 @@ if(isset($_POST['sliderbtn3'])){
                 }
             }
     }
+    if (isset($_POST['productbtn'])) {
+        $pcode = $_POST["prodcode"];
+        $pname = $_POST["prodname"];
+        $pcat = $_POST["option"];
+        $pclass = $_POST["option2"];
+        $pdesc = $_POST["description"];
+        $psize = $_POST["wid"]."x".$_POST["hei"];
+        $pprice = $_POST["price"];
+        $pquan = $_POST["quantity"];
+        $target_dir = "../products/";
+        $target_file = $target_dir . substr(str_shuffle("abcdefghijklmnopqrstuvwxyz"),0,5) . basename($_FILES["product"]["name"]);
+
+        $uploadOk = 1;
+        $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+        $check = getimagesize($_FILES["product"]["tmp_name"]);
+        if ($check == false)
+            {
+                echo "<script type = 'text/javascript>alert'>alert('File is not an Image');
+                window.location.replace('cms_products.php');
+                </script>";
+                $uploadOk = 0;
+            }
+            if ($_FILES["slider3"]["size"] > 10000000) 
+            {
+                echo "<script type = 'text/javascript'>alert('Sorry, your file is too large');
+                window.location.replace('cms_products.php');
+                </script>";
+                $uploadOk = 0;
+            }
+            if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" &&
+                $imageFileType != "JPG" && $imageFileType != "PNG" && $imageFileType != "JPEG" && $imageFileType != "GIF") 
+            {
+                echo "<script type = 'text/javascript'>alert('Sorry, only JPG, JPEG, PNG & GIF files are allowed.');
+                window.location.replace('cms_products.php');
+                </script>";
+                $uploadOk = 0;
+            }
+            else 
+            {
+                if (move_uploaded_file($_FILES["product"]["tmp_name"], $target_file))
+                {
+                $result = mysqli_query($conn,"INSERT INTO producttbl (productcode, productname, productcat, productclass, productdesc, itemsize, itemprice, quantity, productimage) 
+                                                              VALUES ('$pcode','$pname','$pcat','$pclass','$pdesc', '$psize', '$pprice', '$pquan','$target_file')")
+                    or die ("failed to query database". mysql_error());
+                echo"<script type='text/javascript'>alert('Product Added Succesfully'); 
+                window.location.replace('cms_products.php');
+                </script>";
+                } 
+                else 
+                {
+                    echo "<script type = 'text/javascript'>alert('Sorry, there was an error uploading your file.');
+                    </script>";
+                }
+            }
+    }
+
 ?>

@@ -227,7 +227,7 @@ textarea {
                 <span class="close">&times;</span>
                 <h4>Add Product</h4>
                 <hr>
-                
+                <form action="" method="POST" enctype="multipart/form-data">
                 <div class="container">
                 	<div class="row">
 						      <div class="col-75 prodcode">
@@ -245,18 +245,29 @@ textarea {
 						      <div class="col-75">
 						          <select class="w3-select w3-border" name="option">
 								    <option value="" disabled selected placeholder>Product Category</option>
-								    <option value="1">Bedroom</option>
-								    <option value="2">Cabinets</option>
-								    <option value="3">Dining Room</option>
-								    <option value="3">Kitchen</option>
-								    <option value="3">Living Room</option>
+								    <option value="Bedroom">Bedroom</option>
+								    <option value="Cabinets">Cabinets</option>
+								    <option value="Dining Room">Dining Room</option>
+								    <option value="Kitchen">Kitchen</option>
+								    <option value="Living Room">Living Room</option>
+								  </select>
+						      </div>
+						    </div>
+							<div class="row">
+						      <div class="col-75">
+						          <select class="w3-select w3-border" name="option2">
+								    <option value="" disabled selected placeholder>Product Classification</option>
+								    <option value="Chair">Chair</option>
+								    <option value="Cabinet">Cabinet</option>
+								    <option value="Table">Table</option>
+								    <option value="Decoration">Decoration</option>
 								  </select>
 						      </div>
 						    </div>
 
 					<div class="row">
 						      <div class="col-75">
-						        <textarea placeholder="Product Description"></textarea>
+						        <textarea placeholder="Product Description" name='description'></textarea>
 						      </div>
 						    </div>
 
@@ -267,33 +278,45 @@ textarea {
 						    </div> -->
 						       <div class="">
 								  <div class="w3-half">
-								    <input class="w3-input w3-border" type="text" placeholder="WIDTH">
+								    <input class="w3-input w3-border" type="text" placeholder="WIDTH" name="wid">
 								  </div>
 
 								  <div class="w3-half">
-								    <input class="w3-input w3-border" type="text" placeholder="HEIGHT">
+								    <input class="w3-input w3-border" type="text" placeholder="HEIGHT" name="hei">
 								  </div>
 								</div>
 						     
 					
-
 					<div class="row">
 						      <div class="col-75">
-						        <input type="text" id="quantity" name="quantity" placeholder="Quantity">
+						        <input type="text" id="price" name="price" placeholder="Price">
+						      </div>
+						    </div>
+					<div class="row">
+						      <div class="col-75">
+						        <input type="number" id="quantity" name="quantity" placeholder="Quantity" value="1">
 						      </div>
 						    </div>
 
                 </div>
                 <center>
                 <p><b>Product Image</b></p>
-                <img src="img/view.png" class="prodimg"><img src="img/view.png" class="prodimg"><img src="img/view.png" class="prodimg">
+                <img src="img/view.png" class="prodimg" id="productimg">
+				<center><input type="file" class="form-control-file" name='product'id="exampleInputFile" aria-describedby="fileHelp" value="Choose Photo" accept="image/*" onchange="loadslider1(event)"></center>
                 <br>
                 <br>
-                <input type='submit' name='logo' value='SAVE' class="btn_style2">
+				<script>
+				var loadslider1 = function(event) {
+					var output = document.getElementById('productimg');
+					output.src = URL.createObjectURL(event.target.files[0]);
+					};
+				</script>
+                <input type='submit' name='productbtn' value='SAVE' class="btn_style2">
+				
                 </center>
               </div>
             </div>
-
+			</form>
 				<!-- <div id="add_modal" class="modal">
 					<div class="modal-content">
 						    <span class="close">&times;</span>
@@ -353,9 +376,7 @@ textarea {
 							<br>
 						</center>		
 						<h5 style="font-weight: 600;">Description</h5>
-						<h6 style="line-height: 2;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
-
-						Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</h6> 
+						<h6 style="line-height: 2;"><?php echo $rows['productdesc'] ?>x</h6> 
 						<h5 style="font-weight: 600;">Type</h5><h6 style="line-height: 2;">Lorem ipsum</h6>
 						<h5 style="font-weight: 600;">Code</h5><h6 style="line-height: 2;">LOREM123</h6>
 						<h5 style="font-weight: 600;">Price</h5><h6 style="line-height: 2;">123.00</h6> 	 
