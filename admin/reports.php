@@ -179,6 +179,28 @@
   padding:3% !important;
 }
 
+.rightreport{
+  padding: 1%;
+}
+
+.imgreport{
+  padding: 10%;
+  border: 1px solid black;
+  max-width: 500px;
+  max-height: 500px;
+}
+
+.rightreport{
+  font-family: 'Century Gothic';
+}
+.w3-modal-content{
+  height: auto;
+}
+
+.hr{
+  height: 1px;
+  background: black;
+}
 /*MOBILE RESPONSIVE*/
 	@media screen and (max-width: 600px) {
   .content_body{
@@ -240,6 +262,57 @@
                           <div class="w3-container">
                             <h4>View Reports</h4>
                             <hr>
+
+                            <div class="w3-half">
+                              <center><img src="../img/freedel.png " class="imgreport"></center>
+                            </div>
+
+                            <div class="w3-half rightreport">
+                              <h5 style="font-weight: 600;">Price</h5>
+                              <h6 style="line-height: 2;">Php 123.00</h6> 
+
+                              <h5 style="font-weight: 600;">Size</h5>
+                              <h6 style="line-height: 2;">Lorem Size</h6>
+
+                              <h5 style="font-weight: 600;">Wood Type</h5>
+                              <h6 style="line-height: 2;">Lorem wood</h6>
+                      
+                              <h5 style="font-weight: 600;">Color</h5>
+                              <h6 style="line-height: 2;">Lorem Color</h6>
+
+                              <h5 style="font-weight: 600;">Edge</h5>
+                              <h6 style="line-height: 2;">Lorem Edge</h6>
+
+                              <h5 style="font-weight: 600;">Additional Customization</h5>
+                              <h6 style="line-height: 2;">Lorem ipsum dolor sit emet.</h6>
+                            </div>
+                          
+                            <div class="w3-container"><hr></div>
+
+                            <div class="w3-half">
+                              <center><img src="../img/freedel.png " class="imgreport"></center>
+                            </div>
+
+                            <div class="w3-half rightreport">
+                                <h5 style="font-weight: 600;">Price</h5>
+                                <h6 style="line-height: 2;">Php 123.00</h6> 
+
+                                <h5 style="font-weight: 600;">Size</h5>
+                                <h6 style="line-height: 2;">Lorem Size</h6>
+
+                                <h5 style="font-weight: 600;">Wood Type</h5>
+                                <h6 style="line-height: 2;">Lorem wood</h6>
+                        
+                                <h5 style="font-weight: 600;">Color</h5>
+                                <h6 style="line-height: 2;">Lorem Color</h6>
+
+                                <h5 style="font-weight: 600;">Edge</h5>
+                                <h6 style="line-height: 2;">Lorem Edge</h6>
+
+                                <h5 style="font-weight: 600;">Additional Customization</h5>
+                                <h6 style="line-height: 2;">Lorem ipsum dolor sit emet.</h6>
+                            </div>
+                            <div class="w3-container"><hr></div>
                           </div>
                         </div>
                     </div>
