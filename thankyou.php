@@ -35,19 +35,19 @@
 	<center>TRANSACTION CODE: <?php echo $_GET['TransactionCode']; ?></center>	
     <p class="note">Payment needs to be settled before delivery. Please refer to the payment details below:</p>
     <center>
-    <div class="w3-third">
+    <div class="w3-quarter">
     	<center><img src="img/cash.png" style="width: 40px;"><p class="details">50% downpayment</p></center>
     </div>
 
-    <div class="w3-third">
+    <div class="w3-quarter">
     	<center><img src="img/name.png" style="width: 40px;"><p class="details">Evelyn Morada</p></center>
 	</div>
 	
-	<div class="w3-third">
-    	<center><img src="img/name.png" style="width: 40px;"><p class="details">09294888273</p></center>
+	<div class="w3-quarter">
+    	<center><img src="img/phone.png" style="width: 40px;"><p class="details">09294888273</p></center>
     </div>
 
-    <div class="w3-third">
+    <div class="w3-quarter">
     	<center><img src="img/email.png" style="width: 40px;"><p class="details">evelynmorada@gmail.com</p></center>
     </div>
     </center>

@@ -8,26 +8,26 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style type="text/css">
-	body, html {
-	    height: 100%;
-	    line-height: 1.8;
-	    font-family: 'Century Gothic';
-	}
-	/* Full height image header */
-	.bgimg-1 {
-	    background-position: center;
-	    background-size: cover;
-	    background-image: url("/w3images/mac.jpg");
-	    min-height: 100%;
-	}
-	.w3-bar .w3-button {
-	    padding: 16px;
-	}
-	
-	.nav a{
-		text-decoration: none;
-		margin-top: 10px;
-	}	
+  body, html {
+      height: 100%;
+      line-height: 1.8;
+      font-family: 'Century Gothic';
+  }
+  /* Full height image header */
+  .bgimg-1 {
+      background-position: center;
+      background-size: cover;
+      background-image: url("/w3images/mac.jpg");
+      min-height: 100%;
+  }
+  .w3-bar .w3-button {
+      padding: 16px;
+  }
+  
+  .nav a{
+    text-decoration: none;
+    margin-top: 10px;
+  } 
 
   .nav a:hover{
     background: #ceaea5 !important;
@@ -84,9 +84,49 @@
 .dropdown:hover .dropdown-content {
     display: block;
 }
+
+
+.user:hover{
+  background: #ceaea5 !important;
+}
+
+.accordion {
+    color: #fff;
+    cursor: pointer;
+    padding: 18px;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+
+}
+
+.active, .accordion:hover {
+  
+}
+
+.panel {
+  /*  padding: 0 20px;*/
+    margin-left: 20px;
+    display: none;
+    background: transparent !important;
+    
+}
+a.panel:hover {
+  /*  padding: 0 18px;*/
+    display: none;
+    background-color: #343a40;
+    text-decoration: none !important;
+}
+
+.links{
+  padding:5% !important;
+  text-decoration: none !important;
+}
 </style>
 <body>
-	<!-- Navbar (sit on top) -->
+  <!-- Navbar (sit on top) -->
 <div class="w3-top">
   <div class="w3-bar w3-white w3-card" id="myNavbar">
     <a href="#index.php" class="w3-bar-item w3-button w3-wide"><i><img src="img/logo.png" style="width: 150px;" class="logo"></i></a>
@@ -114,7 +154,14 @@
        <?php
         if(!empty($_SESSION['customername'])){
       ?>
-      <a href="#" class="w3-bar-item w3-button"><?php echo $_SESSION['customername'] ?></a>
+      <!-- <a href="#" class="w3-bar-item w3-button"><?php echo $_SESSION['customername'] ?></a> -->
+      <div class="w3-dropdown-hover" style="margin-top: 9px;">
+      <button class="w3-button user"><?php echo $_SESSION['customername'] ?></button>
+      <div class="w3-dropdown-content w3-bar-block w3-card-4">
+        <a href="#" class="w3-bar-item w3-button">Order History</a>
+        <a href="#" class="w3-bar-item w3-button">Logout</a>
+      </div>
+      </div>
       <a href="checkout.php" class="w3-bar-item w3-button">My Cart</a>
       <?php
         }
@@ -139,14 +186,28 @@
   <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close Menu ×</a>
       <a href="index.php" class="w3-bar-item w3-button">HOME</a>
       <a href="about.php" class="w3-bar-item w3-button">ABOUT</a>
-      <a href="products.php" class="w3-bar-item w3-button">PRODUCTS</a>
+      <a href="#products" class="w3-bar-item w3-button w3-padding accordion links">&nbsp; PRODUCTS</a>
+    <div class="panel">
+      <a href="products.php?Category=Bedroom" class="w3-bar-item w3-button w3-padding links">Bedroom</a>
+      <a href="products.php?Category=Cabinets" class="w3-bar-item w3-button w3-padding links">Cabinets</a>
+      <a href="products.php?Category=Dining Room" class="w3-bar-item w3-button w3-padding links">Dining Room</a>
+      <a href="products.php?Category=Kitchen" class="w3-bar-item w3-button w3-padding links">Kitchen</a>
+      <a href="products.php?Category=Living Room" class="w3-bar-item w3-button w3-padding links">Living Room</a>
+      <a href="products.php?Category=All" class="w3-bar-item w3-button w3-padding links">See all</a>
+    </div>
       <a href="gallery.php" class="w3-bar-item w3-button">GALLERY</a>
       <a href="contact.php" class="w3-bar-item w3-button">CONTACT US</a>
       <hr>
       <?php
         if(!empty($_SESSION['customername'])){
       ?>
-      <a href="#" class="w3-bar-item w3-button"><?php echo $_SESSION['customername'] ?></a>
+<!--       <a href="#" class="w3-bar-item w3-button"><?php echo $_SESSION['customername'] ?></a> -->
+
+      <a href="#products" class="w3-bar-item w3-button w3-padding accordion links">&nbsp; <?php echo $_SESSION['customername'] ?></a>
+    <div class="panel">
+      <a href="#" class="w3-bar-item w3-button w3-padding links">Order History</a>
+      <a href="#" class="w3-bar-item w3-button w3-padding links">Logout</a>
+    </div>
       <a href="#" class="w3-bar-item w3-button">My Cart</a>
       <?php
         }
@@ -176,5 +237,24 @@ function w3_close() {
     mySidebar.style.display = "none";
 }
 </script>
+
+<!-- for mobile menu -->
+
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.display === "block") {
+            panel.style.display = "none";
+        } else {
+            panel.style.display = "block";
+        }
+    });
+}
+</script> <!-- end of menu accordion / dropdown cms -->
 </body>
 </html>
