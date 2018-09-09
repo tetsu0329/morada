@@ -159,7 +159,7 @@ a.panel:hover {
       <button class="w3-button user"><?php echo $_SESSION['customername'] ?></button>
       <div class="w3-dropdown-content w3-bar-block w3-card-4">
         <a href="#" class="w3-bar-item w3-button">Order History</a>
-        <a href="#" class="w3-bar-item w3-button">Logout</a>
+        <a href="logout.php" class="w3-bar-item w3-button">Logout</a>
       </div>
       </div>
       <a href="checkout.php" class="w3-bar-item w3-button">My Cart</a>

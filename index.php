@@ -184,7 +184,7 @@
 				{
 		?>
 	    <div class="w3-col l3 m6 w3-margin-bottom boxlink">
-		    <a href="product_view.php"><div class="w3-card boxprod">
+		    <a href="product_view.php?ProductID=<?php echo $rows['id'] ?>"><div class="w3-card boxprod">
 		      <img src="<?php echo substr($rows['productimage'],3) ?>" alt="John" style="width:100%; height:250px">
 		        <div class="w3-container">
 		          <h3><?php echo $rows['productname'] ?></h3>
