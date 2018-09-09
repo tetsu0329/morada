@@ -224,6 +224,10 @@ if(isset($_POST['submitorder'])){
 	if($_POST['payment'] == "paypal"){
 		echo "<script>window.location.replace('payment/index.php?process=1')</script>";
 	}
+	if($_POST['payment'] == "cod"){
+		$_SESSION['paymentAck'] = 'BANK_DEPOSIT';
+		echo "<script>window.location.replace('payment/bank.php')</script>";
+	}
 }
 ?>
 <?php include ('footer.php');?>

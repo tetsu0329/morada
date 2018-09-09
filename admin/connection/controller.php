@@ -10,7 +10,7 @@
     $sqlinquirycount3 = mysqli_query($conn,"SELECT * FROM inquirytable WHERE messagestatus = 'Read'");
     $inqread = mysqli_num_rows($sqlinquirycount3);
 
-    $sqlordercount = mysqli_query($conn,"SELECT * FROM ordertable");
+    $sqlordercount = mysqli_query($conn,"SELECT * FROM transactiontable");
     $ordercount = mysqli_num_rows($sqlordercount);
 
     $sqlusercount = mysqli_query($conn,"SELECT * FROM usertable");

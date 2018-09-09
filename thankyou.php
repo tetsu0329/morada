@@ -32,7 +32,7 @@
 	<div class="w3-container w3-content" style="max-width:800px">
 	<div class="thanks"><h2 class="w3-wide w3-center">THANK YOU FOR CHOOSING US!</h2><p class="w3-opacity w3-center"><i>We are glad you trusted us!</i></p></div>
 	<br><br>
-	<center>TRANSACTION CODE: 4</center>	
+	<center>TRANSACTION CODE: <?php echo $_GET['TransactionCode']; ?></center>	
     <p class="note">Payment needs to be settled before delivery. Please refer to the payment details below:</p>
     <center>
     <div class="w3-third">

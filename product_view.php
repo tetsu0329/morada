@@ -342,7 +342,7 @@ img {
         </select>
         <?php
         }
-        else{
+        if($rows['productclass'] == 'Decoration'){
         ?>
         <select class="w3-select w3-border" name="option" hidden>
           <option value=""></option>
