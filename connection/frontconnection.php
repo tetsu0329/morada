@@ -3,7 +3,7 @@ $sqlselectabout = mysqli_query($conn,"SELECT * FROM abouttable WHERE id='1'");
 $sqlselectmission = mysqli_query($conn,"SELECT * FROM abouttable WHERE id='1'");
 $sqlselectvision = mysqli_query($conn,"SELECT * FROM abouttable WHERE id='1'");
 $sqlselectcontact = mysqli_query($conn,"SELECT * FROM contacttable WHERE id='1'");
-$sqlselectproduct = mysqli_query($conn,"SELECT * FROM producttbl");
+
 $sqlselectslider = mysqli_query($conn,"SELECT * FROM slidertable");
 $sqlselectgallery = mysqli_query($conn,"SELECT * FROM gallerytbl");
 $sqlproduct = mysqli_query($conn,"SELECT * FROM producttbl ORDER BY id DESC LIMIT 4");
@@ -14,11 +14,13 @@ if(isset($_POST['loginbtn'])){
 
     $result = mysqli_query($conn,"SELECT * FROM usertable WHERE emailadd = '$username' AND password = '$password'")
             or die ("failed to query database". mysqli_error());
-
+    $results = mysqli_fetch_assoc($result);
     $numrows = mysqli_num_rows($result);
     if($numrows==1){
+        $_SESSION['customername'] = $results['fname']." ".$results['lname'];
+        $_SESSION['customerid'] = $results['id'];
         echo"<script type='text/javascript'>alert('Login Successful'); 
-        window.location='login.php';
+        window.location='products.php';
         </script>";
     }
     else{

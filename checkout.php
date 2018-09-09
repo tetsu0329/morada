@@ -148,7 +148,10 @@ else{
   <td></td>
   <td></td>
   <td></td>
-  <td><b>PHP <?php echo $total; ?></b></td>
+	<td><b><?php if(!empty($_SESSION['product'])){ echo "PHP ". $total; }
+	else{
+		echo "No items in the cart";
+	}?></b></td>
 </tr>
 <!-- total -->
 

@@ -327,12 +327,12 @@ img {
           <option value="Wood">Wood</option>
         </select>
 
-        <h6>Doors</h6>
+        <h6>Cubes</h6>
         <select class="w3-select w3-border" name="option2">
           <option value="" disabled selected>Choose color</option>
-          <option value="2 Doors">2 Doors</option>
-          <option value="3 Doors">3 Doors</option>
-          <option value="4 Doors">4 Doors</option>
+          <option value="2 Cubes">2 Cubes</option>
+          <option value="3 Cubes">3 Cubes</option>
+          <option value="4 Cubes">4 Cubes</option>
         </select>
 
         <select class="w3-select w3-border" name="option3" hidden>

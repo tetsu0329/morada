@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -97,19 +100,31 @@
     </button>
     </a>
     <div class="dropdown-content">
-      <a href="#">Bedroom</a>
-      <a href="#">Cabinets</a>
-      <a href="#">Dining Room</a>
-      <a href="#">Kitchen</a>
-      <a href="#">Living Room</a>
-      <a href="products.php">See all</a>
+      <a href="products.php?Category=Bedroom">Bedroom</a>
+      <a href="products.php?Category=Cabinets">Cabinets</a>
+      <a href="products.php?Category=Dining Room">Dining Room</a>
+      <a href="products.php?Category=Kitchen">Kitchen</a>
+      <a href="products.php?Category=Living Room">Living Room</a>
+      <a href="products.php?Category=All">See all</a>
     </div>
   </div>
       <a href="gallery.php" class="w3-bar-item w3-button">GALLERY</a>
       <a href="contact.php" class="w3-bar-item w3-button">CONTACT US</a>
        <a href="#" class="w3-bar-item w3-button isDisabled">|</a>
-      <a href="login.php" class="w3-bar-item w3-button">Login</a>
-      <a href="register.php" class="w3-bar-item w3-button">Register Here</a>
+       <?php
+        if(!empty($_SESSION['customername'])){
+      ?>
+      <a href="#" class="w3-bar-item w3-button"><?php echo $_SESSION['customername'] ?></a>
+      <a href="checkout.php" class="w3-bar-item w3-button">My Cart</a>
+      <?php
+        }
+        if(empty($_SESSION['customername'])){
+      ?>
+        <a href="login.php" class="w3-bar-item w3-button">Login</a>
+        <a href="reg.php" class="w3-bar-item w3-button">Register Here</a>
+      <?php
+        }
+      ?>
     </div>
     <!-- Hide right-floated links on small screens and replace them with a menu icon -->
 
@@ -128,8 +143,20 @@
       <a href="gallery.php" class="w3-bar-item w3-button">GALLERY</a>
       <a href="contact.php" class="w3-bar-item w3-button">CONTACT US</a>
       <hr>
-      <a href="login.php" class="w3-bar-item w3-button">Login</a>
-      <a href="reg.php" class="w3-bar-item w3-button">Register Here</a>
+      <?php
+        if(!empty($_SESSION['customername'])){
+      ?>
+      <a href="#" class="w3-bar-item w3-button"><?php echo $_SESSION['customername'] ?></a>
+      <a href="#" class="w3-bar-item w3-button">My Cart</a>
+      <?php
+        }
+        if(empty($_SESSION['customername'])){
+      ?>
+        <a href="login.php" class="w3-bar-item w3-button">Login</a>
+        <a href="reg.php" class="w3-bar-item w3-button">Register Here</a>
+      <?php
+        }
+      ?>
 </nav>
 
 <script>

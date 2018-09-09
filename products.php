@@ -2,6 +2,13 @@
 	include ('navigation.php');
 	include ('connection/frontconn.php');
 	include ('connection/frontconnection.php');
+	$cat = $_GET['Category'];
+	if($cat == 'All'){
+			$sqlselectproduct = mysqli_query($conn,"SELECT * FROM producttbl");
+	}
+	else{
+			$sqlselectproduct = mysqli_query($conn,"SELECT * FROM producttbl WHERE productcat = '$cat'");
+	}	
 ?>
 <!DOCTYPE html>
 <html>
