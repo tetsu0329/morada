@@ -199,6 +199,8 @@ img {
 .demo:hover {
   opacity: 1;
 }
+
+
 </style> 	
 <body>
 
@@ -219,22 +221,22 @@ img {
 <div class="container">
   <div class="mySlides">
     <div class="numbertext">1 / 6</div>
-    <img src="<?php echo substr($rows['productimage'],3) ?>" style="width:100%">
+    <center><img src="<?php echo substr($rows['productimage'],3) ?>" style="width:100%; max-height: 500px; max-width: 500px;" ></center>
   </div>
 
   <div class="mySlides">
     <div class="numbertext">2 / 6</div>
-    <img src="<?php echo substr($rows['productimage'],3) ?>" style="width:100%">
+    <center><img src="<?php echo substr($rows['productimage'],3) ?>" style="width:100%; max-height: 500px; max-width: 500px;"></center>
   </div>
 
   <div class="mySlides">
     <div class="numbertext">3 / 6</div>
-    <img src="<?php echo substr($rows['productimage'],3) ?>" style="width:100%">
+    <center><img src="<?php echo substr($rows['productimage'],3) ?>" style="width:100%; max-height: 500px; max-width: 500px;"></center>
   </div>
     
   <div class="mySlides">
     <div class="numbertext">4 / 6</div>
-    <img src="<?php echo substr($rows['productimage'],3) ?>" style="width:100%">
+    <center><img src="<?php echo substr($rows['productimage'],3) ?>" style="width:100%; max-height: 500px; max-width: 500px;"></center>
   </div>
 
 </div>

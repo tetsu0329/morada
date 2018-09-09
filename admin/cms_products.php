@@ -130,7 +130,7 @@
 }
 
 .top_btns{
-	margin-left: 93%;
+	margin-left: 96%;
 }
 
 /*forms*/
@@ -138,7 +138,7 @@
     box-sizing: border-box;
 }
 
-	input[type=text], select, textarea {
+	input[type=text], input[type=number], select, textarea {
     width: 100% !important;
     padding: 12px;
     border: 1px solid #ccc;
@@ -192,6 +192,8 @@
 	border: 1px solid #8C6A48;
 	margin: 5px;
 	padding: 15px;
+	max-height: 300px !important;
+	max-width: 300px !important;
 }
 
 textarea {
@@ -200,6 +202,7 @@ textarea {
     font-size: 16px;
     resize: none;
 }
+
 /*MOBILE RESPONSIVE*/
 	@media screen and (max-width: 600px) {
   .content_body{
@@ -213,7 +216,6 @@ textarea {
 	}</style>
 <body>
 <div class="content">
-
   <div class="content_body">
   	<div style="padding-top: 5%;"></div>
     <h2>Products</h2>
@@ -222,12 +224,14 @@ textarea {
     <div style="overflow-x:auto;">
     <div class="top_btns">
 	    <button id="add_btn" class="btn_style"><img src="img/add.png" style="height: 15px; width: 15px;"></button>
+	    
 	    <div id="add_modal" class="modal">
               <div class="modal-content">
                 <span class="close">&times;</span>
                 <h4>Add Product</h4>
                 <hr>
                 <form action="" method="POST" enctype="multipart/form-data">
+
                 <div class="container">
                 	<div class="row">
 						      <div class="col-75 prodcode">
@@ -235,11 +239,11 @@ textarea {
 						      </div>
 					</div>
 
-					 <div class="row">
-						      <div class="col-75">
-						        <input type="text" id="prodname" name="prodname" placeholder="Product Name">
-						      </div>
-						    </div>
+					<div class="row">
+						<div class="col-75">
+						    <input type="text" id="prodname" name="prodname" placeholder="Product Name">
+						</div>
+					</div>
 
 					<div class="row">
 						      <div class="col-75">
@@ -253,6 +257,7 @@ textarea {
 								  </select>
 						      </div>
 						    </div>
+
 							<div class="row">
 						      <div class="col-75">
 						          <select class="w3-select w3-border" name="option2">
@@ -287,21 +292,168 @@ textarea {
 								</div>
 						     
 					
-					<div class="row">
+							<div class="row">
 						      <div class="col-75">
 						        <input type="text" id="price" name="price" placeholder="Price">
 						      </div>
 						    </div>
-					<div class="row">
+
+							<div class="row">
 						      <div class="col-75">
 						        <input type="number" id="quantity" name="quantity" placeholder="Quantity" value="1">
 						      </div>
 						    </div>
 
                 </div>
+
                 <center>
                 <p><b>Product Image</b></p>
-                <img src="img/view.png" class="prodimg" id="productimg">
+                <img src="img/view.png" class="prodimg" id="productimg"><br>
+				<center><input type="file" class="form-control-file" name='product'id="exampleInputFile" aria-describedby="fileHelp" value="Choose Photo" accept="image/*" onchange="loadslider1(event)" class="upload"></center>
+                <br>
+                <br>
+				<script>
+				var loadslider1 = function(event) {
+					var output = document.getElementById('productimg');
+					output.src = URL.createObjectURL(event.target.files[0]);
+					};
+				</script>
+                <input type='submit' name='productbtn' value='SAVE' class="btn_style2">
+				
+                </center>
+              </div>
+          </form>
+      </div>
+	    
+    </div>
+    <br>
+
+
+	    <center>
+		  <table>
+		    <tr>
+		      <th>Product Code</th>
+		      <th>Product Name</th>
+		      <th><center>Quantity</center></th>
+		      <th><center>ACTIONS</center></th>
+
+		    </tr>
+
+			<?php
+	            while($rows=mysqli_fetch_assoc($sqlproductcount))
+	            {
+			?>
+		    <tr>
+		      <td>Product<?php echo $rows['id'] ?></td>
+		      <td class="name"><?php echo $rows['productname'] ?></td>
+		      <td><center><?php echo $rows['quantity'] ?></center></td>
+		      <td style="float: left;" class="action">
+					<button id="view_btn" class="btn_style"><img src="img/view.png" style="height: 15px; width: 15px;"></button>
+						<div id="view_modal" class="modal">
+						  <div class="modal-content">
+						    <span class="close">&times;</span>
+						    <h4>View Product Name</h4>
+						    <hr>
+							<center>
+							<img src="img/logo.png" width="300px;" class="prod_img"><br>
+								<br>
+							</center>		
+							<h5 style="font-weight: 600;">Description</h5>
+							<h6 style="line-height: 2;"><?php echo $rows['productdesc'] ?>x</h6> 
+							<h5 style="font-weight: 600;">Type</h5><h6 style="line-height: 2;">Lorem ipsum</h6>
+							<h5 style="font-weight: 600;">Code</h5><h6 style="line-height: 2;">LOREM123</h6>
+							<h5 style="font-weight: 600;">Price</h5><h6 style="line-height: 2;">123.00</h6> 	 
+						  </div>
+
+						  <br>
+						  <br>
+						</div>
+
+						<button id="edit_btn" class="btn_style"><img src="img/edit.png" style="height: 15px; width: 15px;"></button>
+						<div id="edit_modal" class="modal">
+						  <div class="modal-content">
+						    <span class="close">&times;</span>
+						    <h4>Edit Product</h4>
+                <hr>
+                <form action="" method="POST" enctype="multipart/form-data">
+
+                <div class="container">
+                	<div class="row">
+						      <div class="col-75 prodcode">
+						        <input type="text" id="prodcode" name="prodcode" placeholder="Product Code">
+						      </div>
+					</div>
+
+					 <div class="row">
+						      <div class="col-75">
+						        <input type="text" id="prodname" name="prodname" placeholder="Product Name">
+						      </div>
+						    </div>
+
+					<div class="row">
+						      <div class="col-75">
+						          <select class="w3-select w3-border" name="option">
+								    <option value="" disabled selected placeholder>Product Category</option>
+								    <option value="Bedroom">Bedroom</option>
+								    <option value="Cabinets">Cabinets</option>
+								    <option value="Dining Room">Dining Room</option>
+								    <option value="Kitchen">Kitchen</option>
+								    <option value="Living Room">Living Room</option>
+								  </select>
+						      </div>
+						    </div>
+
+							<div class="row">
+						      <div class="col-75">
+						          <select class="w3-select w3-border" name="option2">
+								    <option value="" disabled selected placeholder>Product Classification</option>
+								    <option value="Chair">Chair</option>
+								    <option value="Cabinet">Cabinet</option>
+								    <option value="Table">Table</option>
+								    <option value="Decoration">Decoration</option>
+								  </select>
+						      </div>
+						    </div>
+
+					<div class="row">
+						      <div class="col-75">
+						        <textarea placeholder="Product Description" name='description'></textarea>
+						      </div>
+						    </div>
+
+					<!--  <div class="row">
+						      <div class="col-75 prodcode">
+						        <input type="text" id="width" name="width" placeholder="WIDTH">x<input type="text" id="height" name="height" placeholder="HEIGHT">
+						      </div>
+						    </div> -->
+						       <div class="">
+								  <div class="w3-half">
+								    <input class="w3-input w3-border" type="text" placeholder="WIDTH" name="wid">
+								  </div>
+
+								  <div class="w3-half">
+								    <input class="w3-input w3-border" type="text" placeholder="HEIGHT" name="hei">
+								  </div>
+								</div>
+						     
+					
+							<div class="row">
+						      <div class="col-75">
+						        <input type="text" id="price" name="price" placeholder="Price">
+						      </div>
+						    </div>
+
+							<div class="row">
+						      <div class="col-75">
+						        <input type="number" id="quantity" name="quantity" placeholder="Quantity" value="1">
+						      </div>
+						    </div>
+
+                </div>
+
+                <center>
+                <p><b>Product Image</b></p>
+                <img src="img/view.png" class="prodimg" id="productimg"><br><br>
 				<center><input type="file" class="form-control-file" name='product'id="exampleInputFile" aria-describedby="fileHelp" value="Choose Photo" accept="image/*" onchange="loadslider1(event)"></center>
                 <br>
                 <br>
@@ -315,95 +467,21 @@ textarea {
 				
                 </center>
               </div>
-            </div>
-			</form>
-				<!-- <div id="add_modal" class="modal">
-					<div class="modal-content">
-						    <span class="close">&times;</span>
-						    <h4>Add Product</h4>
-						    <hr>
-
-						<div class="container">
-						    
-
-						   
-
-						    
-
-						    
-
-						   
-
-						    
-						    <br>
-						    
-
-						    <br> 
-						    <input type='submit' name='logo' value='SAVE' class="btn_style">		
+         </div>
+     </form>
+											   
+						  </div>
 						</div>
-					</div>
-				</div> -->
-	    <button class="btn_style"><img src="img/delete.png" style="height: 15px; width: 15px;"></button>
-    </div>
-    <br>
-    <center>
-	  <table>
-	    <tr>
-	      <th>Product Code</th>
-	      <th>Product Name</th>
-	      <th><center>Quantity</center></th>
-	      <th><center>ACTIONS</center></th>
 
-	    </tr>
-
-		<?php
-            while($rows=mysqli_fetch_assoc($sqlproductcount))
-            {
-		?>
-	    <tr>
-	      <td>Product<?php echo $rows['id'] ?></td>
-	      <td class="name"><?php echo $rows['productname'] ?></td>
-	      <td><center><?php echo $rows['quantity'] ?></center></td>
-	      <td style="float: left;" class="action">
-				<button id="view_btn" class="btn_style"><img src="img/view.png" style="height: 15px; width: 15px;"></button>
-					<div id="view_modal" class="modal">
-					  <div class="modal-content">
-					    <span class="close">&times;</span>
-					    <h4>View Product Name</h4>
-					    <hr>
-						<center>
-						<img src="img/logo.png" width="300px;" class="prod_img"><br>
-							<br>
-						</center>		
-						<h5 style="font-weight: 600;">Description</h5>
-						<h6 style="line-height: 2;"><?php echo $rows['productdesc'] ?>x</h6> 
-						<h5 style="font-weight: 600;">Type</h5><h6 style="line-height: 2;">Lorem ipsum</h6>
-						<h5 style="font-weight: 600;">Code</h5><h6 style="line-height: 2;">LOREM123</h6>
-						<h5 style="font-weight: 600;">Price</h5><h6 style="line-height: 2;">123.00</h6> 	 
-					  </div>
-
-					  <br>
-					  <br>
-					</div>
-
-					<button id="edit_btn" class="btn_style"><img src="img/edit.png" style="height: 15px; width: 15px;"></button>
-					<div id="edit_modal" class="modal">
-					  <div class="modal-content">
-					    <span class="close">&times;</span>
-					    <h4>Edit Product Name</h4>
-					    <hr>
-										   
-					  </div>
-					</div>
-
-	      	
-	      </td>
-	    </tr>
-		<?php
-			}
-		?>
-	  </table>
-	</center>
+						<button class="btn_style"><img src="img/delete.png" style="height: 15px; width: 15px;"></button>
+		      	
+		      </td>
+		    </tr>
+			<?php
+				}
+			?>
+		  </table>
+		</center>
 	</div>
 	</div>
 <br>
