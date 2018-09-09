@@ -195,51 +195,65 @@
     <h2>Reports</h2>
     <hr>
 <br>
+<center>
+  <table>
+            <tr>
+              <th>Transaction Number</th>
+              <th>Date of Transaction</th>
+              <th><center>Order By</center></th>
+              <th><center>Order Status</center></th>
+              <th><center>ACTIONS</center></th>
+
+            </tr>
+                
+
+            <tr>
+                <td><center>01</center></td>
+                <td><center>September 9, 2018</center></td>
+                <td><center>Order by lorem</center></td>
+                <td><center>Status</center></td>
+                 <td style="float: left;">
+                    <button onclick="document.getElementById('id01').style.display='block'" class="btn_style"><img src="img/view.png" style="height: 15px; width: 15px;"></button>
+                      <div id="id01" class="w3-modal">
+                        <div class="w3-modal-content">
+                          <header class="w3-container"> 
+                            <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+                          </header>
+                          
+                          <div class="w3-container">
+                            <h4>View Reports</h4>
+                            <hr>
+                          </div>
+                        </div>
+                      </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td><center>01</center></td>
+                <td><center>September 9, 2018</center></td>
+                <td><center>Order by lorem</center></td>
+                <td><center>Status</center></td>
+                 <td style="float: left;">
+                    <button onclick="document.getElementById('id01').style.display='block'" class="btn_style"><img src="img/view.png" style="height: 15px; width: 15px;"></button>
+                      <div id="id01" class="w3-modal">
+                        <div class="w3-modal-content">
+                          <header class="w3-container"> 
+                            <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+                          </header>
+                          
+                          <div class="w3-container">
+                            <h4>View Reports</h4>
+                            <hr>
+                          </div>
+                        </div>
+                      </div>
+                </td>
+            </tr>
+           
+          </table>
+      </center>
    </div>
   </div>
 </body>
-<!-- scripts -->
-<?php
-echo "<script> var view_modal = document.getElementById('view_modal'); </script>";
-echo "<script> var reply_modal = document.getElementById('reply_modal'); </script>";
-	if(isset($_GET['ID'])){
-		$idd = $_GET['ID'];
-		echo "<script> view_modal.style.display = 'block' </script>";
-		$result = mysqli_query($conn,"UPDATE inquirytable SET messagestatus = 'Read' WHERE id = $idd")
-            or die ("failed to query database". mysqli_error());
-	}
-	if(isset($_GET['Reply'])){
-		echo "<script> reply_modal.style.display = 'block' </script>";
-	}
-?>
-
-<!-- Script for closing the modal -->
-<script>
-	// Get the <span> element that closes the modal
-	var view_span = document.getElementsByClassName("close")[0];
-	var reply_span = document.getElementsByClassName("close")[1];
-
-	// When the user clicks on <span> (x), close the modal
-
-	view_span.onclick = function() {
-		view_modal.style.display = "none";
-
-	}
-	reply_span.onclick = function() {
-		reply_modal.style.display = "none";
-
-	}
-	
-	// When the user clicks anywhere outside of the modal, close it
-	window.onclick = function(event) {
-			
-		if (event.target == view_modal) {
-		view_modal.style.display = "none";
-		}
-
-		if (event.target == reply_modal) {
-		reply_modal.style.display = "none";
-		}
-	}
-</script>
 </html>

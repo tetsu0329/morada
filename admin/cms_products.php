@@ -216,71 +216,64 @@ textarea {
 	}</style>
 <body>
 <div class="content">
-  <div class="content_body">
-  	<div style="padding-top: 5%;"></div>
-    <h2>Products</h2>
-    <hr>
-    <br>
-    <div style="overflow-x:auto;">
-    <div class="top_btns">
-	    <button id="add_btn" class="btn_style"><img src="img/add.png" style="height: 15px; width: 15px;"></button>
-	    
-	    <div id="add_modal" class="modal">
-              <div class="modal-content">
-                <span class="close">&times;</span>
-                <h4>Add Product</h4>
-                <hr>
-                <form action="" method="POST" enctype="multipart/form-data">
+	<div class="content_body">
+		<div style="padding-top: 5%;"></div>
+    		<h2>Products</h2>
+    		<hr>
+    		<br>
+    		<div style="overflow-x:auto;">
+    			<div class="top_btns">
+	    			<button id="add_btn" class="btn_style"><img src="img/add.png" style="height: 15px; width: 15px;"></button>
+	    			<div id="add_modal" class="modal">
+              			<div class="modal-content">
+			                <span class="close">&times;</span>
+			                <h4>Add Product</h4>
+			                <hr>
+                			<form action="" method="POST" enctype="multipart/form-data">
+                			<div class="container">
+                				<div class="row">
+								    <div class="col-75 prodcode">
+								        <input type="text" id="prodcode" name="prodcode" placeholder="Product Code">
+								    </div>
+								</div>
 
-                <div class="container">
-                	<div class="row">
-						      <div class="col-75 prodcode">
-						        <input type="text" id="prodcode" name="prodcode" placeholder="Product Code">
-						      </div>
-					</div>
+								<div class="row">
+									<div class="col-75">
+									    <input type="text" id="prodname" name="prodname" placeholder="Product Name">
+									</div>
+								</div>
 
-					<div class="row">
-						<div class="col-75">
-						    <input type="text" id="prodname" name="prodname" placeholder="Product Name">
-						</div>
-					</div>
+								<div class="row">
+						      		<div class="col-75">
+						        		<select class="w3-select w3-border" name="option">
+										    <option value="" disabled selected placeholder>Product Category</option>
+										    <option value="Bedroom">Bedroom</option>
+										    <option value="Cabinets">Cabinets</option>
+										    <option value="Dining Room">Dining Room</option>
+										    <option value="Kitchen">Kitchen</option>
+										    <option value="Living Room">Living Room</option>
+										</select>
+						      		</div>
+						    	</div>
 
-					<div class="row">
-						      <div class="col-75">
-						          <select class="w3-select w3-border" name="option">
-								    <option value="" disabled selected placeholder>Product Category</option>
-								    <option value="Bedroom">Bedroom</option>
-								    <option value="Cabinets">Cabinets</option>
-								    <option value="Dining Room">Dining Room</option>
-								    <option value="Kitchen">Kitchen</option>
-								    <option value="Living Room">Living Room</option>
-								  </select>
-						      </div>
-						    </div>
+								<div class="row">
+						    		<div class="col-75">
+						        		<select class="w3-select w3-border" name="option2">
+										    <option value="" disabled selected placeholder>Product Classification</option>
+										    <option value="Chair">Chair</option>
+										    <option value="Cabinet">Cabinet</option>
+										    <option value="Table">Table</option>
+										    <option value="Decoration">Decoration</option>
+										</select>
+						    		</div>
+						    	</div>
 
-							<div class="row">
-						      <div class="col-75">
-						          <select class="w3-select w3-border" name="option2">
-								    <option value="" disabled selected placeholder>Product Classification</option>
-								    <option value="Chair">Chair</option>
-								    <option value="Cabinet">Cabinet</option>
-								    <option value="Table">Table</option>
-								    <option value="Decoration">Decoration</option>
-								  </select>
-						      </div>
-						    </div>
+								<div class="row">
+								      <div class="col-75">
+								        <textarea placeholder="Product Description" name='description'></textarea>
+								      </div>
+						    	</div>
 
-					<div class="row">
-						      <div class="col-75">
-						        <textarea placeholder="Product Description" name='description'></textarea>
-						      </div>
-						    </div>
-
-					<!--  <div class="row">
-						      <div class="col-75 prodcode">
-						        <input type="text" id="width" name="width" placeholder="WIDTH">x<input type="text" id="height" name="height" placeholder="HEIGHT">
-						      </div>
-						    </div> -->
 						       <div class="">
 								  <div class="w3-half">
 								    <input class="w3-input w3-border" type="text" placeholder="WIDTH" name="wid">
@@ -291,58 +284,53 @@ textarea {
 								  </div>
 								</div>
 						     
-					
-							<div class="row">
-						      <div class="col-75">
-						        <input type="text" id="price" name="price" placeholder="Price">
-						      </div>
-						    </div>
+								<div class="row">
+							      <div class="col-75">
+							        <input type="text" id="price" name="price" placeholder="Price">
+							      </div>
+							    </div>
 
-							<div class="row">
-						      <div class="col-75">
-						        <input type="number" id="quantity" name="quantity" placeholder="Quantity" value="1">
-						      </div>
-						    </div>
+								<div class="row">
+							      <div class="col-75">
+							        <input type="number" id="quantity" name="quantity" placeholder="Quantity" value="1">
+							      </div>
+							    </div>
+                			</div> <!-- container -->
 
-                </div>
-
-                <center>
-                <p><b>Product Image</b></p>
-                <img src="img/view.png" class="prodimg" id="productimg"><br>
-				<center><input type="file" class="form-control-file" name='product'id="exampleInputFile" aria-describedby="fileHelp" value="Choose Photo" accept="image/*" onchange="loadslider1(event)" class="upload"></center>
-                <br>
-                <br>
-				<script>
-				var loadslider1 = function(event) {
-					var output = document.getElementById('productimg');
-					output.src = URL.createObjectURL(event.target.files[0]);
-					};
-				</script>
-                <input type='submit' name='productbtn' value='SAVE' class="btn_style2">
-				
-                </center>
-              </div>
+			                <center>
+			                <p><b>Product Image</b></p>
+			                <img src="img/view.png" class="prodimg" id="productimg"><br>
+							<center><input type="file" class="form-control-file" name='product'id="exampleInputFile" aria-describedby="fileHelp" value="Choose Photo" accept="image/*" onchange="loadslider1(event)" class="upload"></center>
+			                <br>
+			                <br>
+							<script>
+							var loadslider1 = function(event) {
+								var output = document.getElementById('productimg');
+								output.src = URL.createObjectURL(event.target.files[0]);
+								};
+							</script>
+			                <input type='submit' name='productbtn' value='SAVE' class="btn_style2">
+							
+			                </center>
+              			</div> <!-- modalcontainer -->
           </form>
-      </div>
-	    
-    </div>
+      </div> <!-- modal -->
+    </div> <!-- topbtn -->
     <br>
-
-
-	    <center>
+	   
+	   <center>
 		  <table>
 		    <tr>
 		      <th>Product Code</th>
 		      <th>Product Name</th>
 		      <th><center>Quantity</center></th>
 		      <th><center>ACTIONS</center></th>
-
 		    </tr>
-
 			<?php
 	            while($rows=mysqli_fetch_assoc($sqlproductcount))
 	            {
 			?>
+
 		    <tr>
 		      <td>Product<?php echo $rows['id'] ?></td>
 		      <td class="name"><?php echo $rows['productname'] ?></td>
@@ -354,136 +342,125 @@ textarea {
 						    <span class="close">&times;</span>
 						    <h4>View Product Name</h4>
 						    <hr>
-							<center>
-							<img src="img/logo.png" width="300px;" class="prod_img"><br>
-								<br>
-							</center>		
+							<center><img src="img/logo.png" width="300px;" class="prod_img"><br><br></center>		
 							<h5 style="font-weight: 600;">Description</h5>
 							<h6 style="line-height: 2;"><?php echo $rows['productdesc'] ?>x</h6> 
 							<h5 style="font-weight: 600;">Type</h5><h6 style="line-height: 2;">Lorem ipsum</h6>
 							<h5 style="font-weight: 600;">Code</h5><h6 style="line-height: 2;">LOREM123</h6>
 							<h5 style="font-weight: 600;">Price</h5><h6 style="line-height: 2;">123.00</h6> 	 
-						  </div>
-
+						  </div> <!-- modal cont -->
 						  <br>
 						  <br>
-						</div>
+						</div> <!-- modal -->
 
 						<button id="edit_btn" class="btn_style"><img src="img/edit.png" style="height: 15px; width: 15px;"></button>
 						<div id="edit_modal" class="modal">
-						  <div class="modal-content">
+							<div class="modal-content">
 						    <span class="close">&times;</span>
 						    <h4>Edit Product</h4>
-                <hr>
-                <form action="" method="POST" enctype="multipart/form-data">
+                			<hr>
+                			
+                			<form action="" method="POST" enctype="multipart/form-data">
+                				<div class="container">
+                					<div class="row">
+								      <div class="col-75 prodcode">
+								        <input type="text" id="prodcode" name="prodcode" placeholder="Product Code">
+								      </div>
+									</div>
 
-                <div class="container">
-                	<div class="row">
-						      <div class="col-75 prodcode">
-						        <input type="text" id="prodcode" name="prodcode" placeholder="Product Code">
-						      </div>
-					</div>
+								 	<div class="row">
+									      <div class="col-75">
+									        <input type="text" id="prodname" name="prodname" placeholder="Product Name">
+									      </div>
+									 </div>
 
-					 <div class="row">
-						      <div class="col-75">
-						        <input type="text" id="prodname" name="prodname" placeholder="Product Name">
-						      </div>
-						    </div>
+									<div class="row">
+								      <div class="col-75">
+								          <select class="w3-select w3-border" name="option">
+										    <option value="" disabled selected placeholder>Product Category</option>
+										    <option value="Bedroom">Bedroom</option>
+										    <option value="Cabinets">Cabinets</option>
+										    <option value="Dining Room">Dining Room</option>
+										    <option value="Kitchen">Kitchen</option>
+										    <option value="Living Room">Living Room</option>
+										  </select>
+								      </div>
+							    	</div>
 
-					<div class="row">
-						      <div class="col-75">
-						          <select class="w3-select w3-border" name="option">
-								    <option value="" disabled selected placeholder>Product Category</option>
-								    <option value="Bedroom">Bedroom</option>
-								    <option value="Cabinets">Cabinets</option>
-								    <option value="Dining Room">Dining Room</option>
-								    <option value="Kitchen">Kitchen</option>
-								    <option value="Living Room">Living Room</option>
-								  </select>
-						      </div>
-						    </div>
+									<div class="row">
+								      <div class="col-75">
+								          <select class="w3-select w3-border" name="option2">
+										    <option value="" disabled selected placeholder>Product Classification</option>
+										    <option value="Chair">Chair</option>
+										    <option value="Cabinet">Cabinet</option>
+										    <option value="Table">Table</option>
+										    <option value="Decoration">Decoration</option>
+										  </select>
+								      </div>
+								    </div>
 
-							<div class="row">
-						      <div class="col-75">
-						          <select class="w3-select w3-border" name="option2">
-								    <option value="" disabled selected placeholder>Product Classification</option>
-								    <option value="Chair">Chair</option>
-								    <option value="Cabinet">Cabinet</option>
-								    <option value="Table">Table</option>
-								    <option value="Decoration">Decoration</option>
-								  </select>
-						      </div>
-						    </div>
+									<div class="row">
+								      <div class="col-75">
+								        <textarea placeholder="Product Description" name='description'></textarea>
+								      </div>
+								    </div>
 
-					<div class="row">
-						      <div class="col-75">
-						        <textarea placeholder="Product Description" name='description'></textarea>
-						      </div>
-						    </div>
+								    <div class="">
+										  <div class="w3-half">
+										    <input class="w3-input w3-border" type="text" placeholder="WIDTH" name="wid">
+										  </div>
 
-					<!--  <div class="row">
-						      <div class="col-75 prodcode">
-						        <input type="text" id="width" name="width" placeholder="WIDTH">x<input type="text" id="height" name="height" placeholder="HEIGHT">
-						      </div>
-						    </div> -->
-						       <div class="">
-								  <div class="w3-half">
-								    <input class="w3-input w3-border" type="text" placeholder="WIDTH" name="wid">
-								  </div>
+										  <div class="w3-half">
+										    <input class="w3-input w3-border" type="text" placeholder="HEIGHT" name="hei">
+										  </div>
+									</div>
+								     
+							
+									<div class="row">
+								      <div class="col-75">
+								        <input type="text" id="price" name="price" placeholder="Price">
+								      </div>
+								    </div>
 
-								  <div class="w3-half">
-								    <input class="w3-input w3-border" type="text" placeholder="HEIGHT" name="hei">
-								  </div>
-								</div>
-						     
-					
-							<div class="row">
-						      <div class="col-75">
-						        <input type="text" id="price" name="price" placeholder="Price">
-						      </div>
-						    </div>
+									<div class="row">
+								      <div class="col-75">
+								        <input type="number" id="quantity" name="quantity" placeholder="Quantity" value="1">
+								      </div>
+								    </div>
+                				</div>
+                				</form>
 
-							<div class="row">
-						      <div class="col-75">
-						        <input type="number" id="quantity" name="quantity" placeholder="Quantity" value="1">
-						      </div>
-						    </div>
-
-                </div>
-
-                <center>
-                <p><b>Product Image</b></p>
-                <img src="img/view.png" class="prodimg" id="productimg"><br><br>
-				<center><input type="file" class="form-control-file" name='product'id="exampleInputFile" aria-describedby="fileHelp" value="Choose Photo" accept="image/*" onchange="loadslider1(event)"></center>
-                <br>
-                <br>
-				<script>
-				var loadslider1 = function(event) {
-					var output = document.getElementById('productimg');
-					output.src = URL.createObjectURL(event.target.files[0]);
-					};
-				</script>
-                <input type='submit' name='productbtn' value='SAVE' class="btn_style2">
-				
-                </center>
-              </div>
-         </div>
-     </form>
-											   
+				                <center>
+				                <p><b>Product Image</b></p>
+				                <img src="img/view.png" class="prodimg" id="productimg"><br><br>
+								<center><input type="file" class="form-control-file" name='product'id="exampleInputFile" aria-describedby="fileHelp" value="Choose Photo" accept="image/*" onchange="loadslider1(event)"></center>
+				                <br>
+				                <br>
+								<script>
+								var loadslider1 = function(event) {
+									var output = document.getElementById('productimg');
+									output.src = URL.createObjectURL(event.target.files[0]);
+									};
+								</script>
+				                <input type='submit' name='productbtn' value='SAVE' class="btn_style2">
+				                </center>
+				                
+              				</div> <!-- modal cont -->
+        	 			</div> <!-- modal -->
+     				
+						<!-- 					   
 						  </div>
-						</div>
+						</div> -->
 
 						<button class="btn_style"><img src="img/delete.png" style="height: 15px; width: 15px;"></button>
-		      	
 		      </td>
 		    </tr>
 			<?php
 				}
 			?>
 		  </table>
-		</center>
-	</div>
-	</div>
+	</div> <!-- content body -->
+</div> <!-- content -->
 <br>
 <br>
 </body>
