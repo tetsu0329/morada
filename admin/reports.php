@@ -184,10 +184,10 @@
 }
 
 .imgreport{
-  padding: 10%;
+  padding: 5%;
   border: 1px solid black;
-  max-width: 500px;
-  max-height: 500px;
+  max-width: 300px;
+  max-height: 300px;
 }
 
 .rightreport{
@@ -359,7 +359,7 @@
                                 <h5 style="font-weight: 600;">Additional Customization</h5>
                                 <h6 style="line-height: 2;">Lorem ipsum dolor sit emet.</h6>
                             </div> -->
-                            <div class="w3-container"><hr></div>
+                          <!--   <div class="w3-container"><hr></div> -->
                           </div>
                         </div>
                     </div>
