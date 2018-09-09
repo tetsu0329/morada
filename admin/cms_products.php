@@ -202,7 +202,6 @@ textarea {
     font-size: 16px;
     resize: none;
 }
-
 /*MOBILE RESPONSIVE*/
 	@media screen and (max-width: 600px) {
   .content_body{
@@ -223,141 +222,15 @@ textarea {
     		<br>
     		<div style="overflow-x:auto;">
     			<div class="top_btns">
-	    			<button id="add_btn" class="btn_style"><img src="img/add.png" style="height: 15px; width: 15px;"></button>
-	    			<div id="add_modal" class="modal">
-              			<div class="modal-content">
-			                <span class="close">&times;</span>
-			                <h4>Add Product</h4>
-			                <hr>
-                			<form action="" method="POST" enctype="multipart/form-data">
-                			<div class="container">
-                				<div class="row">
-								    <div class="col-75 prodcode">
-								        <input type="text" id="prodcode" name="prodcode" placeholder="Product Code">
-								    </div>
-								</div>
-
-								<div class="row">
-									<div class="col-75">
-									    <input type="text" id="prodname" name="prodname" placeholder="Product Name">
-									</div>
-								</div>
-
-								<div class="row">
-						      		<div class="col-75">
-						        		<select class="w3-select w3-border" name="option">
-										    <option value="" disabled selected placeholder>Product Category</option>
-										    <option value="Bedroom">Bedroom</option>
-										    <option value="Cabinets">Cabinets</option>
-										    <option value="Dining Room">Dining Room</option>
-										    <option value="Kitchen">Kitchen</option>
-										    <option value="Living Room">Living Room</option>
-										</select>
-						      		</div>
-						    	</div>
-
-								<div class="row">
-						    		<div class="col-75">
-						        		<select class="w3-select w3-border" name="option2">
-										    <option value="" disabled selected placeholder>Product Classification</option>
-										    <option value="Chair">Chair</option>
-										    <option value="Cabinet">Cabinet</option>
-										    <option value="Table">Table</option>
-										    <option value="Decoration">Decoration</option>
-										</select>
-						    		</div>
-						    	</div>
-
-								<div class="row">
-								      <div class="col-75">
-								        <textarea placeholder="Product Description" name='description'></textarea>
-								      </div>
-						    	</div>
-
-						       <div class="">
-								  <div class="w3-half">
-								    <input class="w3-input w3-border" type="text" placeholder="WIDTH" name="wid">
-								  </div>
-
-								  <div class="w3-half">
-								    <input class="w3-input w3-border" type="text" placeholder="HEIGHT" name="hei">
-								  </div>
-								</div>
-						     
-								<div class="row">
-							      <div class="col-75">
-							        <input type="text" id="price" name="price" placeholder="Price">
-							      </div>
-							    </div>
-
-								<div class="row">
-							      <div class="col-75">
-							        <input type="number" id="quantity" name="quantity" placeholder="Quantity" value="1">
-							      </div>
-							    </div>
-                			</div> <!-- container -->
-
-			                <center>
-			                <p><b>Product Image</b></p>
-			                <img src="img/view.png" class="prodimg" id="productimg"><br>
-							<center><input type="file" class="form-control-file" name='product'id="exampleInputFile" aria-describedby="fileHelp" value="Choose Photo" accept="image/*" onchange="loadslider1(event)" class="upload"></center>
-			                <br>
-			                <br>
-							<script>
-							var loadslider1 = function(event) {
-								var output = document.getElementById('productimg');
-								output.src = URL.createObjectURL(event.target.files[0]);
-								};
-							</script>
-			                <input type='submit' name='productbtn' value='SAVE' class="btn_style2">
-							
-			                </center>
-              			</div> <!-- modalcontainer -->
-          </form>
-      </div> <!-- modal -->
-    </div> <!-- topbtn -->
-    <br>
-	   
-	   <center>
-		  <table>
-		    <tr>
-		      <th>Product Code</th>
-		      <th>Product Name</th>
-		      <th><center>Quantity</center></th>
-		      <th><center>ACTIONS</center></th>
-		    </tr>
-			<?php
-	            while($rows=mysqli_fetch_assoc($sqlproductcount))
-	            {
-			?>
-
-		    <tr>
-		      <td>Product<?php echo $rows['id'] ?></td>
-		      <td class="name"><?php echo $rows['productname'] ?></td>
-		      <td><center><?php echo $rows['quantity'] ?></center></td>
-		      <td style="float: left;" class="action">
-					<button id="view_btn" class="btn_style"><img src="img/view.png" style="height: 15px; width: 15px;"></button>
-						<div id="view_modal" class="modal">
-						  <div class="modal-content">
-						    <span class="close">&times;</span>
-						    <h4>View Product Name</h4>
-						    <hr>
-							<center><img src="img/logo.png" width="300px;" class="prod_img"><br><br></center>		
-							<h5 style="font-weight: 600;">Description</h5>
-							<h6 style="line-height: 2;"><?php echo $rows['productdesc'] ?>x</h6> 
-							<h5 style="font-weight: 600;">Type</h5><h6 style="line-height: 2;">Lorem ipsum</h6>
-							<h5 style="font-weight: 600;">Code</h5><h6 style="line-height: 2;">LOREM123</h6>
-							<h5 style="font-weight: 600;">Price</h5><h6 style="line-height: 2;">123.00</h6> 	 
-						  </div> <!-- modal cont -->
-						  <br>
-						  <br>
-						</div> <!-- modal -->
-
-						<button id="edit_btn" class="btn_style"><img src="img/edit.png" style="height: 15px; width: 15px;"></button>
-						<div id="edit_modal" class="modal">
-							<div class="modal-content">
-						    <span class="close">&times;</span>
-						    <h4>Edit Product</h4>
+<button onclick="document.getElementById('edit_modal').style.display='block'" class="btn_style"><img src="img/add.png" style="height: 15px; width: 15px;"></button>
+                      <div id="edit_modal" class="w3-modal">
+                        <div class="w3-modal-content">
+                          <header class="w3-container"> 
+                            <span onclick="document.getElementById('edit_modal').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+                          </header>
+                          
+                          <div class="w3-container">
+							<h4>Add Product</h4>
                 			<hr>
                 			
                 			<form action="" method="POST" enctype="multipart/form-data">
@@ -444,15 +317,161 @@ textarea {
 								</script>
 				                <input type='submit' name='productbtn' value='SAVE' class="btn_style2">
 				                </center>
-				                
-              				</div> <!-- modal cont -->
-        	 			</div> <!-- modal -->
+                        </div>
+
+
+                      </div>
+                  </div>
+    </div> <!-- topbtn -->
+    <br>
+	   
+	   <center>
+		  <table>
+		    <tr>
+		      <th>Product Code</th>
+		      <th>Product Name</th>
+		      <th><center>Quantity</center></th>
+		      <th><center>ACTIONS</center></th>
+		    </tr>
+			<?php
+	            while($rows=mysqli_fetch_assoc($sqlproductcount))
+	            {
+			?>
+
+		    <tr>
+		      <td>Product<?php echo $rows['id'] ?></td>
+		      <td class="name"><?php echo $rows['productname'] ?></td>
+		      <td><center><?php echo $rows['quantity'] ?></center></td>
+		      <td style="float: left;" class="action">
+		      	<button onclick="document.getElementById('view_modal').style.display='block'" class="btn_style"><img src="img/view.png" style="height: 15px; width: 15px;"></button>
+                      <div id="view_modal" class="w3-modal">
+                        <div class="w3-modal-content">
+                          <header class="w3-container"> 
+                            <span onclick="document.getElementById('view_modal').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+                          </header>
+                          
+                          <div class="w3-container">
+                            <h4>View Product Name</h4>
+						    <hr>
+							<center><img src="img/logo.png" width="300px;" class="prod_img"><br><br></center>		
+							<h5 style="font-weight: 600;">Description</h5>
+							<h6 style="line-height: 2;"><?php echo $rows['productdesc'] ?>x</h6> 
+							<h5 style="font-weight: 600;">Type</h5><h6 style="line-height: 2;">Lorem ipsum</h6>
+							<h5 style="font-weight: 600;">Code</h5><h6 style="line-height: 2;">LOREM123</h6>
+							<h5 style="font-weight: 600;">Price</h5><h6 style="line-height: 2;">123.00</h6> 
+                          </div>
+                        </div>
+                      </div>
+
+	
+				<button onclick="document.getElementById('edit_modal').style.display='block'" class="btn_style"><img src="img/edit.png" style="height: 15px; width: 15px;"></button>
+                      <div id="edit_modal" class="w3-modal">
+                        <div class="w3-modal-content">
+                          <header class="w3-container"> 
+                            <span onclick="document.getElementById('edit_modal').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+                          </header>
+                          
+                          <div class="w3-container">
+							<h4>Edit Product</h4>
+                			<hr>
+                			
+                			<form action="" method="POST" enctype="multipart/form-data">
+                				<div class="container">
+                					<div class="row">
+								      <div class="col-75 prodcode">
+								        <input type="text" id="prodcode" name="prodcode" placeholder="Product Code">
+								      </div>
+									</div>
+
+								 	<div class="row">
+									      <div class="col-75">
+									        <input type="text" id="prodname" name="prodname" placeholder="Product Name">
+									      </div>
+									 </div>
+
+									<div class="row">
+								      <div class="col-75">
+								          <select class="w3-select w3-border" name="option">
+										    <option value="" disabled selected placeholder>Product Category</option>
+										    <option value="Bedroom">Bedroom</option>
+										    <option value="Cabinets">Cabinets</option>
+										    <option value="Dining Room">Dining Room</option>
+										    <option value="Kitchen">Kitchen</option>
+										    <option value="Living Room">Living Room</option>
+										  </select>
+								      </div>
+							    	</div>
+
+									<div class="row">
+								      <div class="col-75">
+								          <select class="w3-select w3-border" name="option2">
+										    <option value="" disabled selected placeholder>Product Classification</option>
+										    <option value="Chair">Chair</option>
+										    <option value="Cabinet">Cabinet</option>
+										    <option value="Table">Table</option>
+										    <option value="Decoration">Decoration</option>
+										  </select>
+								      </div>
+								    </div>
+
+									<div class="row">
+								      <div class="col-75">
+								        <textarea placeholder="Product Description" name='description'></textarea>
+								      </div>
+								    </div>
+
+								    <div class="">
+										  <div class="w3-half">
+										    <input class="w3-input w3-border" type="text" placeholder="WIDTH" name="wid">
+										  </div>
+
+										  <div class="w3-half">
+										    <input class="w3-input w3-border" type="text" placeholder="HEIGHT" name="hei">
+										  </div>
+									</div>
+								     
+							
+									<div class="row">
+								      <div class="col-75">
+								        <input type="text" id="price" name="price" placeholder="Price">
+								      </div>
+								    </div>
+
+									<div class="row">
+								      <div class="col-75">
+								        <input type="number" id="quantity" name="quantity" placeholder="Quantity" value="1">
+								      </div>
+								    </div>
+                				</div>
+                				</form>
+
+				                <center>
+				                <p><b>Product Image</b></p>
+				                <img src="img/view.png" class="prodimg" id="productimg"><br><br>
+								<center><input type="file" class="form-control-file" name='product'id="exampleInputFile" aria-describedby="fileHelp" value="Choose Photo" accept="image/*" onchange="loadslider1(event)"></center>
+				                <br>
+				                <br>
+								<script>
+								var loadslider1 = function(event) {
+									var output = document.getElementById('productimg');
+									output.src = URL.createObjectURL(event.target.files[0]);
+									};
+								</script>
+				                <input type='submit' name='productbtn' value='SAVE' class="btn_style2">
+				                </center>
+                        </div>
+
+
+                      </div>
+                  </div>
+                  <button class="btn_style"><img src="img/delete.png" style="height: 15px; width: 15px;"></button>
+
+				
      				
 						<!-- 					   
 						  </div>
 						</div> -->
 
-						<button class="btn_style"><img src="img/delete.png" style="height: 15px; width: 15px;"></button>
 		      </td>
 		    </tr>
 			<?php
@@ -465,85 +484,4 @@ textarea {
 <br>
 </body>
 
-<!-- scripts -->
-
-<script>
-// <!--  VIEW modal -->
-	// Get the modal view
-	var view_modal = document.getElementById('view_modal');
-
-	// Get the button view that opens the modal
-	var view_btn = document.getElementById("view_btn");
-
-	// When the user clicks the button, open the modal 
-	view_btn.onclick = function() {
-		view_modal.style.display = "block";
-	}
-// <!-- end of VIEW modal -->
-</script> 
-
-<script>
-// <!--  ADD modal -->
-	// Get the modal view
-	var add_modal = document.getElementById('add_modal');
-
-	// Get the button view that opens the modal
-	var add_btn = document.getElementById("add_btn");
-
-	// When the user clicks the button, open the modal 
-	add_btn.onclick = function() {
-		add_modal.style.display = "block";
-	}
-// <!-- end of ADD modal -->
-</script>
-
-
-<script>
-// <!--  EDIT modal -->
-	// Get the modal view
-	var edit_modal = document.getElementById('edit_modal');
-
-	// Get the button view that opens the modal
-	var edit_btn = document.getElementById("edit_btn");
-
-	// When the user clicks the button, open the modal 
-	edit_btn.onclick = function() {
-		edit_modal.style.display = "block";
-	}
-// <!-- end of EDIT modal -->
-</script>
-
-<!-- Script for closing the modal -->
-<script>
-	// Get the <span> element that closes the modal
-	var add_span = document.getElementsByClassName("close")[0];
-	var view_span = document.getElementsByClassName("close")[1];
-	var edit_span = document.getElementsByClassName("close")[2];
-
-	// When the user clicks on <span> (x), close the modal
-	add_span.onclick = function() {
-		add_modal.style.display = "none";
-
-	}
-	view_span.onclick = function() {
-		view_modal.style.display = "none";
-
-	}
-	edit_span.onclick = function() {
-		edit_modal.style.display = "none";
-
-	}
-	// When the user clicks anywhere outside of the modal, close it
-	window.onclick = function(event) {
-		if (event.target == add_modal) {
-		add_modal.style.display = "none";
-		}
-		if (event.target == view_modal) {
-		view_modal.style.display = "none";
-		}
-		if (event.target == edit_modal) {
-		edit_modal.style.display = "none";
-		}
-	}
-</script>
 </html>
