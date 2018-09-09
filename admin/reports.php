@@ -262,34 +262,81 @@
                           <div class="w3-container">
                             <h4>View Reports</h4>
                             <hr>
-
+                            <?php
+                                $id = $_GET['TransactionCode'];
+                                $sqlselectitem = mysqli_query($conn,"SELECT * FROM itemtransactiontable WHERE transactionID = $id");
+                                while($rows=mysqli_fetch_assoc($sqlselectitem))
+                                {
+                            ?>
                             <div class="w3-half">
-                              <center><img src="../img/freedel.png " class="imgreport"></center>
+                                <?php
+                                $prodid = $rows['productID'];
+                                $sqlselectprod = mysqli_query($conn,"SELECT * FROM producttbl WHERE id = $prodid");
+                                $rows2=mysqli_fetch_assoc($sqlselectprod);
+                                ?>
+                                <h3><?php echo $rows2['productname'] ?></h3>
+                              <center><img src="<?php echo $rows2['productimage'] ?>" class="imgreport"></center>
                             </div>
 
                             <div class="w3-half rightreport">
                               <h5 style="font-weight: 600;">Price</h5>
-                              <h6 style="line-height: 2;">Php 123.00</h6> 
+                              <h6 style="line-height: 2;">PHP <?php echo $rows['price'] ?></h6> 
 
                               <h5 style="font-weight: 600;">Size</h5>
-                              <h6 style="line-height: 2;">Lorem Size</h6>
+                              <h6 style="line-height: 2;"><?php echo $rows['size'] ?></h6>
 
                               <h5 style="font-weight: 600;">Wood Type</h5>
-                              <h6 style="line-height: 2;">Lorem wood</h6>
+                              <h6 style="line-height: 2;">
+                                <?php 
+                                if(!empty($rows['option1'])){
+                                    echo $rows['option1'];
+                                }
+                                else{
+                                    echo 'Default Wood';
+                                }
+                                ?>
+                              </h6>
                       
                               <h5 style="font-weight: 600;">Color</h5>
-                              <h6 style="line-height: 2;">Lorem Color</h6>
+                              <h6 style="line-height: 2;">
+                              <?php 
+                                if(!empty($rows['option2'])){
+                                    echo $rows['option2'];
+                                }
+                                else{
+                                    echo 'Default Color';
+                                }
+                                ?>
+                              </h6>
 
                               <h5 style="font-weight: 600;">Edge</h5>
-                              <h6 style="line-height: 2;">Lorem Edge</h6>
+                              <h6 style="line-height: 2;"><?php 
+                                if(!empty($rows['option3'])){
+                                    echo $rows['option3'];
+                                }
+                                else{
+                                    echo 'Default Edge';
+                                }
+                                ?></h6>
 
                               <h5 style="font-weight: 600;">Additional Customization</h5>
-                              <h6 style="line-height: 2;">Lorem ipsum dolor sit emet.</h6>
+                              <h6 style="line-height: 2;">
+                              <?php 
+                                if(!empty($rows['lastoption'])){
+                                    echo $rows['lastoption'];
+                                }
+                                else{
+                                    echo 'No Additional Customization Request';
+                                }
+                                ?>
+                              </h6>
                             </div>
                           
                             <div class="w3-container"><hr></div>
-
-                            <div class="w3-half">
+                            <?php
+                                }
+                            ?>
+                            <!-- <div class="w3-half">
                               <center><img src="../img/freedel.png " class="imgreport"></center>
                             </div>
 
@@ -311,7 +358,7 @@
 
                                 <h5 style="font-weight: 600;">Additional Customization</h5>
                                 <h6 style="line-height: 2;">Lorem ipsum dolor sit emet.</h6>
-                            </div>
+                            </div> -->
                             <div class="w3-container"><hr></div>
                           </div>
                         </div>
