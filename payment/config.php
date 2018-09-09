@@ -9,9 +9,9 @@ $db_host 		= 'localhost';
 
 //paypal settings
 $PayPalMode 			= 'live'; // sandbox or live
-$PayPalApiUsername 		= 'cynthia_api1.themeconcept.net'; //PayPal API Username
-$PayPalApiPassword 		= 'WZCVK7C963TVCDSF'; //Paypal API password
-$PayPalApiSignature 	= 'AHVhnjrkRMXqHIKgvriean2lVvV3A3f0T66kRJ-.xyPOp9u8xIxLwPud'; //Paypal API Signature
+$PayPalApiUsername 		= 'reylumagui009_api1.yahoo.com'; //PayPal API Username
+$PayPalApiPassword 		= 'PJUVVAZYTN744B3E'; //Paypal API password
+$PayPalApiSignature 	= 'A3T0E7PO-rlDj6TulswgMI9u-YjMAmdvxUzTs986xXxGDJH-blEjPWwS'; //Paypal API Signature
 $PayPalCurrencyCode 	= 'PHP'; //Paypal Currency Code
 $PayPalReturnURL 		= 'http://morada/checkout.php'; //Point to paypal-express-checkout page
 $PayPalCancelURL 		= 'http://morada/payment/cancel'; //Cancel URL if user clicks cancel
