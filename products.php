@@ -83,9 +83,15 @@
 .page-numbers.dots {
   border: 1px solid #FFFFFF;
 }
+.wrapper {
+  box-sizing: border-box;
+  position: relative;
+  padding-bottom: 1em; /* Height of footer */
+  min-height: 100%;
+}
 </style> 	
 <body>
-
+<div class="wrapper">
 	<!-- our products -->
 	  	<div class="w3-container w3-light-grey w3-row w3-center" style="padding: 100px 0px 0px 0px;">
     <span class="w3-xxlarge">Our Products</p>
@@ -135,6 +141,7 @@ $(document).ready(function() {
 });
 	</script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</div>
 </body>
 </html>
 <?php include ('footer.php');?>

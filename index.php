@@ -201,7 +201,7 @@
 	</div>
 
 
-	<center><p><a href="products.php" class="w3-center w3-button w3-brown mybtn">SEE ALL</a></p></center>
+	<center><p><a href="products.php?Category=All" class="w3-center w3-button w3-brown mybtn">SEE ALL</a></p></center>
 	<!-- end * our products -->
 
 	<!-- why choose us -->

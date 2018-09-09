@@ -114,8 +114,8 @@
     box-sizing: border-box;
 }
 
-	input[type=text], select, textarea {
-    width: 45%;
+	input[type=text], input[type=password], select, textarea {
+    width: 100%;
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -171,6 +171,10 @@
         .col-25, .col-75, input[type=submit] {
         width: 100%;
         margin-top: 0;
+    }		
+
+    .modal-content{
+    	width: 90% !important;
     }
 	}
 </style>
@@ -278,7 +282,7 @@
 								while($rows=mysqli_fetch_assoc($sqluserview)){
 						?>
 						<form action="" method="POST">
-					    <h5 style="margin: 20px;">Personal Information</h5>
+					    <center><h5 style="margin: 20px;">Personal Information</h5></center>
 					    <div class="container">
 						    <div class="row">
 						      <div class="col-75">
@@ -305,7 +309,7 @@
 						    </div>
 						</div>
 						
-					  	<h5 style="margin: 20px;">Billing Information</h5>
+					  	<center><h5 style="margin: 20px;">Billing Information</h5></center>
 					    <div class="container">
 
 						    <div class="row">
@@ -327,7 +331,7 @@
 						    </div>
 						</div>
 
-					  	<h5>Login Information</h5>
+					  	<center><h5>Login Information</h5></center>
 
 					    <div class="container">
 						    <div class="row">

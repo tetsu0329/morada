@@ -175,6 +175,10 @@
     clear: both;
 }
 
+.w3-modal-content{
+  padding:3% !important;
+}
+
 /*MOBILE RESPONSIVE*/
 	@media screen and (max-width: 600px) {
   .content_body{
