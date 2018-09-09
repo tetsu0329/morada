@@ -105,6 +105,7 @@
     padding: 20px;
     border: 1px solid #888;
     width: 40%;
+    padding: 3% !important;
 }
 
 /* The Close Button */

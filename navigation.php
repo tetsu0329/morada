@@ -168,7 +168,7 @@ a.panel:hover {
         if(empty($_SESSION['customername'])){
       ?>
         <a href="login.php" class="w3-bar-item w3-button">Login</a>
-        <a href="reg.php" class="w3-bar-item w3-button">Register Here</a>
+        <a href="register.php" class="w3-bar-item w3-button">Register Here</a>
       <?php
         }
       ?>
@@ -214,7 +214,7 @@ a.panel:hover {
         if(empty($_SESSION['customername'])){
       ?>
         <a href="login.php" class="w3-bar-item w3-button">Login</a>
-        <a href="reg.php" class="w3-bar-item w3-button">Register Here</a>
+        <a href="register.php" class="w3-bar-item w3-button">Register Here</a>
       <?php
         }
       ?>

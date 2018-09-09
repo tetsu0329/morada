@@ -202,6 +202,9 @@ textarea {
     font-size: 16px;
     resize: none;
 }
+.w3-modal-content{
+	padding:3% !important;
+}
 /*MOBILE RESPONSIVE*/
 	@media screen and (max-width: 600px) {
   .content_body{
@@ -469,8 +472,8 @@ textarea {
 								</script>
 				                <input type='submit' name='productbtn' value='SAVE' class="btn_style2">
 				                </center>
-                        </div>
 
+                        </div>
 
                       </div>
                   </div>

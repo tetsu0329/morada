@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Login</title>
+	<title>View Product</title>
 </head>
 <style type="text/css">
 	.ourstory{
