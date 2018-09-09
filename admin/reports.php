@@ -200,21 +200,34 @@
             <tr>
               <th>Transaction Number</th>
               <th>Date of Transaction</th>
+              <th><center>Payment Method</center></th>
               <th><center>Order By</center></th>
               <th><center>Order Status</center></th>
               <th><center>ACTIONS</center></th>
 
             </tr>
                 
-
+            <?php
+                while($rows=mysqli_fetch_assoc($sqlordercount))
+	            {
+            ?>
             <tr>
-                <td><center>01</center></td>
-                <td><center>September 9, 2018</center></td>
-                <td><center>Order by lorem</center></td>
-                <td><center>Status</center></td>
+                <td><center><?php echo $rows['transactionID']; ?></center></td>
+                <td><center><?php echo $rows['timestamp']; ?></center></td>
+                <td><center><?php echo $rows['paymentMethod']; ?></center></td>
+                <td><center>
+                    <?php 
+                        $id = $rows['userID'];
+                        $sqlusercount = mysqli_query($conn,"SELECT * FROM usertable WHERE id = $id");
+                        $sqluser = mysqli_fetch_assoc($sqlusercount);
+                        echo $sqluser['fname']." ".$sqluser['lname']; 
+                    ?>
+                </center></td>
+                <td><center><?php echo $rows['transactionStatus']; ?></center></td>
                  <td style="float: left;">
-                    <button onclick="document.getElementById('id01').style.display='block'" class="btn_style"><img src="img/view.png" style="height: 15px; width: 15px;"></button>
-                      <div id="id01" class="w3-modal">
+                    <a href="?TransactionCode=<?php echo $rows['transactionID'] ?>"><button class="btn_style"><img src="img/view.png" style="height: 15px; width: 15px;"></button></a>
+                      
+                    <div id="id01" class="w3-modal">
                         <div class="w3-modal-content">
                           <header class="w3-container"> 
                             <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
@@ -225,35 +238,32 @@
                             <hr>
                           </div>
                         </div>
-                      </div>
+                    </div>
                 </td>
             </tr>
-
-            <tr>
-                <td><center>01</center></td>
-                <td><center>September 9, 2018</center></td>
-                <td><center>Order by lorem</center></td>
-                <td><center>Status</center></td>
-                 <td style="float: left;">
-                    <button onclick="document.getElementById('id01').style.display='block'" class="btn_style"><img src="img/view.png" style="height: 15px; width: 15px;"></button>
-                      <div id="id01" class="w3-modal">
-                        <div class="w3-modal-content">
-                          <header class="w3-container"> 
-                            <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
-                          </header>
-                          
-                          <div class="w3-container">
-                            <h4>View Reports</h4>
-                            <hr>
-                          </div>
-                        </div>
-                      </div>
-                </td>
-            </tr>
-           
+           <?php
+                }
+           ?>
           </table>
       </center>
    </div>
   </div>
 </body>
 </html>
+<?php
+echo "<script> var view_modal = document.getElementById('id01'); </script>";
+	if(isset($_GET['TransactionCode'])){
+		$idd = $_GET['TransactionCode'];
+		echo "<script> view_modal.style.display = 'block' </script>";
+	}
+	
+?>
+<script>
+	// When the user clicks anywhere outside of the modal, close it
+	window.onclick = function(event) {
+			
+			if (event.target == view_modal) {
+			view_modal.style.display = "none";
+			}
+		}
+</script>
