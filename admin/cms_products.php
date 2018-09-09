@@ -343,25 +343,35 @@ textarea {
 		      <td class="name"><?php echo $rows['productname'] ?></td>
 		      <td><center><?php echo $rows['quantity'] ?></center></td>
 		      <td style="float: left;" class="action">
-		      	<button onclick="document.getElementById('view_modal').style.display='block'" class="btn_style"><img src="img/view.png" style="height: 15px; width: 15px;"></button>
+						<a href="?ID=<?php echo $rows['id'] ?>"><button class="btn_style"><img src="img/view.png" style="height: 15px; width: 15px;"></button></a>
+						<?php
+													if(isset($_GET['ID'])){
+														$prodid = $_GET['ID'];
+														$sqlprodview = mysqli_query($conn,"SELECT * FROM producttbl WHERE id = $prodid");
+															while($rows=mysqli_fetch_assoc($sqlprodview)){
+													?>
                       <div id="view_modal" class="w3-modal">
                         <div class="w3-modal-content">
                           <header class="w3-container"> 
                             <span onclick="document.getElementById('view_modal').style.display='none'" class="w3-button w3-display-topright">&times;</span>
                           </header>
-                          
+                         
                           <div class="w3-container">
-                            <h4>View Product Name</h4>
-						    <hr>
-							<center><img src="img/logo.png" width="300px;" class="prod_img"><br><br></center>		
-							<h5 style="font-weight: 600;">Description</h5>
-							<h6 style="line-height: 2;"><?php echo $rows['productdesc'] ?>x</h6> 
-							<h5 style="font-weight: 600;">Type</h5><h6 style="line-height: 2;">Lorem ipsum</h6>
-							<h5 style="font-weight: 600;">Code</h5><h6 style="line-height: 2;">LOREM123</h6>
-							<h5 style="font-weight: 600;">Price</h5><h6 style="line-height: 2;">123.00</h6> 
+                            <h4><?php echo $rows['productname'] ?></h4>
+						    						<hr>
+														<center><img src="<?php echo $rows['productimage'] ?>" width="300px;" class="prod_img"><br><br></center>		
+														<h5 style="font-weight: 600;">Description</h5>
+														<h6 style="line-height: 2;"><?php echo $rows['productdesc'] ?></h6> 
+														<h5 style="font-weight: 600;">Type</h5><h6 style="line-height: 2;"><?php echo $rows['productcat'] ?></h6>
+														<h5 style="font-weight: 600;">Code</h5><h6 style="line-height: 2;"><?php echo $rows['productcode'] ?></h6>
+														<h5 style="font-weight: 600;">Price</h5><h6 style="line-height: 2;"><?php echo "PHP ". $rows['itemprice'] ?></h6> 
                           </div>
                         </div>
-                      </div>
+											</div>
+											<?php
+															}
+														}
+											?>
 
 	
 				<button onclick="document.getElementById('edit_modal').style.display='block'" class="btn_style"><img src="img/edit.png" style="height: 15px; width: 15px;"></button>
@@ -485,3 +495,20 @@ textarea {
 </body>
 
 </html>
+<?php
+echo "<script> var view_modal = document.getElementById('view_modal'); </script>";
+	if(isset($_GET['ID'])){
+		$idd = $_GET['ID'];
+		echo "<script> view_modal.style.display = 'block' </script>";
+	}
+	
+?>
+<script>
+	// When the user clicks anywhere outside of the modal, close it
+	window.onclick = function(event) {
+			
+			if (event.target == view_modal) {
+			view_modal.style.display = "none";
+			}
+		}
+</script>
