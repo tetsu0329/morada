@@ -262,9 +262,8 @@ img {
         <h6>Type</h6>
         <select class="w3-select w3-border" name="option">
           <option value="" disabled selected>Choose type</option>
-          <option value="Metal">Metal</option>
-          <option value="Plastic">Plastic</option>
-          <option value="Wood">Wood</option>
+          <option value="Nara Wood">Narra Wood</option>
+          <option value="Pine Wood">Pine Wood</option>
         </select>
 
         <h6>Color</h6>
@@ -283,12 +282,8 @@ img {
           <option value="Round">Round</option>
         </select>
 
-        <h6>Capacity</h6>
-        <select class="w3-select w3-border" name="option4">
-          <option value="" disabled selected>Choose edge</option>
-          <option value="4 Person">4 Person</option>
-          <option value="5 Person">5 Person</option>
-          <option value="6 Person">6 Person</option>
+        <select class="w3-select w3-border" name="option4" hidden>
+          <option value="" disabled selected>Choose </option>
         </select>
         <?php
         }
@@ -297,9 +292,8 @@ img {
         <h6>Type</h6>
         <select class="w3-select w3-border" name="option">
           <option value="" disabled selected>Choose type</option>
-          <option value="Metal">Metal</option>
-          <option value="Plastic">Plastic</option>
-          <option value="Wood">Wood</option>
+          <option value="Nara Wood">Narra Wood</option>
+          <option value="Pine Wood">Pine Wood</option>
         </select>
 
         <h6>Color</h6>
@@ -324,22 +318,25 @@ img {
         <h6>Type</h6>
         <select class="w3-select w3-border" name="option">
           <option value="" disabled selected>Choose type</option>
-          <option value="Metal">Metal</option>
-          <option value="Plastic">Plastic</option>
-          <option value="Wood">Wood</option>
+          <option value="Nara Wood">Narra Wood</option>
+          <option value="Pine Wood">Pine Wood</option>
+        </select>
+
+        <select class="w3-select w3-border" name="option2">
+          <option value="" disabled selected>Choose color</option>
+          <option value="Metal">Black</option>
+          <option value="Plastic">Brown</option>
+          <option value="Wood">White</option>
         </select>
 
         <h6>Cubes</h6>
-        <select class="w3-select w3-border" name="option2">
+        <select class="w3-select w3-border" name="option3">
           <option value="" disabled selected>Choose color</option>
           <option value="2 Cubes">2 Cubes</option>
           <option value="3 Cubes">3 Cubes</option>
           <option value="4 Cubes">4 Cubes</option>
         </select>
-
-        <select class="w3-select w3-border" name="option3" hidden>
-          <option value=""></option>
-        </select>
+        
         <select class="w3-select w3-border" name="option4" hidden>
           <option value=""></option>
         </select>

@@ -20,7 +20,7 @@ if(isset($_POST['loginbtn'])){
         $_SESSION['customername'] = $results['fname']." ".$results['lname'];
         $_SESSION['customerid'] = $results['id'];
         echo"<script type='text/javascript'>alert('Login Successful'); 
-        window.location='products.php';
+        window.location='products.php?Category=All';
         </script>";
     }
     else{

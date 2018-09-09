@@ -12,14 +12,16 @@ if(isset($_GET['ProductID']))
       $rowcounttt = count($_SESSION['product']);
       $query = mysqli_query($conn,"SELECT * FROM producttbl where id='$prodID'");
       while ($queryhold= mysqli_fetch_array($query)){
-          $product[1] = $queryhold['productcode'];
-          $product[2] = $queryhold['productname'];
-          $product[3] = $_POST['quantity'];
-					$product[4] = $queryhold['itemprice'];
-					$product[5] = $_POST['option'];
-					$product[6] = $_POST['option2'];
-					$product[7] = $_POST['option3'];
-					$product[8] = $_POST['option4'];
+					$product[1] = $queryhold['id'];
+          $product[2] = $queryhold['productcode'];
+          $product[3] = $queryhold['productname'];
+          $product[4] = $_POST['quantity'];
+					$product[5] = $queryhold['itemprice'];
+					$product[6] = $_POST['option'];
+					$product[7] = $_POST['option2'];
+					$product[8] = $_POST['option3'];
+					$product[9] = $_POST['option4'];
+					$product[10] = $_POST['option5'];
       }
       array_push($_SESSION['product'], $product);
       echo "<script>window.location = 'checkout.php'</script>";
@@ -28,14 +30,16 @@ if(isset($_GET['ProductID']))
     {
       $query = mysqli_query($conn,"SELECT * FROM producttbl where id='$prodID'");
       while ($queryhold= mysqli_fetch_array($query)){
-          $product[1] = $queryhold['productcode'];
-          $product[2] = $queryhold['productname'];
-					$product[3] = $_POST['quantity'];
-					$product[4] = $queryhold['itemprice'];
-					$product[5] = $_POST['option'];
-					$product[6] = $_POST['option2'];
-					$product[7] = $_POST['option3'];
-					$product[8] = $_POST['option4'];
+					$product[1] = $queryhold['id'];
+          $product[2] = $queryhold['productcode'];
+          $product[3] = $queryhold['productname'];
+					$product[4] = $_POST['quantity'];
+					$product[5] = $queryhold['itemprice'];
+					$product[6] = $_POST['option'];
+					$product[7] = $_POST['option2'];
+					$product[8] = $_POST['option3'];
+					$product[9] = $_POST['option4'];
+					$product[10] = $_POST['option5'];
       }
       $_SESSION['product']=array($product);
       echo "<script>window.location = 'checkout.php'</script>";
@@ -123,12 +127,12 @@ if(isset($_GET['ProductID']))
     {
 ?>
 <tr>
-  <td><?php echo($_SESSION['product'][$row][1]) ?></td>
   <td><?php echo($_SESSION['product'][$row][2]) ?></td>
   <td><?php echo($_SESSION['product'][$row][3]) ?></td>
-  <td>PHP <?php echo($_SESSION['product'][$row][4]) ?></td>
+  <td><?php echo($_SESSION['product'][$row][4]) ?></td>
+  <td>PHP <?php echo($_SESSION['product'][$row][5]) ?></td>
 	<?php
-	$subtot = $_SESSION['product'][$row][3] * $_SESSION['product'][$row][4];
+	$subtot = $_SESSION['product'][$row][4] * $_SESSION['product'][$row][5];
 
 	$total += $subtot;
 	?>
@@ -170,9 +174,9 @@ else{
   </div>
 <br>
 	  <div class="w3-row-padding">
-
+			<form method="POST" action="">
 	  	<div class="w3-col m6 w3-center">
-	  		<input id="male" class="w3-radio" type="radio" name="payment" value="paypal" checked>
+	  		<input id="male" class="w3-radio" type="radio" name="payment" value="paypal">
     <label>Paypal</label>
     <br>
     <br>
@@ -180,7 +184,7 @@ else{
 	    </div>
 
 	    <div class="w3-col m6 w3-center">
-	  		<input id="male" class="w3-radio" type="radio" name="payment" value="cod" checked>
+	  		<input id="male" class="w3-radio" type="radio" name="payment" value="cod">
     <label>Cash on Delivery</label>
     <br>
     <br>
@@ -188,9 +192,11 @@ else{
 	    </div>
 
 	  </div>
+
 	</div>
 <br>
-<center><p><a href="checkout.php" class="w3-button w3-brown mybtn">CONFIRM ORDER</a></p></center>
+<center><p><input type="submit" value="CONFIRM ORDER" name="submitorder"></p></center>
+</form>
 <br>
 <!-- <div style="margin-bottom: 5.5%;"></div> -->
 <!-- scripts -->
@@ -213,4 +219,11 @@ else{
 <!-- scripts -->
 </body>
 </html>
+<?php
+if(isset($_POST['submitorder'])){
+	if($_POST['payment'] == "paypal"){
+		echo "<script>window.location.replace('payment/index.php?process=1')</script>";
+	}
+}
+?>
 <?php include ('footer.php');?>
