@@ -140,11 +140,16 @@ a.panel:hover {
     </button>
     </a>
     <div class="dropdown-content">
-      <a href="products.php?Category=Bedroom">Bedroom</a>
-      <a href="products.php?Category=Cabinets">Cabinets</a>
-      <a href="products.php?Category=Dining Room">Dining Room</a>
-      <a href="products.php?Category=Kitchen">Kitchen</a>
-      <a href="products.php?Category=Living Room">Living Room</a>
+    <?php
+    $conn = mysqli_connect("localhost", "root", "", "moradadb");
+      $sqlcategorycount = mysqli_query($conn,"SELECT * FROM categorytbl");
+      while($rows=mysqli_fetch_assoc($sqlcategorycount))
+	    {
+    ?>
+      <a href="products.php?Category=<?php echo $rows['categoryname']; ?>"><?php echo $rows['categoryname']; ?></a>
+    <?php
+      }
+    ?>
       <a href="products.php?Category=All">See all</a>
     </div>
   </div>

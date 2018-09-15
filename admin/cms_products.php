@@ -254,11 +254,14 @@ textarea {
 								      <div class="col-75">
 								          <select class="w3-select w3-border" name="option">
 										    <option value="" disabled selected placeholder>Product Category</option>
-										    <option value="Bedroom">Bedroom</option>
-										    <option value="Cabinets">Cabinets</option>
-										    <option value="Dining Room">Dining Room</option>
-										    <option value="Kitchen">Kitchen</option>
-										    <option value="Living Room">Living Room</option>
+												<?php
+													while($rows=mysqli_fetch_assoc($sqlcategorycount))
+													{
+												?>
+										    <option value="<?php echo $rows['categoryname']; ?>"><?php echo $rows['categoryname']; ?></option>
+												<?php
+													}
+												?>
 										  </select>
 								      </div>
 							    	</div>
@@ -406,11 +409,14 @@ textarea {
 								      <div class="col-75">
 								          <select class="w3-select w3-border" name="option">
 										    <option value="" disabled selected placeholder>Product Category</option>
-										    <option value="Bedroom">Bedroom</option>
-										    <option value="Cabinets">Cabinets</option>
-										    <option value="Dining Room">Dining Room</option>
-										    <option value="Kitchen">Kitchen</option>
-										    <option value="Living Room">Living Room</option>
+												<?php
+													while($rows=mysqli_fetch_assoc($sqlcategorycount))
+													{
+												?>
+										    <option value="<?php echo $rows['categoryname']; ?>"><?php echo $rows['categoryname']; ?></option>
+										    <?php
+													}
+												?>
 										  </select>
 								      </div>
 							    	</div>

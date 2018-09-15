@@ -8,6 +8,8 @@ $sqlselectslider = mysqli_query($conn,"SELECT * FROM slidertable");
 $sqlselectgallery = mysqli_query($conn,"SELECT * FROM gallerytbl");
 $sqlproduct = mysqli_query($conn,"SELECT * FROM producttbl ORDER BY id DESC LIMIT 4");
 
+
+
 if(isset($_POST['loginbtn'])){
     $username = $_POST['username'];
     $password = $_POST['password'];

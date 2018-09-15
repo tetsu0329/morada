@@ -35,6 +35,8 @@
 
     $sqlselectgallery = mysqli_query($conn,"SELECT * FROM gallerytbl");
 
+    $sqlcategorycount = mysqli_query($conn,"SELECT * FROM categorytbl");
+
     //add user customer
     if (isset($_POST['adduser'])) {
         $lname = $_POST['lastname'];

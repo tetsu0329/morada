@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <style>
 
 body {
@@ -99,6 +100,7 @@ a.panel:hover {
     <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Close Menu</a>
     <a href="index.php" class="w3-bar-item w3-button w3-padding links">Dashboard</a>
     <a href="useracc.php" class="w3-bar-item w3-button w3-padding links">User Accounts</a>
+    <a href="customization.php" class="w3-bar-item w3-button w3-padding links">Customization</a>
     <a href="#cms" class="w3-bar-item w3-button w3-padding accordion links">CMS</a>
     <div class="panel">
        <a href="cms_homepage.php" class="w3-bar-item w3-button w3-padding links">Homepage</a>
@@ -106,6 +108,7 @@ a.panel:hover {
       <a href="cms_contact.php" class="w3-bar-item w3-button w3-padding links">Contact Us</a>
       <a href="cms_gallery.php" class="w3-bar-item w3-button w3-padding links">Gallery</a>
       <a href="cms_products.php" class="w3-bar-item w3-button w3-padding links">Products</a>
+      <a href="category.php" class="w3-bar-item w3-button w3-padding links">Category</a>
     </div>
   <a href="inquiry.php" class="w3-bar-item w3-button w3-padding links">Inquiry</a>
    <a href="reports.php" class="w3-bar-item w3-button w3-padding links">Reports</a>
