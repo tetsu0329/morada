@@ -212,6 +212,12 @@
         margin-top: 0;
     }
 	}
+      @media only screen and (max-width: 768px) {
+.content_body{
+  margin: 50px;
+  } 
+}
+
 </style>
 <body>
 <div class="content">
@@ -221,6 +227,38 @@
     <h2>Category</h2>
     <hr>
 <br>
+<div class="top_btns">
+<button onclick="document.getElementById('edit_modal').style.display='block'" class="btn_style"><img src="img/add.png" style="height: 15px; width: 15px;"></button>
+                      <div id="edit_modal" class="w3-modal">
+                        <div class="w3-modal-content">
+                          <header class="w3-container"> 
+                            <span onclick="document.getElementById('edit_modal').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+                          </header>
+                          
+                          <div class="w3-container">
+                         <h4>Add Category</h4>
+                          <hr>  
+                          <div class="container">
+                          <div class="row">
+                          <div class="col-75">
+                            <input type="text" id="prodname" name="prodname" placeholder="Category Name">
+                          </div>
+                           </div>
+
+                           <br>
+                           <center>
+                             <input type='submit' name='categsave' value='SAVE' class="btn_style2">&nbsp;<input type='submit' name='categancel' value='CANCEL' class="btn_style2">
+                           </center>
+                            
+                          </div>
+                      
+              
+
+</div>
+                      </div>
+                  </div>
+    </div> <!-- topbtn -->
+    <br>
 <center>
   <table>
             <tr>
@@ -243,7 +281,7 @@
                 
                 <td><center><?php echo $rows['timestamp']; ?></center></td>
                  <td style="float: left;">
-                    <a href="?CategoryID=<?php echo $rows['categoryid'] ?>"><button class="btn_style"><img src="img/view.png" style="height: 15px; width: 15px;"></button></a>
+                    <a href="?CategoryID=<?php echo $rows['categoryid'] ?>"><button class="btn_style"><img src="img/delete.png" style="height: 15px; width: 15px;"></button></a>
                 </td>
             </tr>
            <?php

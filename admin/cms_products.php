@@ -215,7 +215,14 @@ textarea {
         width: 100%;
         margin-top: 0;
     }
-	}</style>
+	}
+		  @media only screen and (max-width: 768px) {
+.content_body{
+  margin: 50px;
+  } 
+}
+
+</style>
 <body>
 <div class="content">
 	<div class="content_body">
