@@ -254,6 +254,19 @@ if(isset($_POST['submitorder'])){
 		$_SESSION['paymentAck'] = 'BANK_DEPOSIT';
 		echo "<script>window.location.replace('payment/bank.php')</script>";
 	}
+if(isset($_GET['delete'])){
+  $ProductID = $_GET['delete'];
+  $rowcount= count($_SESSION['product']);
+    for($row=0; $row<$rowcount; $row++)
+    {   
+        if(in_array($ProductID, $_SESSION['product'][$row])){
+          unset($_SESSION['product'][$row]);
+        }
+    }
+    $_SESSION['product']=array_values($_SESSION['product']);
+    echo "<script>window.location.replace('checkout.php')</script>";
+}
+
 }
 ?>
 <?php include ('footer.php');?>

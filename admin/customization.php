@@ -716,4 +716,4 @@ echo "<script> var view_modal = document.getElementById('view_modal'); </script>
           window.history.pushState({path:newurl},'',newurl);
       }
     }
-  </script>
+</script>
