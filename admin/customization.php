@@ -202,6 +202,11 @@
   height: 1px;
   background: black;
 }
+
+.categoryselect{
+  width:40% !important;
+  float: right;
+}
 /*MOBILE RESPONSIVE*/
 	@media screen and (max-width: 600px) {
   .content_body{
@@ -212,7 +217,25 @@
         width: 100%;
         margin-top: 0;
     }
+
+  .categoryselect{
+  width: 100% !important;
+  float: right;
+}
 	}
+
+  @media only screen and (max-width: 768px) {
+
+  .categoryselect{
+  width: 50% !important;
+  float: right;
+}
+
+
+.content_body{
+  margin: 50px;
+  } 
+}
 </style>
 <body>
 <div class="content">
@@ -223,17 +246,19 @@
     <hr>
 <br>
 <center>
-<select class="w3-select w3-border" name="option2" onchange="myFunction()" type="text" id="dynamic_select">
+<select class="w3-select w3-border categoryselect" name="option2" onchange="myFunction()" type="text" id="dynamic_select">
     <option value="" disabled selected placeholder>Product Classification</option>
     <option value="?Classification=Chair">Chair</option>
 	<option value="?Classification=Cabinet">Cabinet</option>
 	<option value="?Classification=Table">Table</option>
 	<option value="?Classification=Decoration">Decoration</option>
 </select>
+<br><br>
+<div class="w3-responsive">
   <table>
             <tr>
               <th>Customization ID</th>
-              <th>Customization Name</th>
+              <th class="name">Customization Name</th>
               <th><center>ACTIONS</center></th>
 
             </tr>
@@ -247,8 +272,8 @@
                     ?>
                     <tr>
                         <td><center><?php echo $rows['customizationid']; ?></center></td>
-                        <td><center><?php echo $rows['customizationname']; ?></center></td>
-                        <td><a href="?Classification=<?php echo $rows['classification']; ?>&ID=<?php echo $rows['customizationid'] ?>"><button class="btn_style"><img src="img/view.png" style="height: 15px; width: 15px;"></button></a></td>
+                        <td><?php echo $rows['customizationname']; ?></td>
+                        <td><center><a href="?Classification=<?php echo $rows['classification']; ?>&ID=<?php echo $rows['customizationid'] ?>"><button class="btn_style"><img src="img/view.png" style="height: 15px; width: 15px;"></button></a></center></td>
                     </tr>
                     <?php
                 }
@@ -262,6 +287,7 @@
                 }
            ?>
           </table>
+        </div>  
       </center>
    </div>
    <div id="view_modal" class="w3-modal">

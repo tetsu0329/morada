@@ -54,7 +54,28 @@
   .content_body{
     margin-left: 50px;
     margin-top: 30px;  }
+
+    .msg1{
+		margin: 1%;
+		width: 100%;
+		padding: 4%;
+		float: left;
 	}
+	.msg{
+		margin: 1%;
+		width: 100%;
+		padding: 4%;
+		float: left;
+	}
+	}
+
+	  @media only screen and (max-width: 768px) {
+
+.content_body{
+  margin: 50px;
+  } 
+}
+
 </style>
 <body>
 <div class="content">
