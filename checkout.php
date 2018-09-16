@@ -151,7 +151,7 @@ if(isset($_GET['ProductID']))
 	$total += $subtot;
 	?>
   <td>PHP <?php echo $subtot; ?></td>
-  <td><button style="border: 0; box-shadow: none; background: transparent; cursor: pointer;"><img src="admin/img/delete.png" width="15px;"></button></td>
+  <td><a href='?delete=<?php echo $_SESSION['product'][$row][2]; ?>'><button style="border: 0; box-shadow: none; background: transparent; cursor: pointer;"><img src="admin/img/delete.png" width="15px;"></button></a></td>
 </tr>
 
 <?php
@@ -257,6 +257,7 @@ if(isset($_POST['submitorder'])){
 		$_SESSION['paymentAck'] = 'BANK_DEPOSIT';
 		echo "<script>window.location.replace('payment/bank.php')</script>";
 	}
+}
 if(isset($_GET['delete'])){
   $ProductID = $_GET['delete'];
   $rowcount= count($_SESSION['product']);
@@ -268,8 +269,6 @@ if(isset($_GET['delete'])){
     }
     $_SESSION['product']=array_values($_SESSION['product']);
     echo "<script>window.location.replace('checkout.php')</script>";
-}
-
 }
 ?>
 <?php include ('footer.php');?>
