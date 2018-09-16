@@ -256,6 +256,13 @@
 <br><br>
 <div class="w3-responsive">
   <table>
+        <?php
+            if(isset($_GET['Classification'])){
+        ?>
+        <button onclick="document.getElementById('custom_modal').style.display='block'" class="btn_style">Add Customization Selection</button>
+        <?php
+            }
+        ?>    
             <tr>
               <th>Customization ID</th>
               <th class="name">Customization Name</th>
@@ -273,7 +280,8 @@
                     <tr>
                         <td><center><?php echo $rows['customizationid']; ?></center></td>
                         <td><?php echo $rows['customizationname']; ?></td>
-                        <td><center><a href="?Classification=<?php echo $rows['classification']; ?>&ID=<?php echo $rows['customizationid'] ?>"><button class="btn_style"><img src="img/view.png" style="height: 15px; width: 15px;"></button></a></center></td>
+                        <td><center><a href="?Classification=<?php echo $rows['classification']; ?>&ID=<?php echo $rows['customizationid'] ?>"><button class="btn_style">View Selection and Option</button></a>
+                        <a href="?Classification=<?php echo $rows['classification']; ?>&OptionNo=<?php echo $rows['customizationid'] ?>"><button onclick="document.getElementById('edit_modal').style.display='block'" class="btn_style">Add Option in Selection</button></center></td>
                     </tr>
                     <?php
                 }
@@ -296,10 +304,19 @@
                 <span onclick="document.getElementById('view_modal').style.display='none'" class="w3-button w3-display-topright">&times;</span>
             </header>
             <div class="w3-container">
+            <?php
+            $selectid = $_GET['ID'];
+            $query =  mysqli_query($conn,"SELECT * FROM customizationtbl WHERE customizationid = '$selectid'");
+            $res = mysqli_fetch_assoc($query);
+            ?>
+            <h4>View <?php echo $res['customizationname']; ?> Option for <?php echo $_GET['Classification'] ?></h4>
+            <hr> 
+            <form action="" METHOD="POST">
             <table>
             <tr>
               <th>Option No.</th>
               <th><center>Option Name</center></th>
+              <th><center>Action</center></th>
             </tr>
 
             <?php
@@ -313,13 +330,75 @@
                 <tr>
                 <td><?php echo $cnt; ?></td>
                 <td><?php echo $rows['optionname']; ?></td>
+                <td><button onclick='updateURL(<?php echo $rows['optionid'] ?>)'>Delete Option</button></td>
+                
                 </tr>
             <?php
                 $cnt++;
                 }
             }
             ?>
+            </form>
             </table>
+            </div>
+        </div>
+    </div>
+    <div id="add_modal" class="w3-modal">
+        <div class="w3-modal-content">
+            <header class="w3-container"> 
+                <span onclick="document.getElementById('add_modal').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+            </header>
+            <div class="w3-container">
+            <form action= "" method="POST">
+                <?php
+                $class = $_GET['Classification'];
+                $option = $_GET['OptionNo'];
+                ?>
+                <input type="hidden" value='<?php echo $class; ?>' name='Classification'>
+                <input type="hidden" value='<?php echo $option; ?>' name='Option'>
+                <h4>Add Another Option</h4>
+                <hr>  
+                <div class="container">
+                    <div class="row">
+                        <div class="col-75">
+                        <?php
+                            $idd = $_GET['OptionNo'];
+                            $sqlselectcustomization = mysqli_query($conn,"SELECT * FROM customizationtbl WHERE customizationid = '$idd'");
+                            while($rows=mysqli_fetch_assoc($sqlselectcustomization))
+                            {
+                        ?>
+                            <input type="text" id="optionname" name="optionname" placeholder="Add <?php echo $rows['customizationname']; ?> Option" >
+                        <?php
+                            }
+                        ?>
+                        </div>
+                    </div>
+                    <br>
+                    <center>
+                        <input type='submit' name='optionsave' value='SAVE' class="btn_style2">
+                    </center>
+                </div>
+            </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="custom_modal" class="w3-modal">
+        <div class="w3-modal-content">
+            <header class="w3-container"> 
+                <span onclick="document.getElementById('custom_modal').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+            </header>
+            <div class="w3-container">
+                <h4>Add Another Selection</h4>
+                <form action="" METHOD="POST">
+                    <input type="hidden" id="classiname" value='<?php echo $_GET['Classification']; ?>' name="classi">
+                    <input type="text" id="selectionname" name="selectionname" placeholder="Selection Name" >
+                    <br>
+                    <center>
+                        <input type='submit' name='selectionsave' value='SAVE' class="btn_style2">
+                    </center>
+                </form>
+                <hr> 
             </div>
         </div>
     </div>
@@ -331,6 +410,10 @@ echo "<script> var view_modal = document.getElementById('view_modal'); </script>
 	if(isset($_GET['ID'])){
 		$idd = $_GET['ID'];
 		echo "<script> view_modal.style.display = 'block' </script>";
+    }
+    if(isset($_GET['OptionNo'])){
+		$no = $_GET['OptionNo'];
+		echo "<script> add_modal.style.display = 'block' </script>";
 	}
 	
 ?>
@@ -340,6 +423,18 @@ echo "<script> var view_modal = document.getElementById('view_modal'); </script>
 			
 			if (event.target == view_modal) {
 			view_modal.style.display = "none";
+			}
+		}
+    window.onclick = function(event) {
+			
+			if (event.target == add_modal) {
+			add_modal.style.display = "none";
+			}
+		}
+    window.onclick = function(event) {
+			
+			if (event.target == custom_modal) {
+			custom_modal.style.display = "none";
 			}
 		}
         $(function() {
@@ -352,4 +447,14 @@ echo "<script> var view_modal = document.getElementById('view_modal'); </script>
     return false;
   });
 });
+
 </script>
+<script type="text/javascript">
+    function updateURL(optionID) {
+      if (history.pushState) {
+          var id = optionID;
+          var newurl = window.location.href + '&Option='+id;
+          window.history.pushState({path:newurl},'',newurl);
+      }
+    }
+  </script>

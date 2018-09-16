@@ -318,6 +318,39 @@ if(isset($_POST['sliderbtn3'])){
             window.location='category.php';
             </script>";
     }
+    if (isset($_POST['optionsave'])) {
+        $classification = $_POST['Classification'];
+        $option = $_POST['Option'];
+        $name = $_POST['optionname'];
+
+        $result = mysqli_query($conn, "INSERT INTO customizationitemtbl (optionname, customizationid) 
+        VALUES ('$name','$option')")
+            or die ("failed to query database". mysqli_error());
+            echo"<script type='text/javascript'>alert('Option Added successfully'); 
+            window.location='customization.php?Classification=$classification&OptionNo=$option';
+            </script>";
+    }
+    if (isset($_POST['selectionsave'])) {
+        $name = $_POST['selectionname'];
+        $classification = $_POST['classi'];
+
+        $result = mysqli_query($conn, "INSERT INTO customizationtbl (customizationname, classification) 
+        VALUES ('$name','$classification')")
+            or die ("failed to query database". mysqli_error());
+            echo"<script type='text/javascript'>alert('Selection Added successfully'); 
+            window.location='customization.php?Classification=$classification';
+            </script>";
+    }
+    if (isset($_GET['Option'])) {
+        $id = $_GET['ID'];
+        $optionid = $_GET['Option'];
+        $class = $_GET['Classification'];
+        $result = mysqli_query($conn, "DELETE FROM customizationitemtbl WHERE optionid = $optionid")
+            or die ("failed to query database". mysqli_error());
+            echo"<script type='text/javascript'>alert('Option Deleted Successfully');
+            window.location='customization.php?Classification=$class&ID=$id'; 
+            </script>";
+    }
 
     if(isset($_POST['gallerybtn'])){
         $target_dir = "../gallery/";
