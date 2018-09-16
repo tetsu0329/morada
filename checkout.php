@@ -1,5 +1,4 @@
 <?php
-session_start(); 
 include ('navigation.php');
 include ('connection/frontconn.php');
 include ('connection/frontconnection.php');
@@ -17,11 +16,17 @@ if(isset($_GET['ProductID']))
           $product[3] = $queryhold['productname'];
           $product[4] = $_POST['quantity'];
 					$product[5] = $queryhold['itemprice'];
-					$product[6] = $_POST['option'];
+					$product[6] = $_POST['option1'];
 					$product[7] = $_POST['option2'];
 					$product[8] = $_POST['option3'];
 					$product[9] = $_POST['option4'];
 					$product[10] = $_POST['option5'];
+					$product[11] = $_POST['option6'];
+					$product[12] = $_POST['option7'];
+					$product[13] = $_POST['option8'];
+					$product[14] = $_POST['option9'];
+					$product[15] = $_POST['option10'];
+					$product[16] = $_POST['option11'];
       }
       array_push($_SESSION['product'], $product);
       echo "<script>window.location = 'checkout.php'</script>";
@@ -35,11 +40,17 @@ if(isset($_GET['ProductID']))
           $product[3] = $queryhold['productname'];
 					$product[4] = $_POST['quantity'];
 					$product[5] = $queryhold['itemprice'];
-					$product[6] = $_POST['option'];
+					$product[6] = $_POST['option1'];
 					$product[7] = $_POST['option2'];
 					$product[8] = $_POST['option3'];
 					$product[9] = $_POST['option4'];
 					$product[10] = $_POST['option5'];
+					$product[11] = $_POST['option6'];
+					$product[12] = $_POST['option7'];
+					$product[13] = $_POST['option8'];
+					$product[14] = $_POST['option9'];
+					$product[15] = $_POST['option10'];
+					$product[16] = $_POST['option11'];
       }
       $_SESSION['product']=array($product);
       echo "<script>window.location = 'checkout.php'</script>";

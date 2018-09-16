@@ -269,6 +269,24 @@ img {
         <select class="w3-select w3-border" name="option4" hidden>
           <option value=""></option>
         </select>
+        <select class="w3-select w3-border" name="option5" hidden>
+          <option value=""></option>
+        </select>
+        <select class="w3-select w3-border" name="option6" hidden>
+          <option value=""></option>
+        </select>
+        <select class="w3-select w3-border" name="option7" hidden>
+          <option value=""></option>
+        </select>
+        <select class="w3-select w3-border" name="option8" hidden>
+          <option value=""></option>
+        </select>
+        <select class="w3-select w3-border" name="option9" hidden>
+          <option value=""></option>
+        </select>
+        <select class="w3-select w3-border" name="option10" hidden>
+          <option value=""></option>
+        </select>
         <!-- end of static -->
         <?php
         $class = $rows['productclass'];
@@ -298,7 +316,7 @@ img {
         ?>
 
         <h6>Add another customization request</h6>
-        <textarea name="option5"></textarea>
+        <textarea name="option11"></textarea>
 
         <div id="input_div">
           	<h6>Quantity</h6>

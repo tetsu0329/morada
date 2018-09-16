@@ -78,14 +78,21 @@ if($_SESSION["paymentAck"] == "BANK_DEPOSIT")
         $orderedProductPrice = $cart_item[5] * 1.00;    //$cart_item[3] = price
         $orderedProductQty = $cart_item[4];             //$cart_item[4] = qty
         $orderedProductSize = "Default";
-        $option = $cart_item[6];
+        $option1 = $cart_item[6];
         $option2 = $cart_item[7];
         $option3 = $cart_item[8];
+        $option4 = $cart_item[9];
         $option5 = $cart_item[10];
+        $option6 = $cart_item[11];
+        $option7 = $cart_item[12];
+        $option8 = $cart_item[13];
+        $option9 = $cart_item[14];
+        $option10 = $cart_item[15];
+        $option11 = $cart_item[16];
           
         $insert_row = $mysqli->query("INSERT INTO itemtransactiontable
-                  (`transactionID`, `productID`, `qty`, `price`, `size`, `note`, `option1`, `option2`, `option3`, `lastoption`) VALUES
-                  ('$transactionID','$orderedProductId','$orderedProductQty','$orderedProductPrice','$orderedProductSize','','$option','$option2','$option3','$option5')
+                  (`transactionID`, `productID`, `qty`, `price`, `size`, `note`, `option1`, `option2`, `option3`, `option4`, `option5`, `option6`, `option7`, `option8`, `option9`, `option10`, `lastoption`) VALUES
+                  ('$transactionID','$orderedProductId','$orderedProductQty','$orderedProductPrice','$orderedProductSize','','$option1','$option2','$option3','$option4','$option5','$option6','$option7','$option8', '$option9','$option10', '$option11')
               ");
 
         if(!$insert_row){

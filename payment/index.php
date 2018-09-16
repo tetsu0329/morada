@@ -79,10 +79,17 @@ if(isset($_SESSION["product"]) && !isset($_SESSION["payment"])) //Post Data rece
             'itm_code'=>$obj->productcode,
             'itm_id'=>$productID,
             'itm_qty'=>$cart_item[4],                    //$cart_item[4] = qty
-            'option'=>$cart_item[6],
+            'option1'=>$cart_item[6],
             'option2'=>$cart_item[7],
             'option3'=>$cart_item[8],
-            'option5'=>$_cart_item[10]
+            'option4'=>$_cart_item[9],                    
+            'option5'=>$cart_item[10],
+            'option6'=>$cart_item[11],
+            'option7'=>$cart_item[12],
+            'option8'=>$_cart_item[13],                    
+            'option9'=>$cart_item[14],
+            'option10'=>$cart_item[15],
+            'option11'=>$cart_item[16]
         );
         $i++;
     }
@@ -356,15 +363,22 @@ if(isset($_GET["token"]) && isset($_GET["PayerID"]) && isset($_SESSION["payment"
                 $orderedProductQty = $p_item['itm_qty'];
                 $orderedProductSize = $p_item['itm_size'];
                 $orderedProductPrice = $p_item['itm_price'] * 1.00;
-                $option = $p_item['option'];
+                $option1 = $p_item['option1'];
                 $option2 = $p_item['option2'];
                 $option3 = $p_item['option3'];
+                $option4 = $p_item['option4'];
                 $option5 = $p_item['option5'];
+                $option6 = $p_item['option6'];
+                $option7 = $p_item['option7'];
+                $option8 = $p_item['option8'];
+                $option9 = $p_item['option9'];
+                $option10 = $p_item['option10'];
+                $option11 = $p_item['option11'];
 
                 $insert_row = $mysqli->query("INSERT INTO itemtransactiontable
-                  (`transactionID`, `productID`, `qty`, `price`, `size`, `note`, `option1`, `option2`, `option3`, `lastoption`)
+                  (`transactionID`, `productID`, `qty`, `price`, `size`, `note`, `option1`, `option2`, `option3`, `option4`, `option5`, `option6`, `option7`, `option8`, `option9`, `option10`, `lastoption`)
                 VALUES
-                  ('$transactionID','$orderedProductId','$orderedProductQty','$orderedProductPrice','$orderedProductSize','','$option','$option2','$option3','$option5')
+                  ('$transactionID','$orderedProductId','$orderedProductQty','$orderedProductPrice','$orderedProductSize','','$option1','$option2','$option3','$option4','$option5','$option6','$option7','$option8','$option9','$option10','$option11')
               ");
 
                 if(!$insert_row){

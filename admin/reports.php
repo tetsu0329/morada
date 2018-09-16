@@ -227,6 +227,7 @@
               <th>Transaction Number</th>
               <th>Date of Transaction</th>
               <th><center>Payment Method</center></th>
+              <th><center>Order Amount</center></th>
               <th><center>Order By</center></th>
               <th><center>Order Status</center></th>
               <th><center>ACTIONS</center></th>
@@ -241,6 +242,7 @@
                 <td><center><?php echo $rows['transactionID']; ?></center></td>
                 <td><center><?php echo $rows['timestamp']; ?></center></td>
                 <td><center><?php echo $rows['paymentMethod']; ?></center></td>
+                <td><center><?php echo "PHP ".$rows['totalAmount']; ?></center></td>
                 <td><center>
                     <?php 
                         $id = $rows['userID'];
@@ -281,44 +283,56 @@
                             <div class="w3-half rightreport">
                               <h5 style="font-weight: 600;">Price</h5>
                               <h6 style="line-height: 2;">PHP <?php echo $rows['price'] ?></h6> 
-
-                              <h5 style="font-weight: 600;">Size</h5>
-                              <h6 style="line-height: 2;"><?php echo $rows['size'] ?></h6>
-
-                              <h5 style="font-weight: 600;">Wood Type</h5>
-                              <h6 style="line-height: 2;">
-                                <?php 
+                              <h5 style="font-weight: 600;">No. Items</h5>
+                              <h6 style="line-height: 2;"><?php echo $rows['qty'] ?></h6>
+                              <h5 style="font-weight: 600;">Customization</h5> 
+                              <?php
                                 if(!empty($rows['option1'])){
                                     echo $rows['option1'];
+                                    echo "<br>";
                                 }
-                                else{
-                                    echo 'Default Wood';
-                                }
-                                ?>
-                              </h6>
-                      
-                              <h5 style="font-weight: 600;">Color</h5>
-                              <h6 style="line-height: 2;">
-                              <?php 
                                 if(!empty($rows['option2'])){
                                     echo $rows['option2'];
+                                    echo "<br>";
                                 }
-                                else{
-                                    echo 'Default Color';
-                                }
-                                ?>
-                              </h6>
-
-                              <h5 style="font-weight: 600;">Edge</h5>
-                              <h6 style="line-height: 2;"><?php 
                                 if(!empty($rows['option3'])){
                                     echo $rows['option3'];
+                                    echo "<br>";
                                 }
-                                else{
-                                    echo 'Default Edge';
+                                if(!empty($rows['option4'])){
+                                    echo $rows['option4'];
+                                    echo "<br>";
                                 }
-                                ?></h6>
-
+                                if(!empty($rows['option5'])){
+                                    echo $rows['option5'];
+                                    echo "<br>";
+                                }
+                                if(!empty($rows['option6'])){
+                                    echo $rows['option6'];
+                                    echo "<br>";
+                                }
+                                if(!empty($rows['option7'])){
+                                    echo $rows['option7'];
+                                    echo "<br>";
+                                }
+                                if(!empty($rows['option8'])){
+                                    echo $rows['option8'];
+                                    echo "<br>";
+                                }
+                                if(!empty($rows['option9'])){
+                                    echo $rows['option9'];
+                                    echo "<br>";
+                                }
+                                if(!empty($rows['option10'])){
+                                    echo $rows['option10'];
+                                    echo "<br>";
+                                }
+                                if(empty($rows['option1']) && empty($rows['option2']) && empty($rows['option3']) && empty($rows['option4']) &&
+                                empty($rows['option5']) && empty($rows['option6']) && empty($rows['option7']) && empty($rows['option8']) &&
+                                empty($rows['option9']) && empty($rows['option10'])){
+                                    echo "No Customization Request";
+                                }
+                              ?>
                               <h5 style="font-weight: 600;">Additional Customization</h5>
                               <h6 style="line-height: 2;">
                               <?php 
@@ -330,6 +344,8 @@
                                 }
                                 ?>
                               </h6>
+                              <h5 style="font-weight: 600;">Subtotal</h5>
+                              <h6 style="line-height: 2;">PHP <?php echo $subtot = $rows['qty'] * $rows['price']; ?></h6> 
                             </div>
                           
                             <div class="w3-container"><hr></div>
