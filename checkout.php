@@ -129,6 +129,7 @@ if(isset($_GET['ProductID']))
   <th>Quantity</th>
   <th>Price</th>
   <th>Subtotal</th>
+  <th>&nbsp;</th>
 </tr>
 </thead>
 <tbody>
@@ -150,6 +151,7 @@ if(isset($_GET['ProductID']))
 	$total += $subtot;
 	?>
   <td>PHP <?php echo $subtot; ?></td>
+  <td><button style="border: 0; box-shadow: none; background: transparent; cursor: pointer;"><img src="admin/img/delete.png" width="15px;"></button></td>
 </tr>
 
 <?php
@@ -169,6 +171,7 @@ else{
 	else{
 		echo "No items in the cart";
 	}?></b></td>
+	<td></td>
 </tr>
 <!-- total -->
 
