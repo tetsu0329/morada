@@ -351,6 +351,17 @@ if(isset($_POST['sliderbtn3'])){
             window.location='customization.php?Classification=$class&ID=$id'; 
             </script>";
     }
+    if (isset($_GET['SelectionID'])) {
+        $id = $_GET['SelectionID'];
+        $class = $_GET['Classification'];
+        $result = mysqli_query($conn, "DELETE FROM customizationtbl WHERE customizationid = $id")
+            or die ("failed to query database". mysqli_error());
+        $result2 = mysqli_query($conn, "DELETE FROM customizationitemtbl WHERE customizationid = $id")
+            or die ("failed to query database". mysqli_error());    
+            echo"<script type='text/javascript'>alert('Selection Deleted Successfully');
+            window.location='customization.php?Classification=$class'; 
+            </script>";
+    }
 
     if(isset($_POST['gallerybtn'])){
         $target_dir = "../gallery/";

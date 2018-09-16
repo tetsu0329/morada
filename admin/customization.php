@@ -474,13 +474,21 @@
 
   <div class="content_body">
   	<div style="padding-top: 5%;"></div>
-    <h2 class="title">Customization</h2>
+      <?php
+        if(isset($_GET['Classification'])){
+            echo "<h2 class='title'>".$_GET['Classification']." Customization</h2>";
+        }
+        else{
+            echo "<h2 class='title'>Choose Customization</h2>";
+        }
+        ?>
+    
     <hr>
 <br>
 
 
 <center>
-
+        
         <div class="w3-quarter"></div>
         <div class="w3-quarter"></div>
         <div class="w3-quarter">
@@ -529,7 +537,8 @@
                         <td><center><?php echo $rows['customizationid']; ?></center></td>
                         <td><?php echo $rows['customizationname']; ?></td>
                         <td><center><a href="?Classification=<?php echo $rows['classification']; ?>&ID=<?php echo $rows['customizationid'] ?>"><button class="btn_style"><img src="img/view.png" width="15;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Selection & Option</button></a><br>
-                        <br><a href="?Classification=<?php echo $rows['classification']; ?>&OptionNo=<?php echo $rows['customizationid'] ?>"><button onclick="document.getElementById('edit_modal').style.display='block'" class="btn_style"><img src="img/add.png" width="15px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Option in Selection</button></center></td>
+                        <br><a href="?Classification=<?php echo $rows['classification']; ?>&OptionNo=<?php echo $rows['customizationid'] ?>"><button onclick="document.getElementById('edit_modal').style.display='block'" class="btn_style"><img src="img/add.png" width="15px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Option in Selection</button></a><br>
+                        <br><a href="?Classification=<?php echo $rows['classification']; ?>&SelectionID=<?php echo $rows['customizationid'] ?>"><button onclick="document.getElementById('edit_modal').style.display='block'" class="btn_style"><img src="img/delete.png" width="15px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Selection & Option</button></a><br></center></td>
                     </tr>
                     <?php
                 }
