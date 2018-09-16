@@ -162,6 +162,23 @@
     clear: both;
 }
 
+		.title{
+		letter-spacing: 15px;
+		color: #8C6A48;
+		text-align: center;
+		text-transform: uppercase;
+	}
+
+	.headtitle{
+		background:  #e7d5d0;
+		width: 50%;
+		padding: 2%;
+		border: 2px solid #8C6A48;
+	}
+	hr{
+		background-color: #8C6A48;
+		height: 1px;
+	}
 /*MOBILE RESPONSIVE*/
 	@media screen and (max-width: 600px) {
   .content_body{
@@ -193,7 +210,7 @@
 
   <div class="content_body">
   	<div style="padding-top: 5%;"></div>
-    <h2>User Accounts</h2>
+    <h2 class="title">User Accounts</h2>
     <hr>
     <br>
     <div style="overflow-x:auto;">
@@ -202,10 +219,10 @@
 			<div id="add_modal" class="modal">
 				<div class="modal-content">
 					<span class="close">&times;</span>
-					    <h4>Add User</h4>
+					    <h4 class="">Add User</h4>
 					    <hr>
 						<form action='' method='POST'>
-					    <center><h5 style="margin: 20px;">Personal Information</h5></center>
+					    <center><h5 style="margin: 20px;" class="">Personal Information</h5></center>
 					    <div class="container">
 						    <div class="row">
 						      <div class="col-75">

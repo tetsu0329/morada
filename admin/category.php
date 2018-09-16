@@ -201,6 +201,24 @@
   height: 1px;
   background: black;
 }
+
+    .title{
+    letter-spacing: 15px;
+    color: #8C6A48;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .headtitle{
+    background:  #e7d5d0;
+    width: 50%;
+    padding: 2%;
+    border: 2px solid #8C6A48;
+  }
+  hr{
+    background-color: #8C6A48;
+    height: 1px;
+  }
 /*MOBILE RESPONSIVE*/
 	@media screen and (max-width: 600px) {
   .content_body{
@@ -224,7 +242,7 @@
 
   <div class="content_body">
   	<div style="padding-top: 5%;"></div>
-    <h2>Category</h2>
+    <h2 class="title">Category</h2>
     <hr>
 <br>
 <div class="top_btns">
