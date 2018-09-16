@@ -50,6 +50,18 @@
 	.order_body:hover{
 		background-color: #e7d5d0;
 	}
+
+	.title{
+		letter-spacing: 15px;
+		color: #8C6A48;
+		text-align: center;
+	}
+
+	hr{
+		background-color: #8C6A48;
+		height: 1px;
+	}
+
 	@media screen and (max-width: 600px) {
   .content_body{
     margin-left: 50px;
@@ -81,7 +93,7 @@
 <div class="content">
   <div class="content_body">
   	<div style="padding-top: 5%;"></div>
-    <h2>Dashboard</h2>
+    <h2 class="title">DASHBOARD</h2>
     <hr>
     <center>
     	<div class="container">      
@@ -93,7 +105,7 @@
   			<br>
   			<br>
   			<div style="margin-top: 35%;">
-  			<p style="font-size: 20px">MESSAGES</p>
+  			<p style="font-size: 20px" class="title">MESSAGES</p>
   			<hr>
 
   			<div class="inquiry_body msg">

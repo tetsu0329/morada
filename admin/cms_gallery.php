@@ -95,6 +95,24 @@
     text-decoration: none;
     cursor: pointer;
 }
+
+    .title{
+    letter-spacing: 15px;
+    color: #8C6A48;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .headtitle{
+    background:  #e7d5d0;
+    width: 50%;
+    padding: 2%;
+    border: 2px solid #8C6A48;
+  }
+  hr{
+    background-color: #8C6A48;
+    height: 1px;
+  }
 	@media screen and (max-width: 600px) {
   .content_body{
     margin-left: 50px;
@@ -112,7 +130,7 @@
 
   <div class="content_body">
     <div style="padding-top: 5%;"></div>
-    <h2>Gallery</h2>
+    <h2 class="title">Gallery</h2>
     <hr>
         <div class="top_btns">
       <button id="add_btn" class="btn_style"><img src="img/add.png" style="height: 15px; width: 15px;"></button>

@@ -74,18 +74,19 @@ a.panel:hover {
 }
 
 /**/
+
 </style>
 </head>
 <body>
 
 <!-- Top container -->
-<div class="w3-bar w3-top w3-large topbar" style="z-index: 4;">
+<div class="w3-bar w3-top w3-large topbar" style="z-index:;">
   <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i>  </button>
   <span class="w3-bar-item w3-right"><a href="#" class="w3-bar-item w3-button">LOGOUT</a></span>
 </div>
 
 <!-- Sidebar/menu -->
-<nav class="w3-sidebar w3-collapse w3-white w3-animate-left sidebarmenu" style="z-index:3;width:300px;" id="mySidebar"><br>
+<nav class="w3-sidebar w3-collapse w3-white w3-animate-left sidebarmenu" style="z-index:4;width:300px; margin-top: 8px;" id="mySidebar"><br>
   <div class="w3-container w3-row">
     <div class="w3-col s4">
       <img src="img/logo.png" style="max-width: 250px;"><br>

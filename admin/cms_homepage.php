@@ -36,6 +36,8 @@
 
 	.map .img-thumbnail{
 		width: 85% !important;
+		background: #f9f9f9;
+		border: 1px solid #8C6A48;
 	}
 		.btn_style{
 	background-color: #8C6A48 !important;
@@ -111,6 +113,23 @@ input[type=submit]:hover {
     clear: both;
 }
 
+	.title{
+		letter-spacing: 15px;
+		color: #8C6A48;
+		text-align: center;
+		text-transform: uppercase;
+	}
+
+	.headtitle{
+		background:  #e7d5d0;
+		width: 50%;
+		padding: 2%;
+		border: 2px solid #8C6A48;
+	}
+	hr{
+		background-color: #8C6A48;
+		height: 1px;
+	}
 	@media screen and (max-width: 600px) {
   .content_body{
     margin-left: 50px;
@@ -122,9 +141,17 @@ input[type=submit]:hover {
     }
 
     .btn_style {
-    	margin: 5% !important;
+    	margin-top: 2% !important;
+    	margin-bottom: 2% !important;
     }
 
+    .headtitle{
+		width: 100%;
+		margin-top: 10% !important;
+		background:  #e7d5d0;
+		padding: 2%;
+		border: 2px solid #8C6A48;
+	}
 	}
 
 
@@ -140,18 +167,19 @@ input[type=submit]:hover {
 
   <div class="content_body">
   	<div style="padding-top: 5%;"></div>
-    <h2>Homepage</h2>
+    <h2 class="title">Homepage</h2>
     <hr>
      <center>  
-     <h4>Logo</h4> 
-			<div class="map">
-			<input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp"  name="logo" value="Choose Photo" accept="image/*" onchange="loadlogo(event)">
-			
+     	<br>
+     <h4 class="title headtitle">Logo</h4> 
+     <br>
+  
+   			<div class="map">
 				<div class="img-thumbnail">
 					<img src="img/dummymap.jpg" width="50%;" id='logo'>
-					<input type='submit' name='logo' value='Save' class="btn_style">
+					<br><br>
+					<center><input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp"  name="logo" value="Choose Photo" accept="image/*" onchange="loadlogo(event)"><input type='submit' name='logo' value='Save' class="btn_style"></center>	
 				</div>
-				
 			</div>
 			<script>
 			var loadlogo = function(event) {
@@ -159,19 +187,23 @@ input[type=submit]:hover {
 				output.src = URL.createObjectURL(event.target.files[0]);
 				};
 			</script>
-			
-			<br>
-	<h4>Slider</h4> 		
+		<br>
+	<h4 class="title headtitle">Slider Images</h4> 
+	<br>
 			<?php
 				while($rows=mysqli_fetch_assoc($sqlselectslider))
 				{
 			?>
 			<div class="map">
 				<form action="" method="POST" enctype="multipart/form-data">
-				<div class="img-thumbnail"><b>Slider 1</b><br><br><center><input type="file" class="form-control-file" name='slider1'id="exampleInputFile" aria-describedby="fileHelp" value="Choose Photo" accept="image/*" onchange="loadslider1(event)"></center><hr>
+				<div class="img-thumbnail "><b class="title">Slider 1</b>
 				<br><br>
+				<center><img src="<?php echo $rows['sliderpicture'] ?>" width="50%;" id='slider1'></center>
+				<br><br>
+				<input type="file" class="form-control-file" name='slider1'id="exampleInputFile" aria-describedby="fileHelp" value="Choose Photo" accept="image/*" onchange="loadslider1(event)">
 				<input type='submit' name='sliderbtn1' value='Save' class="btn_style">
-					<img src="<?php echo $rows['sliderpicture'] ?>" width="50%;" id='slider1'>
+				
+					
 				</form>
 				</div>
 				
@@ -182,7 +214,6 @@ input[type=submit]:hover {
 					};
 				</script>
 			</div>
-			<br>
 			<?php
 				}
 			?>
@@ -190,12 +221,15 @@ input[type=submit]:hover {
 				while($rows2=mysqli_fetch_assoc($sqlselectslider2))
 				{
 			?>
+			<br><br>
 			<div class="map">
-				<div class="img-thumbnail"><b>Slider 2</b><br><br><input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp"  name="slider2" value="Choose Photo" accept="image/*" onchange="loadslider2(event)"><hr>
+				<div class="img-thumbnail"><b class="title">Slider 2</b><br><br>
 				<form action="" method="POST" enctype="multipart/form-data">
+					<center><img src="<?php echo $rows2['sliderpicture'] ?>" width="50%;" id='slider2'></center>
 				<br><br>
+				<input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp"  name="slider2" value="Choose Photo" accept="image/*" onchange="loadslider2(event)">
 				<input type='submit' name='sliderbtn2' value='Save'  class="btn_style">
-				<img src="<?php echo $rows2['sliderpicture'] ?>" width="50%;" id='slider2'>
+				
 				</form>
 				</div>
 				<script>
@@ -212,12 +246,15 @@ input[type=submit]:hover {
 				while($rows3=mysqli_fetch_assoc($sqlselectslider3))
 				{
 			?>
+			<br><br>
 			<div class="map">
-				<div class="img-thumbnail"><b>Slider 3</b><br><br><input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp"  name="slider3" value="Choose Photo" accept="image/*" onchange="loadslider3(event)"><hr>
+				<div class="img-thumbnail"><b class="title">Slider 3</b><br><br>
 				<form action="" method="POST" enctype="multipart/form-data">
+					<center><img src="<?php echo $rows3['sliderpicture'] ?>" width="50%;" id='slider3'></center>
 				<br><br>
+				<input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp"  name="slider3" value="Choose Photo" accept="image/*" onchange="loadslider3(event)">
 				<input type='submit' name='sliderbtn3' value='Save'  class="btn_style">
-				<img src="<?php echo $rows3['sliderpicture'] ?>" width="50%;" id='slider3'>
+				
 				</form>
 				</div>
 				<script>

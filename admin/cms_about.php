@@ -57,10 +57,48 @@
 	.fr-toolbar, .fr-desktop, .fr-top, .fr-basic, .fr-sticky-off{
 		z-index: 0;
 	}
+
+		.title{
+		letter-spacing: 15px;
+		color: #8C6A48;
+		text-align: center;
+		text-transform: uppercase;
+	}
+
+	.headtitle{
+		background:  #e7d5d0;
+		width: 50%;
+		padding: 2%;
+		border: 2px solid #8C6A48;
+	}
+	hr{
+		background-color: #8C6A48;
+		height: 1px;
+	}
+
 	@media screen and (max-width: 600px) {
   .content_body{
     margin-left: 50px;
     margin-top: 30px;  }
+
+        .btn_style {
+    	margin-top: 2% !important;
+    	margin-bottom: 2% !important;
+    	width: 100%;
+    }
+
+    .headtitle{
+		width: 100%;
+		margin-top: 10% !important;
+		background:  #e7d5d0;
+		padding: 2%;
+		border: 2px solid #8C6A48;
+	}
+
+	.about{
+		width: 100%;
+		margin: 0;
+	}
 	}
 		  @media only screen and (max-width: 768px) {
 .content_body{
@@ -74,14 +112,14 @@
 
   <div class="content_body">
   	<div style="padding-top: 5%;"></div>
-    <h2>About Us</h2>
+    <h2 class="title">About Us</h2>
     <hr>
+    <br>
     <center>
+    	<div><b class="title headtitle">Our Story</b></div>
+    	<br>
     	<div class="about">
 			<div class="about_body">
-				<div><b>Our Story</b></div>
-				<hr>
-				<br>
 			<form action='' method='POST'>
 				<textarea class="form-control p-input" id="exampleTextarea" rows="20" name="aboutcontent" ><?php echo $aboutrow['content'];?></textarea> 
                    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
@@ -100,12 +138,13 @@
 		</div>
 		
 		</form>
-
+		<br>
 		 	<div class="about">
+		 		<div><b class="title headtitle">Mission</b></div>
+				<br><br>
 			<div class="about_body">
-				<div><b>Mission</b></div>
-				<hr>
-				<br>
+				
+
 			<form action='' method='POST'>
 				<textarea class="form-control p-input" id="exampleTextarea" rows="20" name="aboutmission" ><?php echo $aboutrow['mission'];?></textarea> 
                    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
@@ -124,12 +163,11 @@
 		</div>
 		
 		</form>
-
+			<br>
 		 	<div class="about">
+				<div><b class="title headtitle">Vision</b></div>
+				<br><br>
 			<div class="about_body">
-				<div><b>Vision</b></div>
-				<hr>
-				<br>
 			<form action='' method='POST'>
 				<textarea class="form-control p-input" id="exampleTextarea" rows="20" name="aboutvision" ><?php echo $aboutrow['vision'];?></textarea> 
                    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>

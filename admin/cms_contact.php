@@ -127,6 +127,23 @@ input[type=submit]:hover {
     clear: both;
 }
 
+		.title{
+		letter-spacing: 15px;
+		color: #8C6A48;
+		text-align: center;
+		text-transform: uppercase;
+	}
+
+	.headtitle{
+		background:  #e7d5d0;
+		width: 50%;
+		padding: 2%;
+		border: 2px solid #8C6A48;
+	}
+	hr{
+		background-color: #8C6A48;
+		height: 1px;
+	}
 	@media screen and (max-width: 600px) {
   .content_body{
     margin-left: 50px;
@@ -136,6 +153,18 @@ input[type=submit]:hover {
         width: 100%;
         margin-top: 0;
     }
+
+        .headtitle{
+		width: 100%;
+		margin-top: 10% !important;
+		background:  #e7d5d0;
+		padding: 2%;
+		border: 2px solid #8C6A48;
+	}
+
+	.divtop{
+		margin-top: 110% !important; 
+	}
 	}
 		  @media only screen and (max-width: 768px) {
 .content_body{
@@ -149,10 +178,10 @@ input[type=submit]:hover {
 
   <div class="content_body">
   	<div style="padding-top: 5%;"></div>
-    <h2>Contact Us</h2>
+    <h2 class="title">Contact Us</h2>
     <hr>
      <center>  
-     <h4>Contact Details</h4>
+     <h4 class="title headtitle">Contact Details</h4>
 
 	 <?php
 		while($rows=mysqli_fetch_assoc($sqlcontact))
@@ -191,10 +220,9 @@ input[type=submit]:hover {
 			</div>
 			<br>
   			<br>
-  			<br>
-  			<div style="margin-top: 45%;">
+  			<div class="divtop" style="margin-top: 45%;">
 
-			<h4>Social Media</h4>  
+			<h4 class="title headtitle">Social Media</h4>  
   			<div class="social inquiry_body msg"><img src="img/facebook.png" style="width: 50px;"><hr>
 				<div class="row">
 			      <div class="col-75">
@@ -218,15 +246,14 @@ input[type=submit]:hover {
 			      </div>
   				</div>		    	
 			</div>
-
 			<br>
-			<br><input type='submit' value="SAVE" name="contactbtn" class="btn_style"><br>
+			<br>
+			<input type='submit' value="SAVE" name="contactbtn" class="btn_style"><br>
 			<br>
 			<div class="map">
 				<div class="inquiry_body" style="padding: 5%;"><img src="img/map.png" style="width: 50px;"><hr>
 					<img src="img/dummymap.jpg" width="95%;">
 				</div>
-				<br>
 				<br><input type='submit' value="SAVE" name="contactbtn" class="btn_style"><br>
 				<br>
 			</div>

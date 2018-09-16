@@ -185,9 +185,10 @@
 
 .imgreport{
   padding: 5%;
-  border: 1px solid black;
+  border: 1px solid #8C6A48;
   max-width: 300px;
   max-height: 300px;
+  border-radius: 10px !important;
 }
 
 .rightreport{
@@ -201,6 +202,24 @@
   height: 1px;
   background: black;
 }
+
+    .title{
+    letter-spacing: 15px;
+    color: #8C6A48;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .headtitle{
+    background:  #e7d5d0;
+    width: 50%;
+    padding: 2%;
+    border: 2px solid #8C6A48;
+  }
+  hr{
+    background-color: #8C6A48;
+    height: 1px;
+  }
 /*MOBILE RESPONSIVE*/
 	@media screen and (max-width: 600px) {
   .content_body{
@@ -218,7 +237,7 @@
 
   <div class="content_body">
   	<div style="padding-top: 5%;"></div>
-    <h2>Reports</h2>
+    <h2 class="title">Reports</h2>
     <hr>
 <br>
 <center>
@@ -276,7 +295,8 @@
                                 $sqlselectprod = mysqli_query($conn,"SELECT * FROM producttbl WHERE id = $prodid");
                                 $rows2=mysqli_fetch_assoc($sqlselectprod);
                                 ?>
-                                <h3><?php echo $rows2['productname'] ?></h3>
+                                <center><h3><?php echo $rows2['productname'] ?></h3></center>
+                                <br>
                               <center><img src="<?php echo $rows2['productimage'] ?>" class="imgreport"></center>
                             </div>
 

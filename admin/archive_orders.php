@@ -200,6 +200,23 @@ textarea {
     font-size: 16px;
     resize: none;
 }
+        .title{
+        letter-spacing: 15px;
+        color: #8C6A48;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    .headtitle{
+        background:  #e7d5d0;
+        width: 50%;
+        padding: 2%;
+        border: 2px solid #8C6A48;
+    }
+    hr{
+        background-color: #8C6A48;
+        height: 1px;
+    }
 /*MOBILE RESPONSIVE*/
 	@media screen and (max-width: 600px) {
   .content_body{
@@ -224,7 +241,7 @@ textarea {
 
   <div class="content_body" >
   	<div style="padding-top: 5%;"></div>
-    <h2 >Archive | Orders </h2>
+    <h2 class="title">Archive | Orders </h2>
     <hr>
     <div style="overflow-x:auto;">
     <br>
