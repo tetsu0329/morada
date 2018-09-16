@@ -236,20 +236,20 @@
                           </header>
                           
                           <div class="w3-container">
+                          <form action= "" method="POST">
                          <h4>Add Category</h4>
                           <hr>  
                           <div class="container">
                           <div class="row">
                           <div class="col-75">
-                            <input type="text" id="prodname" name="prodname" placeholder="Category Name">
+                            <input type="text" id="prodname" name="catname" placeholder="Category Name">
                           </div>
                            </div>
-
                            <br>
                            <center>
-                             <input type='submit' name='categsave' value='SAVE' class="btn_style2">&nbsp;<input type='submit' name='categancel' value='CANCEL' class="btn_style2">
+                             <input type='submit' name='categsave' value='SAVE' class="btn_style2">&nbsp;<input type='submit' name='categancel' value='CANCEL' class="btn_style2" onclick="document.getElementById('edit_modal').style.display='none'">
                            </center>
-                            
+                            </form>
                           </div>
                       
               

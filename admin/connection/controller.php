@@ -305,6 +305,20 @@ if(isset($_POST['sliderbtn3'])){
             window.location='cms_contact.php';
             </script>";
     }
+    if (isset($_POST['categsave'])) {
+        $addedby = $_SESSION['admin_name'];
+        $catname = $_POST['catname'];
+        date_default_timezone_set("Asia/Manila");
+        $messagedate= date("M-d-Y h:i:s a");
+
+        $result = mysqli_query($conn, "INSERT INTO categorytbl (categoryname, addedby, timestamp) 
+        VALUES ('$catname','$addedby','$messagedate')")
+            or die ("failed to query database". mysqli_error());
+            echo"<script type='text/javascript'>alert('Product Category Added successfully'); 
+            window.location='category.php';
+            </script>";
+    }
+
     if(isset($_POST['gallerybtn'])){
         $target_dir = "../gallery/";
         $target_file = $target_dir . substr(str_shuffle("abcdefghijklmnopqrstuvwxyz"),0,5) . basename($_FILES["gallery"]["name"]);
