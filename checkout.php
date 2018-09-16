@@ -89,7 +89,7 @@ if(isset($_GET['ProductID']))
 		background: #ceaea5 !important;
 	}
 
-		.mybtn{
+	.mybtn{
 		border-radius: 5px !important;
 		border: none;
 	}
@@ -109,12 +109,14 @@ if(isset($_GET['ProductID']))
 	}
 </style> 	
 <body>
-	<div class="w3-container w3-light-grey w3-row w3-center" style="padding: 100px 0px 0px 0px;">
-    <span class="w3-xxlarge">Checkout</p>
+	<div class="w3-container w3-light-grey w3-row w3-center" style="padding: 100px 0px 20px 0px;">
+    <span class="w3-xxlarge">Order Summary</span>
+    <h6 class="w-3opacity"><i>Please check your orders properly before checking out to avoid wrong placement of orders.</i></h6>
   	</div>
   	<br>
   	 <div class="w3-center">
     	<h6><b>Please check your orders below.</b></h6>
+    	<br>
   </div>
   
   	<div class="w3-container">
@@ -175,10 +177,20 @@ else{
 </table>
 </div>
 <br>
-<br>
 </div>
 
-	<div class="w3-container w3-light-grey" style="padding: 50px 50px 50px 50px;">
+  <div class="w3-center"> 	
+    	<h3>Would you like to <b><a href="http://localhost/morada/products.php?Category=All">Continue Shopping?</a></b> or <b><a href="#proceedcheckout">Proceed to Checkout?</a></b></h3>
+  </div>
+
+ <br>
+ <div id="proceedcheckout">&nbsp;</div>
+ <div class="w3-container w3-light-grey w3-row w3-center" style="padding: 20px 0px 20px 0px;">
+    <span class="w3-xxlarge">Proceed to Checkout</span>
+	<h6 class="w-3opacity"><i>Please make sure you have checked the summary of your orders above before checking out.</i></h6>
+  	</div>
+  	<br>
+	<div class="w3-container" style="padding: 0px 50px 50px 50px;">
 
  <div class="w3-center">
       <h6><b>Please choose your payment option.</b></h6>
@@ -186,27 +198,30 @@ else{
 <br>
 	  <div class="w3-row-padding">
 			<form method="POST" action="">
-	  	<div class="w3-col m6 w3-center">
+
+		<div class="w3-quarter">&nbsp;</div>
+	  	<div class="w3-quarter w3-center">
 	  		<input id="male" class="w3-radio" type="radio" name="payment" value="paypal">
     <label>Paypal</label>
     <br>
     <br>
-	      <img class="w3-image" src="img/paypal.png" style="width: 300px; padding-top: 5%;">
+	      <img class="w3-image" src="img/paypal.png" style="width: 150px; padding-top: 5%; border: 1px solid pink; padding:10px; border-radius: 500px;">
 	    </div>
 
-	    <div class="w3-col m6 w3-center">
+	    <div class="w3-quarter m6 w3-center">
 	  		<input id="male" class="w3-radio" type="radio" name="payment" value="cod">
-    <label>Cash on Delivery</label>
-    <br>
-    <br>
-	      <img class="w3-image" src="img/cash.png" style="width: 300px; padding-top: 5%;">
+		    <label>Cash on Delivery</label>
+		    <br>
+		    <br>
+	      <img class="w3-image" src="img/cash.png" style="width: 150px; padding-top: 5%;  border: 1px solid pink; padding:10px; border-radius: 500px;">
 	    </div>
+	    <div class="w3-quarter">&nbsp;</div>
 
 	  </div>
 
 	</div>
 <br>
-<center><p><input type="submit" value="CONFIRM ORDER" name="submitorder"></p></center>
+<center><p><input type="submit" value="PLACE ORDER" name="submitorder" class="w3-button w3-brown mybtn"></p></center>
 </form>
 <br>
 <!-- <div style="margin-bottom: 5.5%;"></div> -->

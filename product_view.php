@@ -325,7 +325,7 @@ img {
 		    <!-- <input type="button" value="+" id="plus" onclick="plus()" class="addminus"> -->
 		    </div>
 	     <hr>
-        <center><p><input type = "submit" value="PROCEED TO CHECKOUT" name="checkout"></p></center>
+        <center><p><input type = "submit" value="ADD TO CART" name="checkout"></p></center>
        </div>
 		 
 		</div>
