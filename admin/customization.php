@@ -9,7 +9,7 @@
 	<title>Customization</title>
 </head>
 
-<style type="text/css">
+<!-- <style type="text/css">
 	body{
 		 margin: 0;
 	}
@@ -207,6 +207,28 @@
   width:40% !important;
   float: right;
 }
+
+.title{
+        letter-spacing: 15px;
+        color: #8C6A48;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    .headtitle{
+        background:  #e7d5d0;
+        width: 50%;
+        padding: 2%;
+        border: 2px solid #8C6A48;
+    }
+    hr{
+        background-color: #8C6A48;
+        height: 1px;
+    }
+
+    .addcustom{
+        float: left;
+    }
 /*MOBILE RESPONSIVE*/
 	@media screen and (max-width: 600px) {
   .content_body{
@@ -222,6 +244,7 @@
   width: 100% !important;
   float: right;
 }
+
 	}
 
   @media only screen and (max-width: 768px) {
@@ -236,37 +259,262 @@
   margin: 50px;
   } 
 }
+</style>  -->
+
+<style type="text/css">
+    <style type="text/css">
+    body{
+         margin: 0;
+    }
+
+    .content_body{
+        margin: 50px 40px 0px 350px;
+    }
+
+    }
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        width: 100%;
+
+        
+    }
+    .name{
+        width: 80%;
+    }
+    th {
+        text-align: left;
+        padding: 20px;
+        width: 200px;
+        background-color: #8C6A48;
+        color: #f1f3f5;
+        border-bottom: 1px solid #dee2e6;
+    }
+    td {
+        text-align: left;
+        padding: 20px;
+        width: 200px;
+        border-bottom: 1px solid #dee2e6;
+    }
+
+    tr{
+        border-bottom: 1px solid #dee2e6;
+    }
+
+    .btn_style{
+        background-color: #d9b6ac;
+        border: none;
+        box-shadow: none;
+        padding: 10px;
+        font-size: 12px;
+        border-radius: 10px;
+        font-weight: 600;
+    }
+
+    .btn_style:hover{
+        border: 1px solid #e7d5d0;
+        color: #313232;
+    }
+
+/*  tr:nth-child(odd){background-color: #f1f3f5;
+    }*/
+    tr:hover {background-color: #f5f5f5;}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 40%;
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.top_btns{
+    margin-left: 93%;
+}
+
+/*forms*/
+    * {
+    box-sizing: border-box;
+}
+
+    input[type=text], input[type=password], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+    input[type=submit] {
+    background-color: #8C6A48;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    
+}
+
+    input[type=submit]:hover {
+    background-color: transparent;
+    border: 1px solid #8C6A48;
+    color: #8C6A48;
+}
+
+.container {
+    border-radius: 5px;
+    padding: 0px 30px 0px 30px;
+}
+
+.col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+}
+
+.col-75 {
+    float: left;
+    width:100%;
+    margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+        .title{
+        letter-spacing: 15px;
+        color: #8C6A48;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    .headtitle{
+        background:  #e7d5d0;
+        width: 50%;
+        padding: 2%;
+        border: 2px solid #8C6A48;
+    }
+    hr{
+        background-color: #8C6A48;
+        height: 1px;
+    }
+
+.w3-modal-content{
+  padding:3% !important;
+}
+
+/*MOBILE RESPONSIVE*/
+    @media screen and (max-width: 600px) {
+  .content_body{
+    margin-left: 0px;
+    margin-top: 30px;  }
+
+        .col-25, .col-75, input[type=submit] {
+        width: 100%;
+        margin-top: 0;
+    }       
+
+    .modal-content{
+        width: 90% !important;
+    }
+
+    .title{
+        font-size: 16px;
+        text-align: center;
+    }
+    }
+
+      @media only screen and (max-width: 768px) {
+
+
+
+.content_body{
+  margin: 50px;
+  } 
+}
+
 </style>
 <body>
 <div class="content">
 
   <div class="content_body">
   	<div style="padding-top: 5%;"></div>
-    <h2>Customization</h2>
+    <h2 class="title">Customization</h2>
     <hr>
 <br>
+
+
 <center>
-<select class="w3-select w3-border categoryselect" name="option2" onchange="myFunction()" type="text" id="dynamic_select">
-    <option value="" disabled selected placeholder>Product Classification</option>
-    <option value="?Classification=Chair">Chair</option>
-	<option value="?Classification=Cabinet">Cabinet</option>
-	<option value="?Classification=Table">Table</option>
-	<option value="?Classification=Decoration">Decoration</option>
-</select>
-<br><br>
-<div class="w3-responsive">
-  <table>
-        <?php
+
+        <div class="w3-quarter"></div>
+        <div class="w3-quarter"></div>
+        <div class="w3-quarter">
+            <select class="w3-select w3-border categoryselect" name="option2" onchange="myFunction()" type="text" id="dynamic_select">
+            <option value="" disabled selected placeholder>Product Classification</option>
+            <option value="?Classification=Chair">Chair</option>
+            <option value="?Classification=Cabinet">Cabinet</option>
+            <option value="?Classification=Table">Table</option>
+            <option value="?Classification=Decoration">Decoration</option>
+        </select>
+        </div>
+        <div class="w3-quarter">
+             <?php
             if(isset($_GET['Classification'])){
         ?>
-        <button onclick="document.getElementById('custom_modal').style.display='block'" class="btn_style">Add Customization Selection</button>
+        <button onclick="document.getElementById('custom_modal').style.display='block'" class="btn_style addcustom"><img src="img/add.png" width="15px;"> Customization Selection</button>
         <?php
             }
-        ?>    
+        ?> 
+        </div>
+
+        
+       
+        <br><br>
+
+        
+        <br><br>
+<div class="w3-responsive">
+  <table>
+   
             <tr>
               <th>Customization ID</th>
               <th class="name">Customization Name</th>
-              <th><center>ACTIONS</center></th>
+              <th class="name"><center>ACTIONS</center></th>
 
             </tr>
                 
@@ -280,8 +528,8 @@
                     <tr>
                         <td><center><?php echo $rows['customizationid']; ?></center></td>
                         <td><?php echo $rows['customizationname']; ?></td>
-                        <td><center><a href="?Classification=<?php echo $rows['classification']; ?>&ID=<?php echo $rows['customizationid'] ?>"><button class="btn_style">View Selection and Option</button></a>
-                        <a href="?Classification=<?php echo $rows['classification']; ?>&OptionNo=<?php echo $rows['customizationid'] ?>"><button onclick="document.getElementById('edit_modal').style.display='block'" class="btn_style">Add Option in Selection</button></center></td>
+                        <td><center><a href="?Classification=<?php echo $rows['classification']; ?>&ID=<?php echo $rows['customizationid'] ?>"><button class="btn_style"><img src="img/view.png" width="15;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Selection & Option</button></a><br>
+                        <br><a href="?Classification=<?php echo $rows['classification']; ?>&OptionNo=<?php echo $rows['customizationid'] ?>"><button onclick="document.getElementById('edit_modal').style.display='block'" class="btn_style"><img src="img/add.png" width="15px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Option in Selection</button></center></td>
                     </tr>
                     <?php
                 }
@@ -312,10 +560,11 @@
             <h4>View <?php echo $res['customizationname']; ?> Option for <?php echo $_GET['Classification'] ?></h4>
             <hr> 
             <form action="" METHOD="POST">
+                <center>
             <table>
             <tr>
               <th>Option No.</th>
-              <th><center>Option Name</center></th>
+              <th class="name"><center>Option Name</center></th>
               <th><center>Action</center></th>
             </tr>
 
@@ -330,7 +579,7 @@
                 <tr>
                 <td><?php echo $cnt; ?></td>
                 <td><?php echo $rows['optionname']; ?></td>
-                <td><button onclick='updateURL(<?php echo $rows['optionid'] ?>)'>Delete Option</button></td>
+                <td><button class="btn_style" onclick='updateURL(<?php echo $rows['optionid'] ?>)'><img src="img/delete.png" width="15px;"></button></td>
                 
                 </tr>
             <?php
@@ -340,6 +589,7 @@
             ?>
             </form>
             </table>
+        </center>
             </div>
         </div>
     </div>
@@ -390,15 +640,15 @@
             </header>
             <div class="w3-container">
                 <h4>Add Another Selection</h4>
+                <hr>
                 <form action="" METHOD="POST">
                     <input type="hidden" id="classiname" value='<?php echo $_GET['Classification']; ?>' name="classi">
                     <input type="text" id="selectionname" name="selectionname" placeholder="Selection Name" >
-                    <br>
+                    <br><br>
                     <center>
                         <input type='submit' name='selectionsave' value='SAVE' class="btn_style2">
                     </center>
                 </form>
-                <hr> 
             </div>
         </div>
     </div>
