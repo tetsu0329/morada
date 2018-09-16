@@ -264,9 +264,50 @@
           </table>
       </center>
    </div>
+   <div id="view_modal" class="w3-modal">
+        <div class="w3-modal-content">
+            <header class="w3-container"> 
+                <span onclick="document.getElementById('view_modal').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+            </header>
+            <div class="w3-container">
+            <table>
+            <tr>
+              <th>Option No.</th>
+              <th><center>Option Name</center></th>
+            </tr>
+
+            <?php
+                if(isset($_GET['ID'])){
+                    $idd = $_GET['ID'];
+                    $cnt = 1;
+                    $sqlcustomizationcount = mysqli_query($conn,"SELECT * FROM customizationitemtbl WHERE customizationid = '$idd'");
+                    while($rows=mysqli_fetch_assoc($sqlcustomizationcount))
+	                {   
+            ?>
+                <tr>
+                <td><?php echo $cnt; ?></td>
+                <td><?php echo $rows['optionname']; ?></td>
+                </tr>
+            <?php
+                $cnt++;
+                }
+            }
+            ?>
+            </table>
+            </div>
+        </div>
+    </div>
   </div>
 </body>
 </html>
+<?php
+echo "<script> var view_modal = document.getElementById('view_modal'); </script>";
+	if(isset($_GET['ID'])){
+		$idd = $_GET['ID'];
+		echo "<script> view_modal.style.display = 'block' </script>";
+	}
+	
+?>
 <script>
 	// When the user clicks anywhere outside of the modal, close it
 	window.onclick = function(event) {

@@ -256,95 +256,8 @@ img {
 	      <p style="line-height: 1;">
         <?php echo $rows['productdesc'] ?>
 	      </p>
-        <?php
-        if($rows['productclass'] == 'Table') {
-        ?>
-        <h6>Type</h6>
-        <select class="w3-select w3-border" name="option">
-          <option value="" disabled selected>Choose type</option>
-          <option value="Nara Wood">Narra Wood</option>
-          <option value="Pine Wood">Pine Wood</option>
-        </select>
-
-        <h6>Color</h6>
-        <select class="w3-select w3-border" name="option2">
-          <option value="" disabled selected>Choose color</option>
-          <option value="Black">Black</option>
-          <option value="Brown">Brown</option>
-          <option value="Mahogany">Mahogany</option>
-          <option value="White">White</option>
-        </select>
-
-        <h6>Edge</h6>
-        <select class="w3-select w3-border" name="option3">
-          <option value="" disabled selected>Choose edge</option>
-          <option value="Point">Point</option>
-          <option value="Round">Round</option>
-        </select>
-
-        <select class="w3-select w3-border" name="option4" hidden>
-          <option value="" disabled selected>Choose </option>
-        </select>
-        <?php
-        }
-        if($rows['productclass'] == 'Chair'){
-        ?>
-        <h6>Type</h6>
-        <select class="w3-select w3-border" name="option">
-          <option value="" disabled selected>Choose type</option>
-          <option value="Nara Wood">Narra Wood</option>
-          <option value="Pine Wood">Pine Wood</option>
-        </select>
-
-        <h6>Color</h6>
-        <select class="w3-select w3-border" name="option2">
-          <option value="" disabled selected>Choose color</option>
-          <option value="Black">Black</option>
-          <option value="Brown">Brown</option>
-          <option value="Mahogany">Mahogany</option>
-          <option value="White">White</option>
-        </select>
-
-        <select class="w3-select w3-border" name="option3" hidden>
-          <option value=""></option>
-        </select>
-        <select class="w3-select w3-border" name="option4" hidden>
-          <option value=""></option>
-        </select>
-        <?php
-        }
-        if($rows['productclass'] == 'Cabinet'){
-        ?>
-        <h6>Type</h6>
-        <select class="w3-select w3-border" name="option">
-          <option value="" disabled selected>Choose type</option>
-          <option value="Nara Wood">Narra Wood</option>
-          <option value="Pine Wood">Pine Wood</option>
-        </select>
-
-        <select class="w3-select w3-border" name="option2">
-          <option value="" disabled selected>Choose color</option>
-          <option value="Metal">Black</option>
-          <option value="Plastic">Brown</option>
-          <option value="Wood">White</option>
-        </select>
-
-        <h6>Cubes</h6>
-        <select class="w3-select w3-border" name="option3">
-          <option value="" disabled selected>Choose color</option>
-          <option value="2 Cubes">2 Cubes</option>
-          <option value="3 Cubes">3 Cubes</option>
-          <option value="4 Cubes">4 Cubes</option>
-        </select>
-        
-        <select class="w3-select w3-border" name="option4" hidden>
-          <option value=""></option>
-        </select>
-        <?php
-        }
-        if($rows['productclass'] == 'Decoration'){
-        ?>
-        <select class="w3-select w3-border" name="option" hidden>
+        <!-- start of static -->
+        <select class="w3-select w3-border" name="option1" hidden>
           <option value=""></option>
         </select>
         <select class="w3-select w3-border" name="option2" hidden>
@@ -356,9 +269,34 @@ img {
         <select class="w3-select w3-border" name="option4" hidden>
           <option value=""></option>
         </select>
+        <!-- end of static -->
         <?php
-        }
+        $class = $rows['productclass'];
+        $sqlcustomizationcount = mysqli_query($conn,"SELECT * FROM customizationtbl WHERE classification = '$class'");
+        $cnt = 1;
+        while($rows2=mysqli_fetch_assoc($sqlcustomizationcount))
+	        {
         ?>
+          <h6><?php echo $rows2['customizationname']; ?></h6>
+        <select class="w3-select w3-border" name="option<?php echo $cnt; ?>">
+          <option value="" disabled selected>Choose <?php echo $rows2['customizationname']; ?></option>
+          <?php
+          $id2 = $rows2['customizationid'];
+          $sqlitemcount = mysqli_query($conn,"SELECT * FROM customizationitemtbl WHERE customizationid = '$id2'");
+          while($rows3=mysqli_fetch_assoc($sqlitemcount))
+            {
+          ?>
+            <option value="<?php echo $rows2['customizationname'].": ".$rows3['optionname']; ?>"><?php echo $rows3['optionname']; ?></option>
+          <?php
+            }
+          ?>
+        </select>
+
+        <?php
+          $cnt++;
+          }
+        ?>
+
         <h6>Add another customization request</h6>
         <textarea name="option5"></textarea>
 
